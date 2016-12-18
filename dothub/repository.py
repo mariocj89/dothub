@@ -61,19 +61,31 @@ class Repo(object):
     def labels(self):
         """List of issue labels"""
         url = self._get_url("labels")
-        return self._gh.get(url, FIELDS["repo"]["label"])
+        result = dict()
+        for label in self._gh.get(url, FIELDS["repo"]["label"]):
+            name = label.pop("name")
+            result[name] = label
+        return result
 
     @property
     def collaborators(self):
         """List of collaborators"""
         url = self._get_url("collaborators")
-        return self._gh.get(url, FIELDS["repo"]["collaborator"])
+        result = dict()
+        for collaborator in self._gh.get(url, FIELDS["repo"]["collaborator"]):
+            name = collaborator.pop("login")
+            result[name] = collaborator
+        return result
 
     @property
     def hooks(self):
         """List of hooks"""
         url = self._get_url("hooks")
-        return self._gh.get(url, FIELDS["repo"]["hooks"])
+        result = dict()
+        for hook in self._gh.get(url, FIELDS["repo"]["hooks"]):
+            name = hook.pop("name")
+            result[name] = hook
+        return result
 
     def describe(self):
         config = dict()

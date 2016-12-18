@@ -28,16 +28,21 @@ class SerializedData(object):
                    homepage='https://pypi.python.org/pypi/hubsync/', has_issues=True,
                    has_downloads=True, name='hubsync')
 
-    collaborators = [
-        dict(login='Mariocj89', permissions={'admin': True, 'push': True, 'pull': True})
-    ]
+    collaborators = dict(
+        Mariocj89=dict(permissions={'admin': True, 'push': True, 'pull': True})
+    )
 
-    labels = [dict(color='fc2929', name='bug'), dict(color='84b6eb', name='enhancement')]
+    labels = dict(bug=dict(color='fc2929'), enhancement=dict(color='84b6eb'))
 
-    hooks = [dict(name='travis', active=True,
-                  config={'domain': 'notify.travis-ci.org', 'token': '********',
-                          'user': 'Mariocj89'},
-                  events=['pull_request', 'push', 'repository'])]
+    hooks = dict(travis=dict(
+        active=True,
+        config={
+            'domain': 'notify.travis-ci.org',
+            'token': '********',
+            'user': 'Mariocj89'
+        },
+        events=['pull_request', 'push', 'repository'])
+    )
 
 
 @pytest.mark.parametrize("attribute, response, expected", [
