@@ -1,5 +1,6 @@
+[![Build Status](https://travis-ci.org/Mariocj89/dothub.svg?branch=master)](https://travis-ci.org/Mariocj89/dothub)
 # dothub
-Stop managing your repo and organization config through an UI like a mere human
+Stop managing your github configuration through an UI like a mere human
 and do everything through beautiful config YAML files.
 
 dothub allows you to declare your configuration in a config file and update it by
