@@ -2,6 +2,8 @@
 from setuptools import setup
 LONG_DESCRIPTION="Tool to sync a github repo based on a config file"
 
+exec(open('sealedmock/_version.py').read())
+
 try:
     # attempt to build a long description from README.md
     # run sudo apt-get install pandoc and pip install pypandoc first
@@ -14,7 +16,7 @@ except (ImportError, RuntimeError, OSError):
 setup(
     name='dothub',
     packages=['dothub'],
-    version='0.1.0',
+    version=__version__,
     description='Manage your github repo as code!',
     long_description=LONG_DESCRIPTION,
     author='Mario Corchero',
