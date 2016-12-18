@@ -5,7 +5,7 @@ import os.path
 import time
 import getpass
 import github_token
-from dothub.github_helper import GitHub
+from dothub import github_helper
 from dothub.repository import Repo
 
 
@@ -55,19 +55,19 @@ def dothub(ctx, user, token, github_base_url):
     """Configure github as code!
 
     Stop using the keyboard like a mere human and store your github config in a file"""
-    gh = GitHub(user, token, github_base_url)
+    gh = github_helper.GitHub(user, token, github_base_url)
     ctx.obj['github'] = gh
 
 
 @dothub.command()
 @click.option("--organization", help="GitHub organization of the repo", required=True)
 @click.option("--repository", help="GitHub repo to serialize", required=True)
-@click.option("--config_file", help="Output config file", default=REPO_CONFIG_FILE)
+@click.option("--output_file", help="Output config file", default=REPO_CONFIG_FILE)
 @click.pass_context
-def repo(ctx, organization, repository, config_file):
+def repo(ctx, organization, repository, output_file):
     """Retrieve the repository config locally"""
     gh = ctx.obj['github']
     r = Repo(gh, organization, repository)
     repo_config = r.describe()
-    with open(config_file, 'w') as f:
+    with open(output_file, 'w') as f:
         yaml.safe_dump(repo_config, f, encoding='utf-8', allow_unicode=True, default_flow_style=False)
