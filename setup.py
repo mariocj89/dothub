@@ -23,7 +23,7 @@ setup(
     keywords=['configuration', 'github', 'code'],
     license='MIT',
     use_2to3=True,
-    install_requires=['mock'],
+    install_requires=['requests'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
