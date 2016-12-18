@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup
-LONG_DESCRIPTION="Tool to sync a github repo based on a config file"
+LONG_DESCRIPTION = "Tool to sync a github repo based on a config file"
 
 exec(open('dothub/_version.py').read())
 
@@ -25,7 +25,7 @@ setup(
     keywords=['configuration', 'github', 'code'],
     license='MIT',
     use_2to3=True,
-    install_requires=['requests'],
+    install_requires=['requests', 'click', 'yaml', 'github_token'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
