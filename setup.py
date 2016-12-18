@@ -2,7 +2,7 @@
 from setuptools import setup
 LONG_DESCRIPTION="Tool to sync a github repo based on a config file"
 
-exec(open('sealedmock/_version.py').read())
+exec(open('dothub/_version.py').read())
 
 try:
     # attempt to build a long description from README.md
