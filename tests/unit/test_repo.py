@@ -1,3 +1,8 @@
+"""Unit test for the repository module
+
+It tests the module in isolation from its interface passing a mock
+instead of interacting with github
+"""
 import pytest
 from dothub.repository import Repo
 from dothub.github_helper import GitHub
