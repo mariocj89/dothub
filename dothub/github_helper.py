@@ -54,3 +54,36 @@ class GitHub(object):
         else:
             raise ValueError("Unexpected type from github: {}"
                              .format(repr(response)))
+
+    def patch(self, url, payload):
+        """Sends a patch to the url
+
+        :param url: url to patch (within the github api). Ex: /repos/mario/repo1/tags
+        :type url: str
+        :param payload: the payload to send
+        :type payload: dict
+        """
+        response = self._session.patch(urljoin(self.api_url, url), json=payload)
+        response.raise_for_status()
+        return response.json()
+
+    def post(self, url, payload):
+        """Sends a post to the url
+
+        :param url: url to post (within the github api). Ex: /repos/mario/repo1/tags
+        :type url: str
+        :param payload: the payload to send
+        :type payload: dict
+        """
+        response = self._session.post(urljoin(self.api_url, url), json=payload)
+        response.raise_for_status()
+        return response.json()
+
+    def delete(self, url):
+        """Sends a delete to the url
+
+        :param url: url to delete (within the github api). Ex: /repos/mario/repo1/tags
+        :type url: str
+        """
+        response = self._session.delete(urljoin(self.api_url, url))
+        response.raise_for_status()

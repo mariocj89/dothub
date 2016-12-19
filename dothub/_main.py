@@ -72,9 +72,21 @@ def repo(ctx, organization, repository):
 @repo.command("get")
 @click.option("--output_file", help="Output config file", default=REPO_CONFIG_FILE)
 @click.pass_context
-def serialize_repo(ctx, output_file):
+def repo_get(ctx, output_file):
     """Retrieve the repository config locally"""
     r = ctx.obj['repository']
     repo_config = r.describe()
     with open(output_file, 'w') as f:
-        yaml.safe_dump(repo_config, f, encoding='utf-8', allow_unicode=True, default_flow_style=False)
+        yaml.safe_dump(repo_config, f, encoding='utf-8', allow_unicode=True,
+                       default_flow_style=False)
+
+
+@repo.command("push")
+@click.option("--input_file", help="Input config file", default=REPO_CONFIG_FILE)
+@click.pass_context
+def repo_push(ctx, input_file):
+    """Update the repository config in github"""
+    r = ctx.obj['repository']
+    with open(input_file) as f:
+        config = yaml.safe_load(f)
+    r.update(config)

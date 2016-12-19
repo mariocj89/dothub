@@ -1,5 +1,6 @@
 import os.path
 import functools
+from . import dict_diff
 
 FIELDS = {
     "repo": {
@@ -41,10 +42,14 @@ class Repo(object):
         self.owner = owner
         self.repository = repository
 
-    def _get_url(self, url):
-        """Given a suburl returns the full path down to the repo
-        with it appended"""
-        url_parts = ["repos", self.owner, self.repository, url]
+    def _get_url(self, *url_parts):
+        """Given some url parts that are part of a repo returns the full url path
+
+        _get_url("cool", "secret") -> /repos/<owner>/<repo_name>/cool/secret
+
+        :rtype: str
+        """
+        url_parts = ["repos", self.owner, self.repository] + list(url_parts)
         # join as paths and trash the last forward slash if any
         res = functools.reduce(os.path.join, url_parts)
         return res[:-1] if res[-1] == '/' else res
@@ -58,6 +63,15 @@ class Repo(object):
         url = self._get_url("")
         return self._gh.get(url, FIELDS["repo"]["options"])
 
+    @options.setter
+    def options(self, new):
+        current = self.options
+        if current == new:
+            return
+
+        url = self._get_url("")
+        self._gh.patch(url, new)
+
     @property
     def labels(self):
         """List of issue labels"""
@@ -67,6 +81,22 @@ class Repo(object):
             name = label.pop("name")
             result[name] = label
         return result
+
+    @labels.setter
+    def labels(self, new):
+        current = self.labels
+        added, missing, updated = dict_diff.diff(current, new)
+        for label in added:
+            new_label = new[label]
+            new_label["name"] = label
+            url = self._get_url("labels")
+            self._gh.post(url, new_label)
+        for label in missing:
+            url = self._get_url("labels", label)
+            self._gh.delete(url)
+        for label in updated:
+            url = self._get_url("labels", label)
+            self._gh.patch(url)
 
     @property
     def collaborators(self):
@@ -78,6 +108,31 @@ class Repo(object):
             result[name] = collaborator
         return result
 
+    @collaborators.setter
+    def collaborators(self, new):
+        current = self.collaborators
+        added, missing, updated = dict_diff.diff(current, new)
+        for user in updated:
+            # Update by recreating
+            missing.append(user)
+            added.append(user)
+        for user in missing:
+            url = self._get_url("collaborators", user)
+            self._gh.delete(url)
+        for user in added:
+            url = self._get_url("collaborators", user)
+            values = new[user]
+            if values.get("admin"):
+                permission = "admin"
+            elif values.get("push"):
+                permission = "push"
+            elif values.get("pull"):
+                permission = "pull"
+            else:
+                raise ValueError("Unexpected permission options: {}"
+                                 .format(values))
+            self._gh.put(url, dict(permission=permission))
+
     @property
     def hooks(self):
         """List of hooks"""
@@ -88,6 +143,13 @@ class Repo(object):
             result[name] = hook
         return result
 
+    @hooks.setter
+    def hooks(self, new):
+        current = self.hooks
+        if current == new:
+            return
+        raise NotImplementedError("Hook edition not implemented yet")
+
     def describe(self):
         config = dict()
         config["options"] = self.options
@@ -95,5 +157,12 @@ class Repo(object):
         config["collaborators"] = self.collaborators
         config["labels"] = self.labels
         config["hooks"] = self.hooks
-
         return config
+
+    def update(self, config):
+        self.options = config["options"]
+        # TODO branches config
+        self.collaborators = config["collaborators"]
+        self.labels = config["labels"]
+        self.hooks = config["hooks"]
+
