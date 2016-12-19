@@ -59,15 +59,22 @@ def dothub(ctx, user, token, github_base_url):
     ctx.obj['github'] = gh
 
 
-@dothub.command()
+@dothub.group()
 @click.option("--organization", help="GitHub organization of the repo", required=True)
 @click.option("--repository", help="GitHub repo to serialize", required=True)
+@click.pass_context
+def repo(ctx, organization, repository):
+    """Serialize/Update the repository config"""
+    gh = ctx.obj['github']
+    ctx.obj['repository'] = Repo(gh, organization, repository)
+
+
+@repo.command("get")
 @click.option("--output_file", help="Output config file", default=REPO_CONFIG_FILE)
 @click.pass_context
-def repo(ctx, organization, repository, output_file):
+def serialize_repo(ctx, output_file):
     """Retrieve the repository config locally"""
-    gh = ctx.obj['github']
-    r = Repo(gh, organization, repository)
+    r = ctx.obj['repository']
     repo_config = r.describe()
     with open(output_file, 'w') as f:
         yaml.safe_dump(repo_config, f, encoding='utf-8', allow_unicode=True, default_flow_style=False)
