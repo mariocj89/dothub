@@ -73,7 +73,7 @@ def test_repo_serialization(session_mock):
     session_mock.return_value.get.side_effect = get_mock_response
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
-        args = base_args + ["repo", "--organization=org", "--repository=repo", "get",
+        args = base_args + ["repo", "--organization=org", "--repository=repo", "pull",
                             "--output_file=" + file_.name]
         result = runner.invoke(dothub, args, obj={})
 

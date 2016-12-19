@@ -69,10 +69,10 @@ def repo(ctx, organization, repository):
     ctx.obj['repository'] = Repo(gh, organization, repository)
 
 
-@repo.command("get")
+@repo.command("pull")
 @click.option("--output_file", help="Output config file", default=REPO_CONFIG_FILE)
 @click.pass_context
-def repo_get(ctx, output_file):
+def repo_pull(ctx, output_file):
     """Retrieve the repository config locally"""
     r = ctx.obj['repository']
     repo_config = r.describe()
