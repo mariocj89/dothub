@@ -24,3 +24,9 @@ From now on you can pull the config with:
 And update your configuration from the localfile with
 
 ```dothub repo --organization=org_name --repository=repo_name push```
+
+# Future features
+
+This is justa prototype, dothub aims to be the configuration tool for your whole github
+see [here](https://github.com/Mariocj89/dothub/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+for the features that are going to come available soon.
