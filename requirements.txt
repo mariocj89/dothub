@@ -1,5 +1,6 @@
-yaml
+pyyaml
 github_token
 pytest
 requests
 sealedmock
+click
