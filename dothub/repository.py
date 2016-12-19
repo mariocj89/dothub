@@ -15,7 +15,7 @@ FIELDS = {
             "login", "permissions"
         ],
         "hooks": [
-            "name", "config", "events", "active"
+            "name", "events", "active"
         ]
     }
 }

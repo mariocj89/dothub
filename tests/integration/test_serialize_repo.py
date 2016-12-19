@@ -25,10 +25,6 @@ EXPECTED_RESULT = """collaborators:
 hooks:
   travis:
     active: false
-    config:
-      domain: notify.travis-ci.org
-      token: '********'
-      user: Mariocj89
     events:
     - issue_comment
     - member

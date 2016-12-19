@@ -22,8 +22,6 @@ class GithubData(object):
     labels = [dict(color='fc2929', name='bug'), dict(color='84b6eb', name='enhancement')]
 
     hooks = [dict(name='travis', active=True,
-                  config={'domain': 'notify.travis-ci.org', 'token': '********',
-                          'user': 'Mariocj89'},
                   events=['pull_request', 'push', 'repository'])]
 
 
@@ -41,11 +39,6 @@ class SerializedData(object):
 
     hooks = dict(travis=dict(
         active=True,
-        config={
-            'domain': 'notify.travis-ci.org',
-            'token': '********',
-            'user': 'Mariocj89'
-        },
         events=['pull_request', 'push', 'repository'])
     )
 
