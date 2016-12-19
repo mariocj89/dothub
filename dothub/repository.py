@@ -1,4 +1,5 @@
 import os.path
+import functools
 
 FIELDS = {
     "repo": {
@@ -45,7 +46,7 @@ class Repo(object):
         with it appended"""
         url_parts = ["repos", self.owner, self.repository, url]
         # join as paths and trash the last forward slash if any
-        res = reduce(os.path.join, url_parts)
+        res = functools.reduce(os.path.join, url_parts)
         return res[:-1] if res[-1] == '/' else res
 
     @property
