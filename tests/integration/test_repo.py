@@ -2,8 +2,11 @@
 from .regex_dict import RegExDict
 from click.testing import CliRunner
 from dothub._main import dothub
+import copy
+import yaml
 import tempfile
 import sealedmock
+from mock import Mock
 
 
 base_args = ["--user=xxx", "--token=yyy"]
@@ -61,7 +64,7 @@ def get_mock_response(url):
     """Using the urls in GET_REQUESTS builds a mock and returns it"""
     res_payload = GET_REQUESTS[url]
     mock = sealedmock.SealedMock()
-    mock.json.return_value = res_payload
+    mock.json.return_value = copy.deepcopy(res_payload)
     mock.raise_for_status = lambda: None
     mock.sealed = True
     return mock
@@ -81,3 +84,59 @@ def test_repo_serialization(session_mock):
         with open(file_.name) as f:
             result_config = f.read()
         assert EXPECTED_RESULT == result_config
+
+
+@sealedmock.patch("dothub._main.github_helper.requests.Session")
+def test_repo_push_without_changes(session_mock):
+    runner = CliRunner()
+    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.sealed = True
+    with tempfile.NamedTemporaryFile() as file_:
+        with open(file_.name, 'w') as f:
+            f.write(EXPECTED_RESULT)
+
+        args = base_args + ["repo", "--organization=org", "--repository=repo", "push",
+                            "--input_file=" + file_.name]
+        result = runner.invoke(dothub, args, obj={})
+
+        assert 0 == result.exit_code
+    # session put/patch/delete were not called
+
+
+@sealedmock.patch("dothub._main.github_helper.requests.Session")
+def test_repo_push_with_changes(session_mock):
+    runner = CliRunner()
+    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.return_value.post.return_value = Mock()
+    session_mock.return_value.patch.return_value = Mock()
+    session_mock.return_value.put.return_value = Mock()
+    session_mock.return_value.delete.return_value = Mock()
+    session_mock.sealed = True
+
+    new_config = yaml.safe_load(EXPECTED_RESULT)
+    # Rename collaborator
+    new_config['collaborators']['new_collaborators'] = new_config['collaborators'].pop("Mariocj89")
+
+    # Rename label
+    new_config["labels"]["cool_bug"] = new_config["labels"].pop("bug")
+    # Update label
+    new_config["labels"]["question"]["color"] = "000000"
+
+    # Update options
+    new_config["options"]["description"] = "Yet a cooler description"
+
+    with tempfile.NamedTemporaryFile() as file_:
+        with open(file_.name, 'w') as f:
+            yaml.safe_dump(new_config, f, encoding='utf-8', allow_unicode=True,
+                           default_flow_style=False)
+
+        args = base_args + ["repo", "--organization=org", "--repository=repo", "push",
+                            "--input_file=" + file_.name]
+        result = runner.invoke(dothub, args, obj={})
+
+    assert 0 == result.exit_code
+    assert 1 == session_mock.return_value.post.call_count  # Renamed label
+    assert 1 == session_mock.return_value.put.call_count  # Renamed collaborator
+    assert 2 == session_mock.return_value.delete.call_count  # Renamed label & collaborator
+    assert 2 == session_mock.return_value.patch.call_count  # updated description + label
+

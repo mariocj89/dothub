@@ -95,8 +95,10 @@ class Repo(object):
             url = self._get_url("labels", label)
             self._gh.delete(url)
         for label in updated:
+            new_label = new[label]
+            new_label["name"] = label
             url = self._get_url("labels", label)
-            self._gh.patch(url)
+            self._gh.patch(url, new_label)
 
     @property
     def collaborators(self):
@@ -121,7 +123,7 @@ class Repo(object):
             self._gh.delete(url)
         for user in added:
             url = self._get_url("collaborators", user)
-            values = new[user]
+            values = new[user]["permissions"]
             if values.get("admin"):
                 permission = "admin"
             elif values.get("push"):

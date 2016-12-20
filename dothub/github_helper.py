@@ -55,6 +55,18 @@ class GitHub(object):
             raise ValueError("Unexpected type from github: {}"
                              .format(repr(response)))
 
+    def put(self, url, payload):
+        """Sends a put to the url
+
+        :param url: url to put (within the github api). Ex: /repos/mario/repo1/tags
+        :type url: str
+        :param payload: the payload to send
+        :type payload: dict
+        """
+        response = self._session.put(urljoin(self.api_url, url), json=payload)
+        response.raise_for_status()
+        return response.json()
+
     def patch(self, url, payload):
         """Sends a patch to the url
 
