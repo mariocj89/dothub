@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Mariocj89/dothub.svg?branch=master)](https://travis-ci.org/Mariocj89/dothub)
+[![PyPI Version](https://img.shields.io/pypi/v/dothub.svg)](https://pypi.python.org/pypi/dothub/)
 
 # dothub
 
