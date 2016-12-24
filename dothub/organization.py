@@ -149,16 +149,17 @@ class Organization(object):
             team = new[team_name]
             repos = team.pop("repositories", {})
             members = team.pop("members", {})
+            team["name"] = team_name
 
-            url = self._get_url("team")
-            self._gh.post(url, team)
+            url = self._get_url("teams")
+            team_id = self._gh.post(url, team)["id"]
 
             for repo_name, repo in repos.items():
                 url = self._get_team_url(team_id, "repos", self.name, repo_name)
                 self._gh.put(url, repo)
 
             for member_name, member in members.items():
-                url = self._get_team_url(team_id, "membership", self.name, member_name)
+                url = self._get_team_url(team_id, "memberships", member_name)
                 self._gh.put(url, member)
 
         for team_name in updated:
@@ -191,11 +192,11 @@ class Organization(object):
             m_added, m_missing, m_updated = dict_diff.diff(old_members, new_members)
             for member_name in m_added.union(m_updated):
                 member = new_members[member_name]
-                url = self._get_team_url(team_id, "membership", self.name, member_name)
+                url = self._get_team_url(team_id, "memberships", member_name)
                 self._gh.put(url, member)
 
             for member_name in m_missing:
-                url = self._get_team_url(team_id, "membership", self.name, member_name)
+                url = self._get_team_url(team_id, "memberships", member_name)
                 self._gh.delete(url)
 
     @property

@@ -65,7 +65,8 @@ class GitHub(object):
         """
         response = self._session.put(urljoin(self.api_url, url), json=payload)
         response.raise_for_status()
-        return response.json()
+        if response.text:
+            return response.json()
 
     def patch(self, url, payload):
         """Sends a patch to the url
@@ -77,7 +78,8 @@ class GitHub(object):
         """
         response = self._session.patch(urljoin(self.api_url, url), json=payload)
         response.raise_for_status()
-        return response.json()
+        if response.text:
+            return response.json()
 
     def post(self, url, payload):
         """Sends a post to the url
@@ -89,7 +91,8 @@ class GitHub(object):
         """
         response = self._session.post(urljoin(self.api_url, url), json=payload)
         response.raise_for_status()
-        return response.json()
+        if response.text:
+            return response.json()
 
     def delete(self, url):
         """Sends a delete to the url
