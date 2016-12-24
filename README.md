@@ -22,9 +22,13 @@ From now on you can pull the config with:
 
 ```dothub repo --organization=org_name --repository=repo_name pull```
 
+```dothub org --name=org_name pull```
+
 And update your configuration from the localfile with
 
 ```dothub repo --organization=org_name --repository=repo_name push```
+
+```dothub org --name=org_name push```
 
 # Future features
 
