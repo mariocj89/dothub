@@ -1,10 +1,10 @@
 import click
-import yaml
 import json
 import os.path
 import time
 import getpass
 import github_token
+from dothub import utils
 from dothub import github_helper
 from dothub.repository import Repo
 from dothub.organization import Organization
@@ -78,9 +78,7 @@ def repo_pull(ctx, output_file):
     """Retrieve the repository config locally"""
     r = ctx.obj['repository']
     repo_config = r.describe()
-    with open(output_file, 'w') as f:
-        yaml.safe_dump(repo_config, f, encoding='utf-8', allow_unicode=True,
-                       default_flow_style=False)
+    utils.serialize_yaml(repo_config, output_file)
 
 
 @repo.command("push")
@@ -89,8 +87,7 @@ def repo_pull(ctx, output_file):
 def repo_push(ctx, input_file):
     """Update the repository config in github"""
     r = ctx.obj['repository']
-    with open(input_file) as f:
-        config = yaml.safe_load(f)
+    config = utils.load_yaml(input_file)
     r.update(config)
 
 
@@ -110,9 +107,7 @@ def org_pull(ctx, output_file):
     """Retrieve the organization config locally"""
     o = ctx.obj['organization']
     org_config = o.describe()
-    with open(output_file, 'w') as f:
-        yaml.safe_dump(org_config, f, encoding='utf-8', allow_unicode=True,
-                       default_flow_style=False)
+    utils.serialize_yaml(org_config, output_file)
 
 
 @org.command("push")
@@ -121,6 +116,5 @@ def org_pull(ctx, output_file):
 def org_push(ctx, input_file):
     """Update the organization config in github"""
     o = ctx.obj['organization']
-    with open(input_file) as f:
-        config = yaml.safe_load(f)
+    config = utils.load_yaml(input_file)
     o.update(config)
