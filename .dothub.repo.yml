@@ -1,0 +1,39 @@
+collaborators:
+  Mariocj89:
+    permission: admin
+hooks:
+  travis:
+    active: true
+    events:
+    - create
+    - delete
+    - issue_comment
+    - member
+    - membership
+    - public
+    - pull_request
+    - push
+    - repository
+labels:
+  bug:
+    color: ee0701
+  duplicate:
+    color: cccccc
+  enhancement:
+    color: 84b6eb
+  help wanted:
+    color: 128A0C
+  invalid:
+    color: e6e6e6
+  question:
+    color: cc317c
+  wontfix:
+    color: ffffff
+options:
+  description: Stop managing your github config like a mere human
+  has_downloads: true
+  has_issues: true
+  has_wiki: true
+  homepage: null
+  name: dothub
+  private: false
