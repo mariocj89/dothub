@@ -7,12 +7,14 @@ import getpass
 import github_token
 from dothub import github_helper
 from dothub.repository import Repo
+from dothub.organization import Organization
 
 
 APP_DIR = click.get_app_dir("dothub")
 CONFIG_FILE = os.path.join(APP_DIR, "config.json")
 DEFAULT_API_URL = "https://api.github.com"
 REPO_CONFIG_FILE = ".dothub.repo.yml"
+ORG_CONFIG_FILE = ".dothub.org.yml"
 
 
 def load_config():
@@ -90,3 +92,35 @@ def repo_push(ctx, input_file):
     with open(input_file) as f:
         config = yaml.safe_load(f)
     r.update(config)
+
+
+@dothub.group()
+@click.option("--name", help="GitHub organization name", required=True)
+@click.pass_context
+def org(ctx, name):
+    """Serialize/Update the org config"""
+    gh = ctx.obj['github']
+    ctx.obj['organization'] = Organization(gh, name)
+
+
+@org.command("pull")
+@click.option("--output_file", help="Output config file", default=ORG_CONFIG_FILE)
+@click.pass_context
+def org_pull(ctx, output_file):
+    """Retrieve the organization config locally"""
+    o = ctx.obj['organization']
+    org_config = o.describe()
+    with open(output_file, 'w') as f:
+        yaml.safe_dump(org_config, f, encoding='utf-8', allow_unicode=True,
+                       default_flow_style=False)
+
+
+@org.command("push")
+@click.option("--input_file", help="Input config file", default=ORG_CONFIG_FILE)
+@click.pass_context
+def org_push(ctx, input_file):
+    """Update the organization config in github"""
+    o = ctx.obj['organization']
+    with open(input_file) as f:
+        config = yaml.safe_load(f)
+    o.update(config)

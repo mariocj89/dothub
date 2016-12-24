@@ -1,4 +1,4 @@
-import _main
+from . import _main
 
 
 def main():
