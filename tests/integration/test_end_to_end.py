@@ -15,6 +15,7 @@ ORG_CONFIG = {
     'teams': {
     },
     'hooks': {
+        # TO BE IMPLEMENTED
     },
     'members': {
         'dothub-bot': {
@@ -33,6 +34,53 @@ ORG_CONFIG = {
         'email': None
     }
 }
+
+REPO_CONFIG = {
+    'labels': {
+        'new draw': {
+            'color': 'fbca04'
+        },
+        'feature': {
+            'color': '009800'
+        },
+        'bug': {
+            'color': '000000'
+        },
+        'urgent': {
+            'color': 'e11d21'
+        },
+        'technical': {
+            'color': '0052cc'
+        }
+    },
+    'hooks': {
+        # TO BE IMPLEMENTED
+    },
+    'collaborators': {
+        'dnaranjo89': {
+            'permission': 'admin'
+        },
+        'Mariocj89': {
+            'permission': 'admin'
+        },
+        'palvarez89': {
+            'permission': 'admin'
+        },
+        'dothub-bot': {
+            'permission': 'admin'
+        }
+    },
+    'options': {
+        'homepage': 'https://echaloasuerte.com',
+        'private': False,
+        'has_wiki': False,
+        'description': None,
+        'has_issues': True,
+        'name': 'test-repo',
+        'has_downloads': True
+    }
+}
+
 
 skip_on_no_token = pytest.mark.skipif(
     not DOTHUB_TOKEN,
@@ -82,3 +130,48 @@ def test_configure_org(preserve_org):
     result = runner.invoke(dothub, args, obj={})
     assert 0 == result.exit_code
     assert ORG_CONFIG == utils.load_yaml(test_config_file)
+
+
+@pytest.yield_fixture()
+def preserve_repo():
+    """Saves the repo config and restores it at the end of each test"""
+    with tempfile.NamedTemporaryFile() as original_config:
+        original_config_file = original_config.name
+
+    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+                            "pull", "--output_file=" + original_config_file]
+    result = CliRunner().invoke(dothub, args, obj={})
+    assert 0 == result.exit_code
+
+    yield
+
+    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+                            "push", "--input_file=" + original_config_file]
+    result = CliRunner().invoke(dothub, args, obj={})
+    assert 0 == result.exit_code
+
+
+@skip_on_no_token
+def test_configure_repo(preserve_repo):
+    runner = CliRunner()
+    with tempfile.NamedTemporaryFile() as test_config:
+        test_config_file = test_config.name
+
+    # ########################
+    # Test updating the config
+    # ########################
+    utils.serialize_yaml(REPO_CONFIG, test_config_file)
+    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+                            "push", "--input_file=" + test_config_file]
+    result = runner.invoke(dothub, args, obj={})
+    assert 0 == result.exit_code
+
+    # ##########################
+    # Test retrieving the config
+    # ##########################
+    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+                            "pull", "--output_file=" + test_config_file]
+    result = runner.invoke(dothub, args, obj={})
+    assert 0 == result.exit_code
+    assert REPO_CONFIG == utils.load_yaml(test_config_file)
+
