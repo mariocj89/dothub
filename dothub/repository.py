@@ -1,6 +1,6 @@
 import os.path
 import functools
-from . import dict_diff
+from . import dict_diff, utils
 
 FIELDS = {
     "repo": {
@@ -107,6 +107,9 @@ class Repo(object):
         result = dict()
         for collaborator in self._gh.get(url, FIELDS["repo"]["collaborator"]):
             name = collaborator.pop("login")
+            permissions = collaborator.pop("permissions")
+            permission = utils.decode_permissions(permissions)
+            collaborator["permission"] = permission
             result[name] = collaborator
         return result
 
@@ -123,17 +126,8 @@ class Repo(object):
             self._gh.delete(url)
         for user in added:
             url = self._get_url("collaborators", user)
-            values = new[user]["permissions"]
-            if values.get("admin"):
-                permission = "admin"
-            elif values.get("push"):
-                permission = "push"
-            elif values.get("pull"):
-                permission = "pull"
-            else:
-                raise ValueError("Unexpected permission options: {}"
-                                 .format(values))
-            self._gh.put(url, dict(permission=permission))
+            values = new[user]
+            self._gh.put(url, values)
 
     @property
     def hooks(self):

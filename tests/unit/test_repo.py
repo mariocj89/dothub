@@ -32,7 +32,7 @@ class SerializedData(object):
                    has_downloads=True, name='hubsync')
 
     collaborators = dict(
-        Mariocj89=dict(permissions={'admin': True, 'push': True, 'pull': True})
+        Mariocj89=dict(permission='admin')
     )
 
     labels = dict(bug=dict(color='fc2929'), enhancement=dict(color='84b6eb'))

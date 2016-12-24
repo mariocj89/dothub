@@ -21,10 +21,7 @@ GET_REQUESTS = RegExDict({
 
 EXPECTED_RESULT = """collaborators:
   Mariocj89:
-    permissions:
-      admin: true
-      pull: true
-      push: true
+    permission: admin
 hooks:
   travis:
     active: false
