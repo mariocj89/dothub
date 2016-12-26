@@ -30,6 +30,8 @@ And update your configuration from the localfile with
 
 ```dothub org --name=org_name push```
 
+If you don't provide owner/organization and repo name it asumes you want it to work with the tracking branch of the current repository.
+
 # Future features
 
 This is justa prototype, dothub aims to be the configuration tool for your whole github
