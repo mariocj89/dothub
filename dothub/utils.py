@@ -1,5 +1,7 @@
 """Some common utils"""
 import yaml
+import git
+import re
 
 
 def decode_permissions(permissions_dict):
@@ -24,3 +26,22 @@ def serialize_yaml(config, file_name):
 def load_yaml(file_name):
     with open(file_name) as f:
         return yaml.safe_load(f)
+
+
+def extract_gh_info_from_uri(input_uri):
+    """Given a valid github uri extracts the owner and the repo"""
+    return re.search(r".*[:/]([^/]+)/(.*)\.git", input_uri).groups()
+
+
+def workspace_repo():
+    """Extracts the owner and repository of the current workspace
+    return a tuple as (owner, repo)
+    """
+    try:
+        ws_repo = git.Repo()
+        tracking_remote = ws_repo.active_branch.tracking_branch().remote_name
+        remote = [r for r in ws_repo.remotes if r.name == tracking_remote][0]
+        return extract_gh_info_from_uri(list(remote.urls)[0])
+    except (git.exc.InvalidGitRepositoryError, IndexError, AttributeError,
+            ValueError, TypeError):
+        return None

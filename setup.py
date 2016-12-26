@@ -22,7 +22,7 @@ setup(
     author='Mario Corchero',
     author_email='mariocj89@gmail.com',
     url='https://github.com/Mariocj89/dothub',
-    keywords=['configuration', 'github', 'code'],
+    keywords=['configuration', 'github', 'code', 'GitPython'],
     license='MIT',
     use_2to3=True,
     install_requires=['requests', 'click', 'github_token', 'pyyaml'],
