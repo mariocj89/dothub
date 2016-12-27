@@ -18,7 +18,7 @@ FIELDS = {
     "team_member": ["login"],
     "team_membership": ["role"],
     "team_repos": ["permissions", "name"],
-    "hooks": ["name", "events", "active"],  # config might have masked secret
+    "hooks": ["name", "events", "active", "config"],
 }
 
 
@@ -225,11 +225,15 @@ class Organization(object):
         for hook_name in updated:
             hook_id = hooks_id[hook_name]
             hook = new[hook_name]
+            if "secret" or "token" in hook:
+                raise RuntimeError("Updating hooks with secrets is not supported")
             url = self._get_url("hooks", hook_id)
             self._gh.patch(url, hook)
 
-        if added:
-            raise RuntimeError("Adding hooks still not supported: {}".format(added))
+        for hook_name in added:
+            hook = new[hook_name]
+            url = self._get_url("hooks")
+            self._gh.post(url, hook)
 
     def describe(self):
         """Serializes the whole configuration into a dict"""
