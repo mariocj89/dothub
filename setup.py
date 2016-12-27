@@ -25,7 +25,7 @@ setup(
     keywords=['configuration', 'github', 'code', 'GitPython'],
     license='MIT',
     use_2to3=True,
-    install_requires=['requests', 'click', 'github_token', 'pyyaml'],
+    install_requires=['requests', 'click', 'github_token', 'pyyaml', 'deepdiff'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

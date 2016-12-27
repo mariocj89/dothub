@@ -2,6 +2,18 @@
 import yaml
 import git
 import re
+from deepdiff import DeepDiff
+import click
+
+from yaml import Loader, SafeLoader
+
+
+def construct_yaml_str(self, node):
+    # Override the default string handling function
+    # to always return unicode objects
+    return self.construct_scalar(node)
+Loader.add_constructor(u'tag:yaml.org,2002:str', construct_yaml_str)
+SafeLoader.add_constructor(u'tag:yaml.org,2002:str', construct_yaml_str)
 
 
 def decode_permissions(permissions_dict):
@@ -45,3 +57,29 @@ def workspace_repo():
     except (git.exc.InvalidGitRepositoryError, IndexError, AttributeError,
             ValueError, TypeError):
         return None
+
+
+def confirm_changes(current, new):
+    """Prints the proposed changes and asks for confirmation"""
+    d = DeepDiff(current, new, ignore_order=True)
+    added = set()
+    removed = set()
+    changed = d.get("values_changed", dict())
+    for key in ["dictionary_item_added", "iterable_item_added", "attribute_added",
+                "set_item_added"]:
+        added = added.union(d.get(key, set()))
+    for key in ["dictionary_item_removed", "iterable_item_removed", "attribute_removed",
+                "set_item_removed"]:
+        removed = removed.union(d.get(key, set()))
+
+    if added or removed or changed:
+        click.echo("Changes: ")
+
+    for l in added:
+        click.secho("+ {}".format(l), fg='green')
+    for l in removed:
+        click.secho("- {}".format(l), fg='red')
+    for l, v in changed.items():
+        click.secho("C {0} ({1[old_value]} -> {1[new_value]})".format(l, v), fg='yellow')
+
+    click.confirm("Apply changes?", abort=True, default=True)

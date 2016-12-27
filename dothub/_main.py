@@ -97,8 +97,10 @@ def repo_pull(ctx, output_file):
 def repo_push(ctx, input_file):
     """Update the repository config in github"""
     r = ctx.obj['repository']
-    config = utils.load_yaml(input_file)
-    r.update(config)
+    new_config = utils.load_yaml(input_file)
+    current_config = r.describe()
+    utils.confirm_changes(current_config, new_config)
+    r.update(new_config)
 
 
 @dothub.group()
@@ -126,5 +128,7 @@ def org_pull(ctx, output_file):
 def org_push(ctx, input_file):
     """Update the organization config in github"""
     o = ctx.obj['organization']
-    config = utils.load_yaml(input_file)
-    o.update(config)
+    new_config = utils.load_yaml(input_file)
+    current_config = o.describe()
+    utils.confirm_changes(current_config, new_config)
+    o.update(new_config)
