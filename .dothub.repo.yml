@@ -4,6 +4,10 @@ collaborators:
 hooks:
   travis:
     active: true
+    config:
+      domain: notify.travis-ci.org
+      token: '********'
+      user: Mariocj89
     events:
     - create
     - delete
@@ -17,16 +21,14 @@ hooks:
 labels:
   bug:
     color: ee0701
-  duplicate:
-    color: cccccc
   enhancement:
     color: 84b6eb
   help wanted:
     color: 128A0C
-  invalid:
-    color: e6e6e6
   question:
     color: cc317c
+  web:
+    color: 5319e7
   wontfix:
     color: ffffff
 options:
