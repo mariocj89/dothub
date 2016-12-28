@@ -16,7 +16,7 @@ FIELDS = {
             "login", "permissions"
         ],
         "hooks": [
-            "name", "events", "active"
+            "name", "events", "active", "config"
         ]
     }
 }
@@ -142,9 +142,27 @@ class Repo(object):
     @hooks.setter
     def hooks(self, new):
         current = self.hooks
-        if current == new:
-            return
-        raise NotImplementedError("Hook edition not implemented yet")
+        raw_curr_hooks = self._gh.get(self._get_url("hooks"), ["name", "id"])
+        hooks_id = {h["name"]: h["id"] for h in raw_curr_hooks}
+
+        added, missing, updated = dict_diff.diff(current, new)
+        for hook_name in missing:
+            hook_id = hooks_id[hook_name]
+            url = self._get_url("hooks", hook_id)
+            self._gh.delete(url)
+
+        for hook_name in updated:
+            hook_id = hooks_id[hook_name]
+            hook = new[hook_name]
+            if "secret" or "token" in hook:
+                raise RuntimeError("Updating hooks with secrets is not supported")
+            url = self._get_url("hooks", hook_id)
+            self._gh.patch(url, hook)
+
+        for hook_name in added:
+            hook = new[hook_name]
+            url = self._get_url("hooks")
+            self._gh.post(url, hook)
 
     def describe(self):
         config = dict()
