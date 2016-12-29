@@ -89,6 +89,7 @@ def repo_pull(ctx, output_file):
     r = ctx.obj['repository']
     repo_config = r.describe()
     utils.serialize_yaml(repo_config, output_file)
+    click.echo("{} updated".format(output_file))
 
 
 @repo.command("push")
@@ -120,6 +121,7 @@ def org_pull(ctx, output_file):
     o = ctx.obj['organization']
     org_config = o.describe()
     utils.serialize_yaml(org_config, output_file)
+    click.echo("{} updated".format(output_file))
 
 
 @org.command("push")

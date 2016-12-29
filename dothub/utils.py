@@ -72,8 +72,10 @@ def confirm_changes(current, new):
                 "set_item_removed"]:
         removed = removed.union(d.get(key, set()))
 
-    if added or removed or changed:
-        click.echo("Changes: ")
+    if not(added or removed or changed):
+        return
+
+    click.echo("Changes: ")
 
     for l in added:
         click.secho("+ {}".format(l), fg='green')
