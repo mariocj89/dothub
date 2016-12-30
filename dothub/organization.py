@@ -251,4 +251,12 @@ class Organization(object):
         self.teams = data["teams"]
         self.hooks = data["hooks"]
 
+    @property
+    def repos(self):
+        """Retrieves all the repos in an organization
 
+        :return: yields all the repos
+        """
+        for repo in self._gh.get(self._get_url("repos"), ["name", "fork"]):
+            if not repo["fork"]:
+                yield repo["name"]

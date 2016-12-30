@@ -3,20 +3,22 @@ import functools
 from . import dict_diff, utils
 
 FIELDS = {
-    "options": [
-        "name", "description", "homepage", "private", "has_issues", "has_wiki",
-        "has_downloads", "allow_rebase_merge", "allow_squash_merge",
-        "allow_merge_commit"
-    ],
-    "label": [
-        "name", "color"
-    ],
-    "collaborator": [
-        "login", "permissions"
-    ],
-    "hooks": [
-        "name", "events", "active", "config"
-    ]
+    "repo": {
+        "options": [
+            "name", "description", "homepage", "private", "has_issues", "has_wiki",
+            "has_downloads", "allow_rebase_merge", "allow_squash_merge",
+            "allow_merge_commit"
+        ],
+        "label": [
+            "name", "color"
+        ],
+        "collaborator": [
+            "login", "permissions"
+        ],
+        "hooks": [
+            "name", "events", "active", "config"
+        ]
+    }
 }
 
 
@@ -59,7 +61,7 @@ class Repo(object):
         Name, description, url, etc...
         """
         url = self._get_url("")
-        return self._gh.get(url, FIELDS["options"])
+        return self._gh.get(url, FIELDS["repo"]["options"])
 
     @options.setter
     def options(self, new):
@@ -75,7 +77,7 @@ class Repo(object):
         """List of issue labels"""
         url = self._get_url("labels")
         result = dict()
-        for label in self._gh.get(url, FIELDS["label"]):
+        for label in self._gh.get(url, FIELDS["repo"]["label"]):
             name = label.pop("name")
             result[name] = label
         return result
@@ -103,7 +105,7 @@ class Repo(object):
         """List of collaborators"""
         url = self._get_url("collaborators")
         result = dict()
-        for collaborator in self._gh.get(url, FIELDS["collaborator"]):
+        for collaborator in self._gh.get(url, FIELDS["repo"]["collaborator"]):
             name = collaborator.pop("login")
             permissions = collaborator.pop("permissions")
             permission = utils.decode_permissions(permissions)
@@ -132,7 +134,7 @@ class Repo(object):
         """List of hooks"""
         url = self._get_url("hooks")
         result = dict()
-        for hook in self._gh.get(url, FIELDS["hooks"]):
+        for hook in self._gh.get(url, FIELDS["repo"]["hooks"]):
             name = hook.pop("name")
             result[name] = hook
         return result

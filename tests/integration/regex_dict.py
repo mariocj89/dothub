@@ -28,4 +28,3 @@ class RegExDict(dict):
         except KeyError:
             return default
 
-

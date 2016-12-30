@@ -100,8 +100,8 @@ def repo_push(ctx, input_file):
     r = ctx.obj['repository']
     new_config = utils.load_yaml(input_file)
     current_config = r.describe()
-    utils.confirm_changes(current_config, new_config)
-    r.update(new_config)
+    if utils.confirm_changes(current_config, new_config, abort=True):
+        r.update(new_config)
 
 
 @dothub.group()
@@ -132,5 +132,40 @@ def org_push(ctx, input_file):
     o = ctx.obj['organization']
     new_config = utils.load_yaml(input_file)
     current_config = o.describe()
-    utils.confirm_changes(current_config, new_config)
-    o.update(new_config)
+    if utils.confirm_changes(current_config, new_config, abort=True):
+        o.update(new_config)
+
+
+@org.command()
+@click.option("--input_file", help="Input config file", default=REPO_CONFIG_FILE)
+@click.pass_context
+def repos(ctx, input_file):
+    """Updates all repos of an org with the specified repo config
+
+    This will iterate over all repos in the org and update them with the template provided
+    "Repo specific fields" will be ignored if presents in the repo file
+    """
+    ignored_options = ["name", "description", "homepage"]
+
+    gh = ctx.obj['github']
+    o = ctx.obj['organization']
+    new_config = utils.load_yaml(input_file)
+    if any(_ in new_config["options"] for _ in ignored_options):
+        message = ("{} keys wont be updated but they are present in {}.\n"
+                   "Continue anyway?".format(ignored_options, input_file))
+        click.confirm(message, abort=True, default=True)
+
+    for field in ignored_options:
+        new_config["options"].pop(field, None)
+
+    for repo_name in o.repos:
+        click.echo("Updating {}".format(repo_name))
+        r = Repo(gh, o.name, repo_name)
+        current_config = r.describe()
+        for field in ignored_options:
+            current_config["options"].pop(field, None)
+        if utils.confirm_changes(current_config, new_config):
+            r.update(new_config)
+
+    click.echo("All repos in {} processed".format(o.name))
+

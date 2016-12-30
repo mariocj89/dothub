@@ -59,8 +59,14 @@ def workspace_repo():
         return None
 
 
-def confirm_changes(current, new):
-    """Prints the proposed changes and asks for confirmation"""
+def confirm_changes(current, new, abort=False):
+    """Prints the proposed changes and asks for confirmation
+
+    :param current: Current config to compare with
+    :param new: new changes to apply
+    :param abort: abort app if the user rejects changes (return false otherwise)
+    :return: True if the user wants the changes, False if there are no changes or rejected
+    """
     d = DeepDiff(current, new, ignore_order=True)
     added = set()
     removed = set()
@@ -73,7 +79,7 @@ def confirm_changes(current, new):
         removed = removed.union(d.get(key, set()))
 
     if not(added or removed or changed):
-        return
+        return False
 
     click.echo("Changes: ")
 
@@ -84,4 +90,4 @@ def confirm_changes(current, new):
     for l, v in changed.items():
         click.secho("C {0} ({1[old_value]} -> {1[new_value]})".format(l, v), fg='yellow')
 
-    click.confirm("Apply changes?", abort=True, default=True)
+    return click.confirm("Apply changes?", abort=abort, default=True)
