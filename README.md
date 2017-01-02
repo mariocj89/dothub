@@ -64,7 +64,7 @@ travis hooks have been disabled and you have a new awesome "new-tag"
 
 You can update all the repositories of an organization from your .dothub.repo.yml file.
 
-You can just do ```dothub repo pull``` from a repo with the default configuration and then
+You can just do ```dothub repo pull --output_file=.dothub.org.repos.yml``` from a repo with the default configuration and then
 ```dothub org repos``` to configure all the repositories. Note that some repository
 specific options like the name or the description will be ignored on the update.
 

@@ -15,6 +15,7 @@ CONFIG_FILE = os.path.join(APP_DIR, "config.json")
 DEFAULT_API_URL = "https://api.github.com"
 REPO_CONFIG_FILE = ".dothub.repo.yml"
 ORG_CONFIG_FILE = ".dothub.org.yml"
+ORG_REPOS_CONFIG_FILE = ".dothub.org.repos.yml"
 
 
 def load_config():
@@ -137,7 +138,7 @@ def org_push(ctx, input_file):
 
 
 @org.command()
-@click.option("--input_file", help="Input config file", default=REPO_CONFIG_FILE)
+@click.option("--input_file", help="Input config file", default=ORG_REPOS_CONFIG_FILE)
 @click.pass_context
 def repos(ctx, input_file):
     """Updates all repos of an org with the specified repo config
