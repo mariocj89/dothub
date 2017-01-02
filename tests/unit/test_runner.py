@@ -1,5 +1,5 @@
 from click.testing import CliRunner
-from dothub._main import dothub
+from dothub.cli import dothub
 
 
 base_args = ["--user=xxx", "--token=yyy"]

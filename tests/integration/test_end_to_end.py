@@ -3,7 +3,7 @@
 import pytest
 from click.testing import CliRunner
 import tempfile
-from dothub._main import dothub
+from dothub.cli import dothub
 from dothub import utils
 import os
 

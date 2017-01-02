@@ -1,7 +1,7 @@
 """Integration tests for organization control"""
 from .regex_dict import RegExDict
 from click.testing import CliRunner
-from dothub._main import dothub
+from dothub.cli import dothub
 from dothub import utils
 import copy
 import yaml
@@ -124,7 +124,7 @@ def get_mock_response(url):
     return mock
 
 
-@sealedmock.patch("dothub._main.github_helper.requests.Session")
+@sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_repo_serialization(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = get_mock_response
@@ -140,7 +140,7 @@ def test_repo_serialization(session_mock):
         assert EXPECTED_RESULT == result_config
 
 
-@sealedmock.patch("dothub._main.github_helper.requests.Session")
+@sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_org_push_without_changes(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = get_mock_response
@@ -157,7 +157,7 @@ def test_org_push_without_changes(session_mock):
         # session put/patch/delete were not called
 
 
-@sealedmock.patch("dothub._main.github_helper.requests.Session")
+@sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_repo_push_with_changes(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = get_mock_response
@@ -196,7 +196,7 @@ def test_repo_push_with_changes(session_mock):
     assert 1 == session_mock.return_value.patch.call_count
 
 
-@sealedmock.patch("dothub._main.github_helper.requests.Session")
+@sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_org_push_all_repos_without_changes(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = get_mock_response
