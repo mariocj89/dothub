@@ -87,3 +87,11 @@ commands but this can be overriden through some parameters.
 This is justa prototype, dothub aims to be the configuration tool for your whole github
 see [here](https://github.com/Mariocj89/dothub/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 for the features that are going to come available soon.
+
+# FAQ
+
+#### How can I retriger the reconfigure step?
+Delete your config file `TODO` and rerun dothub
+
+#### How can I use the tool if I am need to provide a custom SSL certificate?
+Pass the envvar REQUESTS_CA_BUNDLE=YOURCERTPATH.cer before running dothub
