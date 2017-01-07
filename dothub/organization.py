@@ -1,9 +1,3 @@
-# Notes:
-# - Add unit and integration tests for the organization
-
-# - Add IDs on objects that have it to allow for proper rename (labels?)
-# - Define the version of the github api to use (through the media type)
-
 import functools
 import os
 from . import dict_diff, utils
@@ -246,10 +240,14 @@ class Organization(object):
 
     def update(self, data):
         """Updates the github configuration with the configuration data passed in """
-        self.options = data["options"]
-        self.members = data["members"]
-        self.teams = data["teams"]
-        self.hooks = data["hooks"]
+        if "options" in data:
+            self.options = data["options"]
+        if "members" in data:
+            self.members = data["members"]
+        if "teams" in data:
+            self.teams = data["teams"]
+        if "hooks" in data:
+            self.hooks = data["hooks"]
 
     @property
     def repos(self):

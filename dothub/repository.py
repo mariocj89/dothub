@@ -167,16 +167,18 @@ class Repo(object):
     def describe(self):
         config = dict()
         config["options"] = self.options
-        # TODO branches config
         config["collaborators"] = self.collaborators
         config["labels"] = self.labels
         config["hooks"] = self.hooks
         return config
 
     def update(self, config):
-        self.options = config["options"]
-        # TODO branches config
-        self.collaborators = config["collaborators"]
-        self.labels = config["labels"]
-        self.hooks = config["hooks"]
+        if "options" in config:
+            self.options = config["options"]
+        if "collaborators" in config:
+            self.collaborators = config["collaborators"]
+        if "labels" in config:
+            self.labels = config["labels"]
+        if "hooks" in config:
+            self.hooks = config["hooks"]
 
