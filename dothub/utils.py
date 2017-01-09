@@ -74,6 +74,7 @@ def confirm_changes(current, new, abort=False):
     added = set()
     removed = set()
     changed = d.get("values_changed", dict())
+    changed.update(d.get("type_changes", dict()))
     for key in ["dictionary_item_added", "iterable_item_added", "attribute_added",
                 "set_item_added"]:
         added = added.union(d.get(key, set()))
