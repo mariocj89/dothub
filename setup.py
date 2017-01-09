@@ -1,16 +1,15 @@
 #!/usr/bin/env python
+import os
 from setuptools import setup
 LONG_DESCRIPTION = "Tool to sync a github repo based on a config file"
 
 exec(open('dothub/_version.py').read())
 
-try:
+if os.environ.get("FORCE_PANDOC_GENERATION") == "y":
     # attempt to build a long description from README.md
     # run sudo apt-get install pandoc and pip install pypandoc first
     import pypandoc
     LONG_DESCRIPTION=pypandoc.convert('README.md', 'rst')
-except (ImportError, RuntimeError, OSError):
-    pass
 
 
 setup(
