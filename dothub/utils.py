@@ -62,11 +62,14 @@ def workspace_repo():
 def confirm_changes(current, new, abort=False):
     """Prints the proposed changes and asks for confirmation
 
+    Keys present in current but missing in new are considered unchanged
+
     :param current: Current config to compare with
     :param new: new changes to apply
     :param abort: abort app if the user rejects changes (return false otherwise)
     :return: True if the user wants the changes, False if there are no changes or rejected
     """
+    current = {k: current[k] for k in new}
     d = DeepDiff(current, new, ignore_order=True)
     added = set()
     removed = set()
