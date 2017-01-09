@@ -90,12 +90,12 @@ for the features that are going to come available soon.
 
 # FAQ
 
-#### How can I retriger the reconfigure step?
+## How can I retriger the reconfigure step?
 Just run dothub configure
 
-#### How can I use the tool if I am need to provide a custom SSL certificate?
+## How can I use the tool if I am need to provide a custom SSL certificate?
 Pass the envvar REQUESTS_CA_BUNDLE=YOURCERTPATH.cer before running dothub
 
-#### I don't want the tool to manage my webhooksi a part of the config
+## I don't want the tool to manage my webhooksi a part of the config
 Just remove that part! If there is full section missing (hooks, options, members, etc.). It will be ignored
 
