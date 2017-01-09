@@ -1,14 +1,12 @@
 """Functions for the command line interface"""
 
-import os
 import click
 from dothub import github_helper
 from dothub import utils
 from dothub.organization import Organization
 from dothub.repository import Repo
-from dothub.config import CONFIG_FILE
+from dothub.config import config_wizard, DEFAULT_API_URL
 
-DEFAULT_API_URL = "https://api.github.com"
 REPO_CONFIG_FILE = ".dothub.repo.yml"
 ORG_CONFIG_FILE = ".dothub.org.yml"
 ORG_REPOS_CONFIG_FILE = ".dothub.org.repos.yml"
@@ -39,9 +37,9 @@ def dothub(ctx, user, token, github_base_url):
 
 
 @dothub.command()
-def reset():
-    """Removes the config file so the wizard can be run again"""
-    os.remove(CONFIG_FILE)
+def configure():
+    """Runs the configuration wizard"""
+    config_wizard()
 
 
 @dothub.group()
