@@ -3,6 +3,7 @@ import yaml
 import git
 import re
 from deepdiff import DeepDiff
+from six import string_types
 import click
 
 from yaml import Loader, SafeLoader
@@ -74,7 +75,11 @@ def confirm_changes(current, new, abort=False):
     added = set()
     removed = set()
     changed = d.get("values_changed", dict())
-    changed.update(d.get("type_changes", dict()))
+    for key_change, change in d.get("type_changes", dict()).items():
+        if issubclass(change["new_type"], string_types) and issubclass(change["old_type"], string_types):
+            continue  # It was a change on the string type ignore
+        else:
+            changed[key_change] = change
     for key in ["dictionary_item_added", "iterable_item_added", "attribute_added",
                 "set_item_added"]:
         added = added.union(d.get(key, set()))

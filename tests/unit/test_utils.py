@@ -39,3 +39,12 @@ def test_confirm_changes_missing_keys_are_ignored(mock_confirm):
 
     utils.confirm_changes(dict(options="B", hooks="C"), dict(options="B"))
     assert 0 == mock_confirm.call_count
+
+
+@sealedmock.patch("dothub.utils.click.confirm")
+def test_confirm_changes_str_unicode_changes_are_ignored(mock_confirm):
+    mock_confirm.return_value = None
+    mock_confirm.sealed = True
+
+    utils.confirm_changes(dict(options=u"B"), dict(options="B"))
+    assert 0 == mock_confirm.call_count
