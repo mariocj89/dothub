@@ -32,7 +32,7 @@ def dothub(ctx, user, token, github_base_url):
         ctx.default_map.setdefault("repo", {})
         ctx.default_map.setdefault("org", {})
         ctx.default_map["org"].setdefault("name", ws_owner)
-        ctx.default_map["repo"].setdefault("organization", ws_owner)
+        ctx.default_map["repo"].setdefault("owner", ws_owner)
         ctx.default_map["repo"].setdefault("repository", ws_repo)
 
 
