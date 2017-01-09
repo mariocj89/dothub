@@ -77,7 +77,7 @@ def test_repo_serialization(session_mock):
     session_mock.return_value.get.side_effect = get_mock_response
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
-        args = base_args + ["repo", "--organization=org", "--repository=repo", "pull",
+        args = base_args + ["repo", "--owner=org", "--repository=repo", "pull",
                             "--output_file=" + file_.name]
         result = runner.invoke(dothub, args, obj={})
 
@@ -96,7 +96,7 @@ def test_repo_push_without_changes(session_mock):
         with open(file_.name, 'w') as f:
             f.write(EXPECTED_RESULT)
 
-        args = base_args + ["repo", "--organization=org", "--repository=repo", "push",
+        args = base_args + ["repo", "--owner=org", "--repository=repo", "push",
                             "--input_file=" + file_.name]
         result = runner.invoke(dothub, args, obj={})
 
@@ -131,7 +131,7 @@ def test_repo_push_with_changes(session_mock):
             yaml.safe_dump(new_config, f, encoding='utf-8', allow_unicode=True,
                            default_flow_style=False)
 
-        args = base_args + ["repo", "--organization=org", "--repository=repo", "push",
+        args = base_args + ["repo", "--owner=org", "--repository=repo", "push",
                             "--input_file=" + file_.name]
         result = runner.invoke(dothub, args, obj={})
 

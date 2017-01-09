@@ -43,13 +43,13 @@ def configure():
 
 
 @dothub.group()
-@click.option("--organization", help="GitHub organization of the repo", required=True)
+@click.option("--owner", help="GitHub owner of the repo", required=True)
 @click.option("--repository", help="GitHub repo to serialize", required=True)
 @click.pass_context
-def repo(ctx, organization, repository):
+def repo(ctx, owner, repository):
     """Serialize/Update the repository config"""
     gh = ctx.obj['github']
-    ctx.obj['repository'] = Repo(gh, organization, repository)
+    ctx.obj['repository'] = Repo(gh, owner, repository)
 
 
 @repo.command("pull")

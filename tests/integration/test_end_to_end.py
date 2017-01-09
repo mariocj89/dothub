@@ -138,14 +138,14 @@ def preserve_repo():
     with tempfile.NamedTemporaryFile() as original_config:
         original_config_file = original_config.name
 
-    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "pull", "--output_file=" + original_config_file]
     result = CliRunner().invoke(dothub, args, obj={})
     assert 0 == result.exit_code
 
     yield
 
-    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "push", "--input_file=" + original_config_file]
     result = CliRunner().invoke(dothub, args, obj={})
     assert 0 == result.exit_code
@@ -161,7 +161,7 @@ def test_configure_repo(preserve_repo):
     # Test updating the config
     # ########################
     utils.serialize_yaml(REPO_CONFIG, test_config_file)
-    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "push", "--input_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
     assert 0 == result.exit_code
@@ -169,7 +169,7 @@ def test_configure_repo(preserve_repo):
     # ##########################
     # Test retrieving the config
     # ##########################
-    args = CLI_BASE_ARGS + ["repo", "--organization=dothub-sandbox", "--repository=test-repo",
+    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "pull", "--output_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
     assert 0 == result.exit_code

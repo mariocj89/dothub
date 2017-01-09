@@ -74,11 +74,11 @@ By default dothub will assume you want to work with the repo that your workspace
 or the organization of repo for the current tracking branch in case of organization
 commands but this can be overriden through some parameters.
 
-```dothub repo --organization=org_name --repository=repo_name pull```
+```dothub repo --owner=org_name --repository=repo_name pull```
 
 ```dothub org --name=org_name pull```
 
-```dothub repo --organization=org_name --repository=repo_name push```
+```dothub repo --owner=org_name --repository=repo_name push```
 
 ```dothub org --name=org_name push```
 
