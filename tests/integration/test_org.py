@@ -3,7 +3,6 @@ from .regex_dict import RegExDict
 from click.testing import CliRunner
 from dothub.cli import dothub
 from dothub import utils
-import copy
 import yaml
 import tempfile
 import sealedmock
@@ -114,20 +113,10 @@ SAMPLE_REPO_CONFIG = {
 }
 
 
-def get_mock_response(url):
-    """Using the urls in GET_REQUESTS builds a mock and returns it"""
-    res_payload = GET_REQUESTS[url]
-    mock = sealedmock.SealedMock()
-    mock.json.return_value = copy.deepcopy(res_payload)
-    mock.raise_for_status = lambda: None
-    mock.sealed = True
-    return mock
-
-
 @sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_repo_serialization(session_mock):
     runner = CliRunner()
-    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         args = base_args + ["org", "--name=etcaterva", "pull",
@@ -143,7 +132,7 @@ def test_repo_serialization(session_mock):
 @sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_org_push_without_changes(session_mock):
     runner = CliRunner()
-    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         with open(file_.name, 'w') as f:
@@ -160,7 +149,7 @@ def test_org_push_without_changes(session_mock):
 @sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_repo_push_with_changes(session_mock):
     runner = CliRunner()
-    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
     session_mock.return_value.post.return_value = mock.MagicMock()
     session_mock.return_value.patch.return_value = mock.MagicMock()
     session_mock.return_value.put.return_value = mock.MagicMock()
@@ -199,7 +188,7 @@ def test_repo_push_with_changes(session_mock):
 @sealedmock.patch("dothub.cli.github_helper.requests.Session")
 def test_org_push_all_repos_without_changes(session_mock):
     runner = CliRunner()
-    session_mock.return_value.get.side_effect = get_mock_response
+    session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         utils.serialize_yaml(SAMPLE_REPO_CONFIG, file_.name)

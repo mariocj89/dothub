@@ -3,8 +3,9 @@ import werkzeug.exceptions
 import logging
 import os
 from dothub.repository import Repo
+from dothub.organization import Organization
 from dothub import github_helper
-from dothub.cli import REPO_CONFIG_FILE
+from dothub.cli import REPO_CONFIG_FILE, ORG_CONFIG_FILE, ORG_REPOS_CONFIG_FILE
 from dothub import utils
 import requests.exceptions
 import yaml
@@ -66,20 +67,37 @@ def github():
                                              " Are you a GitHub hook event?")
 
     LOG.info("Handling {} event for {}".format(event, repo_full_name))
-    repo = Repo(GH_HELPER, repo_owner, repo_name)
 
     if event == "push":
-        # REPO CONFIG
+        # REPO update
+        repo = Repo(GH_HELPER, repo_owner, repo_name)
         try:
-            new_config = yaml.safe_load(repo.get_file(REPO_CONFIG_FILE))
-            current = repo.describe()
-            LOG.info("Checking if any repo change...")
-            if check_changes(current, new_config):
-                repo.update(new_config)
-                actions.append("repo_sync")
+            new_repo_config = yaml.safe_load(repo.get_file(REPO_CONFIG_FILE))
         except requests.exceptions.HTTPError:
-            LOG.info("Skipping repo config", exc_info=True)
             pass
+        else:
+            current_repo_config = repo.describe()
+            LOG.info("Checking if any repo change...")
+            if check_changes(current_repo_config, new_repo_config):
+                repo.update(new_repo_config)
+                actions.append("repo_update")
+
+        # ORG update
+        try:
+            org = Organization(GH_HELPER, repo_owner)
+        except requests.exceptions.HTTPError:
+            pass
+        else:
+            try:
+                new_org_config = yaml.safe_load(repo.get_file(ORG_CONFIG_FILE))
+            except requests.exceptions.HTTPError:
+                return False
+            else:
+                current_org_config = org.describe()
+                LOG.info("Checking if any org change...")
+                if check_changes(current_org_config, new_org_config):
+                    org.update(new_org_config)
+                    actions.append("org_update")
 
     return flask.jsonify(
         success=True,
