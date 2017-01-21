@@ -70,23 +70,7 @@ def confirm_changes(current, new, abort=False):
     :param abort: abort app if the user rejects changes (return false otherwise)
     :return: True if the user wants the changes, False if there are no changes or rejected
     """
-    current = {k: current[k] for k in new}
-    d = DeepDiff(current, new, ignore_order=True)
-    added = set()
-    removed = set()
-    changed = d.get("values_changed", dict())
-    for key_change, change in d.get("type_changes", dict()).items():
-        if issubclass(change["new_type"], string_types) and issubclass(change["old_type"], string_types):
-            continue  # It was a change on the string type ignore
-        else:
-            changed[key_change] = change
-    for key in ["dictionary_item_added", "iterable_item_added", "attribute_added",
-                "set_item_added"]:
-        added = added.union(d.get(key, set()))
-    for key in ["dictionary_item_removed", "iterable_item_removed", "attribute_removed",
-                "set_item_removed"]:
-        removed = removed.union(d.get(key, set()))
-
+    added, removed, changed = diff_configs(current, new)
     if not(added or removed or changed):
         return False
 
@@ -100,3 +84,29 @@ def confirm_changes(current, new, abort=False):
         click.secho("C {0} ({1[old_value]} -> {1[new_value]})".format(l, v), fg='yellow')
 
     return click.confirm("Apply changes?", abort=abort, default=True)
+
+
+def diff_configs(current, new):
+    """Diffs to dict using DeepDiff and returning the changes ready to print
+
+    Keys present in current but missing in new are considered unchanged
+
+    Returns a tuple of added, removed and updated
+    """
+    current = {k: current[k] for k in new}
+    d = DeepDiff(current, new, ignore_order=True)
+    added = set()
+    removed = set()
+    changed = d.get("values_changed", dict())
+    for key_change, change in d.get("type_changes", dict()).items():
+        if change["new_value"] == change["old_value"]: # str vs unicode type changes
+            continue
+        else:
+            changed[key_change] = change
+    for key in ["dictionary_item_added", "iterable_item_added", "attribute_added",
+                "set_item_added"]:
+        added = added.union(d.get(key, set()))
+    for key in ["dictionary_item_removed", "iterable_item_removed", "attribute_removed",
+                "set_item_removed"]:
+        removed = removed.union(d.get(key, set()))
+    return added, removed, changed
