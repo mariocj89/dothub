@@ -376,5 +376,41 @@
             "id": 182909026, 
             "name": "wontfix"
         }
-    ]
+    ],
+    ".*contents/.dothub.repo.yml": {
+        "type": "file",
+        "encoding": "base64",
+        "size": 5362,
+        "name": ".dothub.repo.yml",
+        "path": ".dothub.repo.yml",
+        "content": "",
+        "sha": "3d21ec53a331a6f037a91c368710b99387d012c1",
+        "url": "https://api.github.com/repos/octokit/octokit.rb/contents/.dothub.repo.yml",
+        "git_url": "https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
+        "html_url": "https://github.com/octokit/octokit.rb/blob/master/.dothub.repo.yml",
+        "download_url": "https://raw.githubusercontent.com/octokit/octokit.rb/master/.dothub.repo.yml",
+        "_links": {
+            "git": "https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
+            "self": "https://api.github.com/repos/octokit/octokit.rb/contents/.dothub.repo.yml",
+            "html": "https://github.com/octokit/octokit.rb/blob/master/.dothub.repo.yml"
+        }
+    },
+    ".*contents/.dothub.org.yml": {
+        "type": "file",
+        "encoding": "base64",
+        "size": 5362,
+        "name": ".dothub.oeg.yml",
+        "path": ".dothub.org.yml",
+        "content": "",
+        "sha": "3d21ec53a331a6f037a91c368710b99387d012c1",
+        "url": "https://api.github.com/repos/octokit/octokit.rb/contents/.dothub.repo.yml",
+        "git_url": "https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
+        "html_url": "https://github.com/octokit/octokit.rb/blob/master/.dothub.repo.yml",
+        "download_url": "https://raw.githubusercontent.com/octokit/octokit.rb/master/.dothub.repo.yml",
+        "_links": {
+            "git": "https://api.github.com/repos/octokit/octokit.rb/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
+            "self": "https://api.github.com/repos/octokit/octokit.rb/contents/.dothub.repo.yml",
+            "html": "https://github.com/octokit/octokit.rb/blob/master/.dothub.repo.yml"
+        }
+    }
 }
