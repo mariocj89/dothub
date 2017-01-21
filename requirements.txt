@@ -1,9 +1,14 @@
 click==6.6
+coverage==4.3
 deepdiff==2.5.3
+Flask==0.12
 funcsigs==1.0.2
 gitdb2==2.0.0
 github-token==0.1.0
 GitPython==2.1.1
+itsdangerous==0.24
+Jinja2==2.9.4
+MarkupSafe==0.23
 mock==2.0.0
 pbr==1.10.0
 py==1.4.32
@@ -13,3 +18,4 @@ requests==2.12.4
 sealedmock==0.3.0
 six==1.10.0
 smmap2==2.0.1
+Werkzeug==0.11.15

@@ -45,4 +45,5 @@ setup(
             'dothub=dothub.__main__:main'
         ]
     },
+    scripts=["dothub_serve.py"]
 )

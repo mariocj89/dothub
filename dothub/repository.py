@@ -1,6 +1,7 @@
 import os.path
 import functools
 from . import dict_diff, utils
+import base64
 
 FIELDS = {
     "repo": {
@@ -181,4 +182,13 @@ class Repo(object):
             self.labels = config["labels"]
         if "hooks" in config:
             self.hooks = config["hooks"]
+
+    def get_file(self, file_path):
+        """Retrieves a file from the repo
+
+        :param file_path: File to retrieve content from the repo
+        """
+        url = self._get_url("contents", file_path)
+        encoded_content = self._gh.get(url, ["content"])["content"]
+        return base64.b64decode(encoded_content)
 
