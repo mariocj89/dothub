@@ -28,7 +28,7 @@ def config_wizard():
     conf = dict()
     conf["metadata"] = dict(config_time=time.time())
     if not os.path.isdir(APP_DIR):
-        os.mkdir(APP_DIR)
+        os.makedirs(APP_DIR)
     initial_config(conf)
     with open(CONFIG_FILE, 'w') as f:
         conf = json.dump(conf, f, indent=4)
