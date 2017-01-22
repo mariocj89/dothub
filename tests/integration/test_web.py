@@ -75,11 +75,13 @@ def test_push_triggers_no_change(session, trigger_hook):
 def test_push_triggers_repo_update(session, trigger_hook):
     payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
     payloads["/repos/etcaterva/echaloasuerte"]["description"] = "New description"
+    push_payload = copy.deepcopy(hooks_payloads.PUSH)
+    push_payload["commits"][0]["modified"].append(".dothub.repo.yml")
     session.get.side_effect = data_utils.requests_mock(payloads)
     session.patch.return_value.raise_for_status.return_value = None
     session.patch.return_value.text = None
     session.sealed = True
-    response = trigger_hook('push', hooks_payloads.PUSH)
+    response = trigger_hook('push', push_payload)
     assert 200 == response.status_code
     assert "repo_update" in response.json["actions"]
     session.patch.assert_called_once()
@@ -89,11 +91,13 @@ def test_push_triggers_repo_update(session, trigger_hook):
 def test_push_triggers_org_update(session, trigger_hook):
     payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
     payloads["/orgs/etcaterva"]["description"] = "New description"
+    push_payload = copy.deepcopy(hooks_payloads.PUSH)
+    push_payload["commits"][0]["modified"].append(".dothub.org.yml")
     session.get.side_effect = data_utils.requests_mock(payloads)
     session.patch.return_value.raise_for_status.return_value = None
     session.patch.return_value.text = None
     session.sealed = True
-    response = trigger_hook('push', hooks_payloads.PUSH)
+    response = trigger_hook('push', push_payload)
     assert 200 == response.status_code
     assert "org_update" in response.json["actions"]
     session.patch.assert_called_once()
