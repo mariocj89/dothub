@@ -30,10 +30,11 @@ def decode_permissions(permissions_dict):
                          .format(permissions_dict))
 
 
-def serialize_yaml(config, file_name):
-    with open(file_name, 'w') as f:
-        yaml.safe_dump(config, f, encoding='utf-8', allow_unicode=True,
-                       default_flow_style=False)
+def serialize_yaml(config, file_name=None):
+    """Serialzes the yaml, returns if no file_name passed in"""
+    f = open(file_name, 'w') if file_name else None
+    return yaml.safe_dump(config, f, encoding='utf-8', allow_unicode=True,
+                          default_flow_style=False)
 
 
 def load_yaml(file_name):

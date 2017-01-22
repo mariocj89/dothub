@@ -192,3 +192,18 @@ class Repo(object):
         encoded_content = self._gh.get(url, ["content"])["content"]
         return base64.b64decode(encoded_content)
 
+    def update_file(self, file_path, content):
+        """Updates a file from the repo with the passed content
+
+        :param file_path: File to retrieve content from the repo
+        :param content: New content of the file
+        """
+        url = self._get_url("contents", file_path)
+        file_sha = self._gh.get(url, ["sha"])["sha"]
+        encoded_content = base64.b64encode(content)
+        self._gh.patch(url, {
+            "path": file_path,
+            "message": "dobhub auto sync",
+            "content": encoded_content,
+            "sha": file_sha
+        })

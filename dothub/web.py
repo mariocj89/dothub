@@ -68,36 +68,61 @@ def github():
 
     LOG.info("Handling {} event for {}".format(event, repo_full_name))
 
-    if event == "push":
-        # REPO update
-        repo = Repo(GH_HELPER, repo_owner, repo_name)
-        try:
-            new_repo_config = yaml.safe_load(repo.get_file(REPO_CONFIG_FILE))
-        except requests.exceptions.HTTPError:
-            pass
-        else:
-            current_repo_config = repo.describe()
-            LOG.info("Checking if any repo change...")
-            if check_changes(current_repo_config, new_repo_config):
-                repo.update(new_repo_config)
-                actions.append("repo_update")
+    # This code needs quite a refactor, it is late and I just want to sleep...
+    # I know, so unprofessional...
 
-        # ORG update
+    # REPO
+    repo_changes = False
+    repo = Repo(GH_HELPER, repo_owner, repo_name)
+    try:
+        file_repo_config = yaml.safe_load(repo.get_file(REPO_CONFIG_FILE))
+    except requests.exceptions.HTTPError:
+        pass
+    else:
+        current_repo_config = repo.describe()
+        repo_changes = check_changes(current_repo_config, file_repo_config)
+
+    # ORG
+    org_changes = False
+    try:
+        org = Organization(GH_HELPER, repo_owner)
+    except requests.exceptions.HTTPError:
+        pass
+    else:
         try:
-            org = Organization(GH_HELPER, repo_owner)
+            file_org_config = yaml.safe_load(repo.get_file(ORG_CONFIG_FILE))
         except requests.exceptions.HTTPError:
-            pass
+            return False
         else:
-            try:
-                new_org_config = yaml.safe_load(repo.get_file(ORG_CONFIG_FILE))
-            except requests.exceptions.HTTPError:
-                return False
-            else:
-                current_org_config = org.describe()
-                LOG.info("Checking if any org change...")
-                if check_changes(current_org_config, new_org_config):
-                    org.update(new_org_config)
-                    actions.append("org_update")
+            current_org_config = org.describe()
+            LOG.info("Checking if any org change...")
+            org_changes = check_changes(current_org_config, file_org_config)
+
+    if event == "push":
+        if repo_changes:
+            repo.update(file_repo_config)
+            actions.append("repo_update")
+
+        if org_changes:
+            org.update(file_org_config)
+            actions.append("org_update")
+
+    else:  # any other hook
+        if repo_changes:
+            for key in [_ for _ in current_repo_config if _ not in file_repo_config]:
+                current_repo_config.pop(key)
+            LOG.info("Updating repo config file")
+            repo.update_file(REPO_CONFIG_FILE, utils.serialize_yaml(current_repo_config))
+            actions.append("repo_sync")
+
+        if org_changes:
+            for key in [_ for _ in current_org_config if _ not in file_org_config]:
+                current_org_config.pop(key)
+            org.update(current_org_config)
+            LOG.info("Updating org config file")
+            repo.update_file(ORG_CONFIG_FILE, utils.serialize_yaml(current_org_config))
+            actions.append("org_sync")
+
 
     return flask.jsonify(
         success=True,

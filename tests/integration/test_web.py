@@ -48,7 +48,11 @@ def test_only_post_accepted_on_github(app):
     assert 405 == app.delete(GITHUB_URL).status_code
 
 
-def test_post_contains_meta_fields_in_response(trigger_hook):
+@sealedmock.patch("dothub.web.GH_HELPER._session")
+def test_post_contains_meta_fields_in_response(session, trigger_hook):
+    session.get.side_effect = data_utils.requests_mock(
+        regex_dict.RegExDict(data_utils.REPO_AND_ORG_DATA)
+    )
     response = trigger_hook('unknown', hooks_payloads.PUSH)
     assert 200 == response.status_code
     assert response.json["success"] is True
@@ -82,7 +86,7 @@ def test_push_triggers_repo_update(session, trigger_hook):
 
 
 @sealedmock.patch("dothub.web.GH_HELPER._session")
-def test_push_triggers_repo_update(session, trigger_hook):
+def test_push_triggers_org_update(session, trigger_hook):
     payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
     payloads["/orgs/etcaterva"]["description"] = "New description"
     session.get.side_effect = data_utils.requests_mock(payloads)
@@ -92,4 +96,32 @@ def test_push_triggers_repo_update(session, trigger_hook):
     response = trigger_hook('push', hooks_payloads.PUSH)
     assert 200 == response.status_code
     assert "org_update" in response.json["actions"]
+    session.patch.assert_called_once()
+
+
+@sealedmock.patch("dothub.web.GH_HELPER._session")
+def test_non_push_triggers_repo_sync(session, trigger_hook):
+    payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
+    payloads["/repos/etcaterva/echaloasuerte"]["description"] = "New description"
+    session.get.side_effect = data_utils.requests_mock(payloads)
+    session.patch.return_value.raise_for_status.return_value = None
+    session.patch.return_value.text = None
+    session.sealed = True
+    response = trigger_hook('other_action', hooks_payloads.PUSH)
+    assert 200 == response.status_code
+    assert "repo_sync" in response.json["actions"]
+    session.patch.assert_called_once()
+
+
+@sealedmock.patch("dothub.web.GH_HELPER._session")
+def test_non_push_triggers_org_sync(session, trigger_hook):
+    payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
+    payloads["/orgs/etcaterva"]["description"] = "New description"
+    session.get.side_effect = data_utils.requests_mock(payloads)
+    session.patch.return_value.raise_for_status.return_value = None
+    session.patch.return_value.text = None
+    session.sealed = True
+    response = trigger_hook('other_action', hooks_payloads.PUSH)
+    assert 200 == response.status_code
+    assert "org_sync" in response.json["actions"]
     session.patch.assert_called_once()
