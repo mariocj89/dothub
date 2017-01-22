@@ -98,7 +98,9 @@ def github():
             LOG.info("Checking if any org change...")
             org_changes = check_changes(current_org_config, file_org_config)
 
-    if event == "push":
+    if event == "ping":
+        return "pong"
+    elif event == "push":
         if repo_changes:
             repo.update(file_repo_config)
             actions.append("repo_update")
