@@ -92,7 +92,7 @@ def github():
         try:
             file_org_config = yaml.safe_load(repo.get_file(ORG_CONFIG_FILE))
         except requests.exceptions.HTTPError:
-            return False
+            pass
         else:
             current_org_config = org.describe()
             LOG.info("Checking if any org change...")
