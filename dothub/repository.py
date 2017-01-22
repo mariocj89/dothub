@@ -50,7 +50,7 @@ class Repo(object):
 
         :rtype: str
         """
-        url_parts = ["repos", self.owner, self.repository] + list(url_parts)
+        url_parts = ["repos", self.owner, self.repository] + [str(p) for p in url_parts]
         # join as paths and trash the last forward slash if any
         res = functools.reduce(os.path.join, url_parts)
         return res[:-1] if res[-1] == '/' else res
