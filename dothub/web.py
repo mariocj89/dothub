@@ -141,12 +141,12 @@ def github():
     try:
         event = flask.request.headers['X-GitHub-Event']
         data = flask.request.get_json() or {}
-        repo_full_name = data["repository"]["full_name"]
     except KeyError:
         LOG.info("Missing data in request, rejecting", exc_info=True)
         raise werkzeug.exceptions.BadRequest("Missing data on request,"
                                              " Are you a GitHub hook event?")
 
+    repo_full_name = data["repository"]["full_name"] if "repository" in data else "N/A"
     LOG.info("Handling {} event for {}".format(event, repo_full_name))
 
     if event == "ping":
