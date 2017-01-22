@@ -21,10 +21,10 @@ setup(
     author='Mario Corchero',
     author_email='mariocj89@gmail.com',
     url='https://github.com/Mariocj89/dothub',
-    keywords=['configuration', 'github', 'code', 'GitPython'],
+    keywords=['configuration', 'github', 'code'],
     license='MIT',
     use_2to3=True,
-    install_requires=['requests', 'click', 'github_token', 'pyyaml', 'deepdiff', 'PyGit', 'six'],
+    install_requires=['requests', 'click', 'github_token', 'pyyaml', 'deepdiff', 'GitPython', 'six'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
