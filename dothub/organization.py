@@ -32,7 +32,7 @@ class Organization(object):
 
     @staticmethod
     def _get_team_url(team_id, *url_parts):
-        url_parts = ["teams", str(team_id)] + list(url_parts)
+        url_parts = ["teams", str(team_id)] + [str(p) for p in url_parts]
         # join as paths and trash the last forward slash if any
         res = functools.reduce(os.path.join, url_parts)
         return res[:-1] if res[-1] == '/' else res
@@ -44,7 +44,7 @@ class Organization(object):
 
         :rtype: str
         """
-        url_parts = ["orgs", self.name] + list(url_parts)
+        url_parts = ["orgs", self.name] + [str(p) for p in url_parts]
         # join as paths and trash the last forward slash if any
         res = functools.reduce(os.path.join, url_parts)
         return res[:-1] if res[-1] == '/' else res
