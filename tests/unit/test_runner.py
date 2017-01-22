@@ -2,7 +2,7 @@ from click.testing import CliRunner
 from dothub.cli import dothub
 
 
-base_args = ["--user=xxx", "--token=yyy"]
+base_args = ["--token=yyy"]
 
 
 def test_dothub_help():

@@ -8,7 +8,7 @@ from dothub import utils
 import os
 
 DOTHUB_TOKEN = os.environ.get("DOTHUB_USER_TOKEN")
-CLI_BASE_ARGS = ["--user=dothub-user", "--token=" + str(DOTHUB_TOKEN)]
+CLI_BASE_ARGS = ["--token=" + str(DOTHUB_TOKEN)]
 
 
 ORG_CONFIG = {

@@ -20,7 +20,7 @@ def load_config():
         with open(CONFIG_FILE) as f:
             conf = json.load(f)
     except IOError:
-        if os.environ.get("GITHUB_USER") and os.environ.get("GITHUB_TOKEN"):
+        if os.environ.get("GITHUB_TOKEN"):
             conf = AUTO_CONFIG
         else:
             click.echo("Seems this is the first time you run dothub,"
@@ -46,7 +46,6 @@ def config_wizard():
 def initial_config(conf):
     """Asks the user for the general configuration for the app and fills the config object"""
     user = click.prompt("What is your username? ")
-    conf["user"] = user
     password = getpass.getpass()
     token_factory = github_token.TokenFactory(user, password, "gitorg", github_token.ALL_SCOPES)
     token = token_factory(tfa_token_callback=lambda: click.prompt("Insert your TFA token: "))
