@@ -103,6 +103,7 @@ def test_push_triggers_org_update(session, trigger_hook):
     session.patch.assert_called_once()
 
 
+@pytest.mark.skip(reason="Deactivated feature")
 @sealedmock.patch("dothub.web.GH_HELPER._session")
 def test_non_push_triggers_repo_sync(session, trigger_hook):
     payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))
@@ -117,6 +118,7 @@ def test_non_push_triggers_repo_sync(session, trigger_hook):
     session.patch.assert_called_once()
 
 
+@pytest.mark.skip(reason="Deactivated feature")
 @sealedmock.patch("dothub.web.GH_HELPER._session")
 def test_non_push_triggers_org_sync(session, trigger_hook):
     payloads = regex_dict.RegExDict(copy.deepcopy(data_utils.REPO_AND_ORG_DATA))

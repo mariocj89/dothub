@@ -160,22 +160,25 @@ def github():
         updated_files = list(itertools.chain(*[c["modified"] for c in data["commits"]]))
         LOG.info(updated_files)
 
+        # Syncing the config file is disabled due to known issues when changing both
+        # can lead to a consistency issue. At the moment the only source of truth is
+        # considered the config file
         if REPO_CONFIG_FILE in updated_files:
             actions += repo_update(repo_owner, repo_name)
-        else:
-            actions += repo_sync(repo_owner, repo_name)
+        # else:
+        #    actions += repo_sync(repo_owner, repo_name)
 
         if ORG_CONFIG_FILE in updated_files:
             actions += org_update(repo_owner, repo_name)
-        else:
-            actions += org_sync(repo_owner, repo_name)
+        # else:
+        #    actions += org_sync(repo_owner, repo_name)
 
     else:  # any other hook
         if "repository" in data:
             repo_owner = data["repository"]["owner"]["name"]
             repo_name = data["repository"]["name"]
-            actions += repo_sync(repo_owner, repo_name)
-            actions += org_sync(repo_owner, repo_name)
+            # actions += repo_sync(repo_owner, repo_name)
+            # actions += org_sync(repo_owner, repo_name)
 
     return flask.jsonify(
         success=True,
