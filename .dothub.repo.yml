@@ -18,6 +18,15 @@ hooks:
     - pull_request
     - push
     - repository
+  web:
+    active: true
+    config:
+      content_type: json
+      insecure_ssl: '0'
+      secret: '********'
+      url: https://kolkrabbi.heroku.com/hooks/github
+    events:
+    - '*'
 labels:
   bug:
     color: ee0701
