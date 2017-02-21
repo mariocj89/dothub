@@ -1,6 +1,7 @@
 import getpass
 import json
 import time
+import os
 
 import click
 import github_token
@@ -10,6 +11,7 @@ import os.path
 DEFAULT_API_URL = "https://api.github.com"
 APP_DIR = click.get_app_dir("dothub")
 CONFIG_FILE = os.path.join(APP_DIR, "config.json")
+AUTO_CONFIG = {}
 
 
 def load_config():
@@ -18,8 +20,12 @@ def load_config():
         with open(CONFIG_FILE) as f:
             conf = json.load(f)
     except IOError:
-        click.echo("Seems this is the first time you run dothub, let me configure your settings...")
-        conf = config_wizard()
+        if os.environ.get("GITHUB_USER") and os.environ.get("GITHUB_TOKEN"):
+            conf = AUTO_CONFIG
+        else:
+            click.echo("Seems this is the first time you run dothub,"
+                       " let me configure your settings...")
+            conf = config_wizard()
     return conf
 
 
