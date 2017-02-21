@@ -53,7 +53,8 @@ def workspace_repo():
     """
     try:
         ws_repo = git.Repo()
-        tracking_remote = ws_repo.active_branch.tracking_branch().remote_name
+        tracking_branch = ws_repo.active_branch.tracking_branch()
+        tracking_remote = tracking_branch.remote_name if tracking_branch else "origin"
         remote = [r for r in ws_repo.remotes if r.name == tracking_remote][0]
         return extract_gh_info_from_uri(list(remote.urls)[0])
     except (git.exc.InvalidGitRepositoryError, IndexError, AttributeError,
