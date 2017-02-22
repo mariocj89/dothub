@@ -36,8 +36,6 @@ labels:
     color: 128A0C
   question:
     color: cc317c
-  web:
-    color: 5319e7
   wontfix:
     color: ffffff
 options:
