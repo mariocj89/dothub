@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mariocj89/dothub.svg?branch=master)](https://travis-ci.org/Mariocj89/dothub)
+[![Build Status](https://travis-ci.org/mariocj89/dothub.svg?branch=master)](https://travis-ci.org/mariocj89/dothub)
 [![PyPI Version](https://img.shields.io/pypi/v/dothub.svg)](https://pypi.python.org/pypi/dothub/)
 [![Code Health](https://landscape.io/github/mariocj89/dothub/master/landscape.svg?style=flat)](https://landscape.io/github/mariocj89/dothub/master)
 
@@ -87,7 +87,7 @@ commands but this can be overriden through some parameters.
 # Future features
 
 This is justa prototype, dothub aims to be the configuration tool for your whole github
-see [here](https://github.com/Mariocj89/dothub/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+see [here](https://github.com/mariocj89/dothub/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 for the features that are going to come available soon.
 
 # FAQ

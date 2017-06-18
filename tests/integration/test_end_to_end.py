@@ -21,7 +21,7 @@ ORG_CONFIG = {
         'dothub-bot': {
             'role': 'admin'
         },
-        'Mariocj89': {
+        'mariocj89': {
             'role': 'admin'
         }
     },
@@ -60,7 +60,7 @@ REPO_CONFIG = {
         'dnaranjo89': {
             'permission': 'admin'
         },
-        'Mariocj89': {
+        'mariocj89': {
             'permission': 'admin'
         },
         'palvarez89': {

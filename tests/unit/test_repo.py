@@ -17,7 +17,7 @@ class GithubData(object):
                        has_downloads=True, name='hubsync')
 
     collaborators = [
-        dict(login='Mariocj89', permissions={'admin': True, 'push': True, 'pull': True})
+        dict(login='mariocj89', permissions={'admin': True, 'push': True, 'pull': True})
     ]
 
     labels = [dict(color='fc2929', name='bug'), dict(color='84b6eb', name='enhancement')]
@@ -38,7 +38,7 @@ class SerializedData(object):
                    has_downloads=True, name='hubsync')
 
     collaborators = dict(
-        Mariocj89=dict(permission='admin')
+        mariocj89=dict(permission='admin')
     )
 
     labels = dict(bug=dict(color='fc2929'), enhancement=dict(color='84b6eb'))

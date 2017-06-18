@@ -20,7 +20,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     author='Mario Corchero',
     author_email='mariocj89@gmail.com',
-    url='https://github.com/Mariocj89/dothub',
+    url='https://github.com/mariocj89/dothub',
     keywords=['configuration', 'github', 'code'],
     license='MIT',
     use_2to3=True,

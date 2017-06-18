@@ -17,9 +17,9 @@ base_args = ["--token=yyy"]
 
 EXPECTED_RESULT = """hooks: {}
 members:
-  Mariocj89:
-    role: admin
   dnaranjo89:
+    role: admin
+  mariocj89:
     role: admin
   palvarez89:
     role: admin
@@ -35,7 +35,7 @@ teams:
     description: ''
     id: 1338338
     members:
-      Mariocj89:
+      mariocj89:
         role: member
       palvarez89:
         role: member
@@ -48,7 +48,7 @@ teams:
     description: Pepole working in the apps
     id: 1827619
     members:
-      Mariocj89:
+      mariocj89:
         role: member
     permission: pull
     privacy: closed
@@ -61,9 +61,9 @@ teams:
     description: Web developers
     id: 1827620
     members:
-      Mariocj89:
-        role: member
       dnaranjo89:
+        role: member
+      mariocj89:
         role: member
     permission: pull
     privacy: closed
@@ -79,7 +79,7 @@ teams:
 
 SAMPLE_REPO_CONFIG = {
     'collaborators': {
-        'Mariocj89': {
+        'mariocj89': {
             'permission': 'admin'
         }
     },
@@ -89,7 +89,7 @@ SAMPLE_REPO_CONFIG = {
             'config': {
                 'domain': 'notify.travis-ci.org',
                 'token': '********',
-                'user': 'Mariocj89'
+                'user': 'mariocj89'
             },
             'events': ['issue_comment', 'member', 'public', 'pull_request', 'push']
         }
@@ -165,7 +165,7 @@ def test_repo_push_with_changes(session_mock):
     # Add member
     new_config['members']["new_member"] = member_config
     # Updated member
-    new_config['members']["Mariocj89"]["role"] = "member"
+    new_config['members']["mariocj89"]["role"] = "member"
 
     new_config["options"]["company"] = "Bloomberg"
 

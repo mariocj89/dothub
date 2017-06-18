@@ -39,7 +39,7 @@ DOTHUB_REPO_CONFIG = {
             "config": {
                 "domain": "notify.travis-ci.org",
                 "token": "********",
-                "user": "Mariocj89"
+                "user": "mariocj89"
             },
             "events": [
                 "issue_comment",
@@ -51,7 +51,7 @@ DOTHUB_REPO_CONFIG = {
         }
     },
     "collaborators": {
-        "Mariocj89": {
+        "mariocj89": {
             "permission": "admin"
         }
     },
@@ -106,7 +106,7 @@ DOTHUB_ORG_CONFIG = {
         "palvarez89": {
             "role": "admin"
         },
-        "Mariocj89": {
+        "mariocj89": {
             "role": "admin"
         }
     },
@@ -125,7 +125,7 @@ DOTHUB_ORG_CONFIG = {
             },
             "id": 1827619,
             "members": {
-                "Mariocj89": {
+                "mariocj89": {
                     "role": "member"
                 }
             }
@@ -150,7 +150,7 @@ DOTHUB_ORG_CONFIG = {
                 "dnaranjo89": {
                     "role": "member"
                 },
-                "Mariocj89": {
+                "mariocj89": {
                     "role": "member"
                 }
             }
@@ -169,7 +169,7 @@ DOTHUB_ORG_CONFIG = {
                 "palvarez89": {
                     "role": "member"
                 },
-                "Mariocj89": {
+                "mariocj89": {
                     "role": "member"
                 }
             }

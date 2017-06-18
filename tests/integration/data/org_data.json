@@ -1,23 +1,23 @@
 {
     ".*/teams/1338338/members$": [
         {
-            "following_url": "https://api.github.com/users/Mariocj89/following{/other_user}", 
-            "gists_url": "https://api.github.com/users/Mariocj89/gists{/gist_id}", 
-            "organizations_url": "https://api.github.com/users/Mariocj89/orgs", 
-            "url": "https://api.github.com/users/Mariocj89", 
-            "events_url": "https://api.github.com/users/Mariocj89/events{/privacy}", 
-            "subscriptions_url": "https://api.github.com/users/Mariocj89/subscriptions", 
-            "html_url": "https://github.com/Mariocj89", 
+            "following_url": "https://api.github.com/users/mariocj89/following{/other_user}", 
+            "gists_url": "https://api.github.com/users/mariocj89/gists{/gist_id}", 
+            "organizations_url": "https://api.github.com/users/mariocj89/orgs", 
+            "url": "https://api.github.com/users/mariocj89", 
+            "events_url": "https://api.github.com/users/mariocj89/events{/privacy}", 
+            "subscriptions_url": "https://api.github.com/users/mariocj89/subscriptions", 
+            "html_url": "https://github.com/mariocj89", 
             "avatar_url": "https://avatars.githubusercontent.com/u/3709683?v=3", 
-            "repos_url": "https://api.github.com/users/Mariocj89/repos", 
-            "received_events_url": "https://api.github.com/users/Mariocj89/received_events", 
+            "repos_url": "https://api.github.com/users/mariocj89/repos", 
+            "received_events_url": "https://api.github.com/users/mariocj89/received_events", 
             "gravatar_id": "", 
-            "starred_url": "https://api.github.com/users/Mariocj89/starred{/owner}{/repo}", 
+            "starred_url": "https://api.github.com/users/mariocj89/starred{/owner}{/repo}", 
             "site_admin": false, 
-            "login": "Mariocj89", 
+            "login": "mariocj89", 
             "type": "User", 
             "id": 3709683, 
-            "followers_url": "https://api.github.com/users/Mariocj89/followers"
+            "followers_url": "https://api.github.com/users/mariocj89/followers"
         }, 
         {
             "following_url": "https://api.github.com/users/palvarez89/following{/other_user}", 
@@ -307,38 +307,38 @@
         }
     ], 
     ".*/orgs/etcaterva/hooks$": [], 
-    ".*/teams/1827619/memberships/Mariocj89$": {
-        "url": "https://api.github.com/teams/1827619/memberships/Mariocj89", 
+    ".*/teams/1827619/memberships/mariocj89$": {
+        "url": "https://api.github.com/teams/1827619/memberships/mariocj89", 
         "state": "active", 
         "role": "member"
     }, 
-    ".*/teams/1827620/memberships/Mariocj89$": {
-        "url": "https://api.github.com/teams/1827620/memberships/Mariocj89", 
+    ".*/teams/1827620/memberships/mariocj89$": {
+        "url": "https://api.github.com/teams/1827620/memberships/mariocj89", 
         "state": "active", 
         "role": "member"
     }, 
-    ".*/orgs/etcaterva/memberships/Mariocj89$": {
-        "url": "https://api.github.com/orgs/etcaterva/memberships/Mariocj89", 
+    ".*/orgs/etcaterva/memberships/mariocj89$": {
+        "url": "https://api.github.com/orgs/etcaterva/memberships/mariocj89", 
         "state": "active", 
         "role": "admin", 
         "user": {
-            "following_url": "https://api.github.com/users/Mariocj89/following{/other_user}", 
-            "gists_url": "https://api.github.com/users/Mariocj89/gists{/gist_id}", 
-            "organizations_url": "https://api.github.com/users/Mariocj89/orgs", 
-            "url": "https://api.github.com/users/Mariocj89", 
-            "events_url": "https://api.github.com/users/Mariocj89/events{/privacy}", 
-            "subscriptions_url": "https://api.github.com/users/Mariocj89/subscriptions", 
-            "html_url": "https://github.com/Mariocj89", 
+            "following_url": "https://api.github.com/users/mariocj89/following{/other_user}", 
+            "gists_url": "https://api.github.com/users/mariocj89/gists{/gist_id}", 
+            "organizations_url": "https://api.github.com/users/mariocj89/orgs", 
+            "url": "https://api.github.com/users/mariocj89", 
+            "events_url": "https://api.github.com/users/mariocj89/events{/privacy}", 
+            "subscriptions_url": "https://api.github.com/users/mariocj89/subscriptions", 
+            "html_url": "https://github.com/mariocj89", 
             "avatar_url": "https://avatars.githubusercontent.com/u/3709683?v=3", 
-            "repos_url": "https://api.github.com/users/Mariocj89/repos", 
-            "received_events_url": "https://api.github.com/users/Mariocj89/received_events", 
+            "repos_url": "https://api.github.com/users/mariocj89/repos", 
+            "received_events_url": "https://api.github.com/users/mariocj89/received_events", 
             "gravatar_id": "", 
-            "starred_url": "https://api.github.com/users/Mariocj89/starred{/owner}{/repo}", 
+            "starred_url": "https://api.github.com/users/mariocj89/starred{/owner}{/repo}", 
             "site_admin": false, 
-            "login": "Mariocj89", 
+            "login": "mariocj89", 
             "type": "User", 
             "id": 3709683, 
-            "followers_url": "https://api.github.com/users/Mariocj89/followers"
+            "followers_url": "https://api.github.com/users/mariocj89/followers"
         }, 
         "organization": {
             "issues_url": "https://api.github.com/orgs/etcaterva/issues", 
@@ -695,23 +695,23 @@
             "followers_url": "https://api.github.com/users/dnaranjo89/followers"
         }, 
         {
-            "following_url": "https://api.github.com/users/Mariocj89/following{/other_user}", 
-            "gists_url": "https://api.github.com/users/Mariocj89/gists{/gist_id}", 
-            "organizations_url": "https://api.github.com/users/Mariocj89/orgs", 
-            "url": "https://api.github.com/users/Mariocj89", 
-            "events_url": "https://api.github.com/users/Mariocj89/events{/privacy}", 
-            "subscriptions_url": "https://api.github.com/users/Mariocj89/subscriptions", 
-            "html_url": "https://github.com/Mariocj89", 
+            "following_url": "https://api.github.com/users/mariocj89/following{/other_user}", 
+            "gists_url": "https://api.github.com/users/mariocj89/gists{/gist_id}", 
+            "organizations_url": "https://api.github.com/users/mariocj89/orgs", 
+            "url": "https://api.github.com/users/mariocj89", 
+            "events_url": "https://api.github.com/users/mariocj89/events{/privacy}", 
+            "subscriptions_url": "https://api.github.com/users/mariocj89/subscriptions", 
+            "html_url": "https://github.com/mariocj89", 
             "avatar_url": "https://avatars.githubusercontent.com/u/3709683?v=3", 
-            "repos_url": "https://api.github.com/users/Mariocj89/repos", 
-            "received_events_url": "https://api.github.com/users/Mariocj89/received_events", 
+            "repos_url": "https://api.github.com/users/mariocj89/repos", 
+            "received_events_url": "https://api.github.com/users/mariocj89/received_events", 
             "gravatar_id": "", 
-            "starred_url": "https://api.github.com/users/Mariocj89/starred{/owner}{/repo}", 
+            "starred_url": "https://api.github.com/users/mariocj89/starred{/owner}{/repo}", 
             "site_admin": false, 
-            "login": "Mariocj89", 
+            "login": "mariocj89", 
             "type": "User", 
             "id": 3709683, 
-            "followers_url": "https://api.github.com/users/Mariocj89/followers"
+            "followers_url": "https://api.github.com/users/mariocj89/followers"
         }, 
         {
             "following_url": "https://api.github.com/users/palvarez89/following{/other_user}", 
@@ -912,27 +912,27 @@
     ], 
     ".*/teams/1827619/members$": [
         {
-            "following_url": "https://api.github.com/users/Mariocj89/following{/other_user}", 
-            "gists_url": "https://api.github.com/users/Mariocj89/gists{/gist_id}", 
-            "organizations_url": "https://api.github.com/users/Mariocj89/orgs", 
-            "url": "https://api.github.com/users/Mariocj89", 
-            "events_url": "https://api.github.com/users/Mariocj89/events{/privacy}", 
-            "subscriptions_url": "https://api.github.com/users/Mariocj89/subscriptions", 
-            "html_url": "https://github.com/Mariocj89", 
+            "following_url": "https://api.github.com/users/mariocj89/following{/other_user}", 
+            "gists_url": "https://api.github.com/users/mariocj89/gists{/gist_id}", 
+            "organizations_url": "https://api.github.com/users/mariocj89/orgs", 
+            "url": "https://api.github.com/users/mariocj89", 
+            "events_url": "https://api.github.com/users/mariocj89/events{/privacy}", 
+            "subscriptions_url": "https://api.github.com/users/mariocj89/subscriptions", 
+            "html_url": "https://github.com/mariocj89", 
             "avatar_url": "https://avatars.githubusercontent.com/u/3709683?v=3", 
-            "repos_url": "https://api.github.com/users/Mariocj89/repos", 
-            "received_events_url": "https://api.github.com/users/Mariocj89/received_events", 
+            "repos_url": "https://api.github.com/users/mariocj89/repos", 
+            "received_events_url": "https://api.github.com/users/mariocj89/received_events", 
             "gravatar_id": "", 
-            "starred_url": "https://api.github.com/users/Mariocj89/starred{/owner}{/repo}", 
+            "starred_url": "https://api.github.com/users/mariocj89/starred{/owner}{/repo}", 
             "site_admin": false, 
-            "login": "Mariocj89", 
+            "login": "mariocj89", 
             "type": "User", 
             "id": 3709683, 
-            "followers_url": "https://api.github.com/users/Mariocj89/followers"
+            "followers_url": "https://api.github.com/users/mariocj89/followers"
         }
     ], 
-    ".*/teams/1338338/memberships/Mariocj89$": {
-        "url": "https://api.github.com/teams/1338338/memberships/Mariocj89", 
+    ".*/teams/1338338/memberships/mariocj89$": {
+        "url": "https://api.github.com/teams/1338338/memberships/mariocj89", 
         "state": "active", 
         "role": "member"
     }, 
@@ -957,23 +957,23 @@
             "followers_url": "https://api.github.com/users/dnaranjo89/followers"
         }, 
         {
-            "following_url": "https://api.github.com/users/Mariocj89/following{/other_user}", 
-            "gists_url": "https://api.github.com/users/Mariocj89/gists{/gist_id}", 
-            "organizations_url": "https://api.github.com/users/Mariocj89/orgs", 
-            "url": "https://api.github.com/users/Mariocj89", 
-            "events_url": "https://api.github.com/users/Mariocj89/events{/privacy}", 
-            "subscriptions_url": "https://api.github.com/users/Mariocj89/subscriptions", 
-            "html_url": "https://github.com/Mariocj89", 
+            "following_url": "https://api.github.com/users/mariocj89/following{/other_user}", 
+            "gists_url": "https://api.github.com/users/mariocj89/gists{/gist_id}", 
+            "organizations_url": "https://api.github.com/users/mariocj89/orgs", 
+            "url": "https://api.github.com/users/mariocj89", 
+            "events_url": "https://api.github.com/users/mariocj89/events{/privacy}", 
+            "subscriptions_url": "https://api.github.com/users/mariocj89/subscriptions", 
+            "html_url": "https://github.com/mariocj89", 
             "avatar_url": "https://avatars.githubusercontent.com/u/3709683?v=3", 
-            "repos_url": "https://api.github.com/users/Mariocj89/repos", 
-            "received_events_url": "https://api.github.com/users/Mariocj89/received_events", 
+            "repos_url": "https://api.github.com/users/mariocj89/repos", 
+            "received_events_url": "https://api.github.com/users/mariocj89/received_events", 
             "gravatar_id": "", 
-            "starred_url": "https://api.github.com/users/Mariocj89/starred{/owner}{/repo}", 
+            "starred_url": "https://api.github.com/users/mariocj89/starred{/owner}{/repo}", 
             "site_admin": false, 
-            "login": "Mariocj89", 
+            "login": "mariocj89", 
             "type": "User", 
             "id": 3709683, 
-            "followers_url": "https://api.github.com/users/Mariocj89/followers"
+            "followers_url": "https://api.github.com/users/mariocj89/followers"
         }
     ]
 }

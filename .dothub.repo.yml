@@ -1,5 +1,5 @@
 collaborators:
-  Mariocj89:
+  mariocj89:
     permission: admin
 hooks:
   travis:
@@ -7,7 +7,7 @@ hooks:
     config:
       domain: notify.travis-ci.org
       token: '********'
-      user: Mariocj89
+      user: mariocj89
     events:
     - create
     - delete
