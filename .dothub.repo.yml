@@ -1,32 +1,6 @@
 collaborators:
   mariocj89:
     permission: admin
-hooks:
-  travis:
-    active: true
-    config:
-      domain: notify.travis-ci.org
-      token: '********'
-      user: mariocj89
-    events:
-    - create
-    - delete
-    - issue_comment
-    - member
-    - membership
-    - public
-    - pull_request
-    - push
-    - repository
-  web:
-    active: true
-    config:
-      content_type: json
-      insecure_ssl: '0'
-      secret: '********'
-      url: https://kolkrabbi.heroku.com/hooks/github
-    events:
-    - '*'
 labels:
   bug:
     color: ee0701
@@ -39,6 +13,9 @@ labels:
   wontfix:
     color: ffffff
 options:
+  allow_merge_commit: true
+  allow_rebase_merge: true
+  allow_squash_merge: true
   description: Stop managing your github config like a mere human
   has_downloads: true
   has_issues: true
