@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/mariocj89/dothub.svg?branch=master)](https://travis-ci.org/Mariocj89/dothub)
 [![PyPI Version](https://img.shields.io/pypi/v/dothub.svg)](https://pypi.python.org/pypi/dothub/)
+[![Code Health](https://landscape.io/github/mariocj89/dothub/master/landscape.svg?style=flat)](https://landscape.io/github/mariocj89/dothub/master)
+
 
 # dothub
 
