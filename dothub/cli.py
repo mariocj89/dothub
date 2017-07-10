@@ -132,8 +132,9 @@ def repos(ctx, input_file):
         click.echo("Updating {}".format(repo_name))
         r = Repo(gh, o.name, repo_name)
         current_config = r.describe()
-        for field in ignored_options:
+        for field in set(ignored_options) - {"name"}:
             current_config["options"].pop(field, None)
+        new_config["options"]["name"] = repo_name
         if utils.confirm_changes(current_config, new_config):
             r.update(new_config)
 
