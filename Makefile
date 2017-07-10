@@ -2,6 +2,6 @@ test:
 	tox
 
 release:
-	FORCE_PANDOC_GENERATION='y' python setup.py sdist upload -r pypi
+	python setup.py sdist_wheel upload -r pypi
 
 .PHONY: test release
