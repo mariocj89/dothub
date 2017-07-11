@@ -1,15 +1,8 @@
 #!/usr/bin/env python
 import os
 from setuptools import setup
-LONG_DESCRIPTION = "Tool to sync a github repo based on a config file"
 
 exec(open('dothub/_version.py').read())
-
-if os.environ.get("FORCE_PANDOC_GENERATION") == "y":
-    # attempt to build a long description from README.md
-    # run sudo apt-get install pandoc and pip install pypandoc first
-    import pypandoc
-    LONG_DESCRIPTION=pypandoc.convert('README.md', 'rst')
 
 
 setup(
@@ -17,7 +10,6 @@ setup(
     packages=['dothub'],
     version=__version__,
     description='Manage your github repo as code!',
-    long_description=LONG_DESCRIPTION,
     author='Mario Corchero',
     author_email='mariocj89@gmail.com',
     url='https://github.com/mariocj89/dothub',
