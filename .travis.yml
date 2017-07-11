@@ -6,7 +6,3 @@ python:
 install: pip install tox-travis
 script:
     - tox
-    - if [ "${TRAVIS_BRANCH}" == "master" ]; then
-        pip install dothub ;
-        yes | dothub repo --owner=mariocj89 --repository=dothub push ;
-      fi
