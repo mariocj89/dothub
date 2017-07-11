@@ -26,7 +26,7 @@ class GitHub(object):
         """
         self.api_url = api_url
         self._session = requests.Session()
-        self._session.headers["Authorization"] = "token {}".format(token)
+        self._session.auth = (user, token)
 
     def get(self, url, fields):
         """Retrieves all fields from an url using a mask

@@ -13,15 +13,16 @@ ORG_REPOS_CONFIG_FILE = ".dothub.org.repos.yml"
 
 
 @click.group()
+@click.option("--user", help="GitHub user to use", envvar="GITHUB_USER", required=True)
 @click.option("--token", help="GitHub API token to use", envvar="GITHUB_TOKEN", required=True)
 @click.option("--github_base_url", help="GitHub base api url",
               envvar="GITHUB_API_URL", default=DEFAULT_API_URL)
 @click.pass_context
-def dothub(ctx, token, github_base_url):
+def dothub(ctx, user, token, github_base_url):
     """Configure github as code!
 
     Stop using the keyboard like a mere human and store your github config in a file"""
-    gh = github_helper.GitHub(token, github_base_url)
+    gh = github_helper.GitHub(user, token, github_base_url)
     ctx.obj['github'] = gh
 
     ws_repo_info = utils.workspace_repo()

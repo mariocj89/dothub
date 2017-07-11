@@ -12,7 +12,7 @@ from . import data_utils
 
 GET_REQUESTS = RegExDict(data_utils.REPO_AND_ORG_DATA)
 
-base_args = ["--token=yyy"]
+base_args = ["--user=xxx", "--token=yyy"]
 
 
 EXPECTED_RESULT = """hooks: {}
@@ -117,7 +117,6 @@ SAMPLE_REPO_CONFIG = {
 def test_repo_serialization(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
-    session_mock.return_value.headers = mock.MagicMock()
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         args = base_args + ["org", "--name=etcaterva", "pull",
@@ -134,7 +133,6 @@ def test_repo_serialization(session_mock):
 def test_org_push_without_changes(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
-    session_mock.return_value.headers = mock.MagicMock()
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         with open(file_.name, 'w') as f:
@@ -156,7 +154,6 @@ def test_repo_push_with_changes(session_mock):
     session_mock.return_value.patch.return_value = mock.MagicMock()
     session_mock.return_value.put.return_value = mock.MagicMock()
     session_mock.return_value.delete.return_value = mock.MagicMock()
-    session_mock.return_value.headers = mock.MagicMock()
     session_mock.sealed = True
 
     new_config = yaml.safe_load(EXPECTED_RESULT)
@@ -192,7 +189,6 @@ def test_repo_push_with_changes(session_mock):
 def test_org_push_all_repos_without_changes(session_mock):
     runner = CliRunner()
     session_mock.return_value.get.side_effect = data_utils.requests_mock(GET_REQUESTS)
-    session_mock.return_value.headers = mock.MagicMock()
     session_mock.sealed = True
     with tempfile.NamedTemporaryFile() as file_:
         utils.serialize_yaml(SAMPLE_REPO_CONFIG, file_.name)
