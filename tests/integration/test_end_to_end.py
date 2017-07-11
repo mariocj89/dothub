@@ -7,8 +7,8 @@ from dothub.cli import dothub
 from dothub import utils
 import os
 
-DOTHUB_TOKEN = os.environ.get("DOTHUB_USER_TOKEN")
-CLI_BASE_ARGS = ["--user=dothub-user", "--token=" + str(DOTHUB_TOKEN)]
+DOTHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+CLI_BASE_ARGS = ["--user=dothub-bot", "--token=" + str(DOTHUB_TOKEN)]
 
 
 ORG_CONFIG = {
@@ -77,7 +77,10 @@ REPO_CONFIG = {
         'description': None,
         'has_issues': True,
         'name': 'test-repo',
-        'has_downloads': True
+        'has_downloads': True,
+        'allow_merge_commit': False,
+        'allow_squash_merge': True,
+        'allow_rebase_merge': True
     }
 }
 
