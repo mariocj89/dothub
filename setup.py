@@ -36,6 +36,5 @@ setup(
         'console_scripts': [
             'dothub=dothub.__main__:main'
         ]
-    },
-    scripts=["dothub_serve.py"]
+    }
 )
