@@ -4,14 +4,18 @@ from setuptools import setup
 
 exec(open('dothub/_version.py').read())
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
 
 setup(
     name='dothub',
     packages=['dothub'],
     version=__version__,
-    description='Manage your github repo as code!',
     author='Mario Corchero',
     author_email='mariocj89@gmail.com',
+    description='Manage your github repo as code!',
+    long_description=readme(),
     url='https://github.com/mariocj89/dothub',
     keywords=['configuration', 'github', 'code'],
     license='MIT',
