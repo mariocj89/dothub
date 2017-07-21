@@ -24,6 +24,7 @@ def requests_mock(payloads):
         """Using the urls in payloads builds a mock and returns it"""
         res_payload = payloads[url]
         mock = sealedmock.SealedMock()
+        mock.text = json.dumps(res_payload)
         mock.json.return_value = copy.deepcopy(res_payload)
         mock.raise_for_status = lambda: None
         mock.sealed = True

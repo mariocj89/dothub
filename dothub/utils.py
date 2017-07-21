@@ -1,4 +1,5 @@
 """Some common utils"""
+import logging
 import yaml
 import git
 import re
@@ -7,6 +8,8 @@ from six import string_types
 import click
 
 from yaml import Loader, SafeLoader
+
+LOG = logging.getLogger(__name__)
 
 
 def construct_yaml_str(self, node):
@@ -76,14 +79,14 @@ def confirm_changes(current, new, abort=False):
     if not(added or removed or changed):
         return False
 
-    click.echo("Changes: ")
+    LOG.info("Changes: ")
 
     for l in added:
-        click.secho("+ {}".format(l), fg='green')
+        LOG.info(click.style("+ {}".format(l), fg='green'))
     for l in removed:
-        click.secho("- {}".format(l), fg='red')
+        LOG.info(click.style("- {}".format(l), fg='red'))
     for l, v in changed.items():
-        click.secho("C {0} ({1[old_value]} -> {1[new_value]})".format(l, v), fg='yellow')
+        LOG.info(click.style("C {0} ({1[old_value]} -> {1[new_value]})".format(l, v), fg='yellow'))
 
     return click.confirm("Apply changes?", abort=abort, default=True)
 

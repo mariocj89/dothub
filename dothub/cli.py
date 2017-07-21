@@ -1,5 +1,6 @@
 """Functions for the command line interface"""
 
+import logging
 import click
 from dothub import github_helper
 from dothub import utils
@@ -10,6 +11,7 @@ from dothub.config import config_wizard, DEFAULT_API_URL
 REPO_CONFIG_FILE = ".dothub.repo.yml"
 ORG_CONFIG_FILE = ".dothub.org.yml"
 ORG_REPOS_CONFIG_FILE = ".dothub.org.repos.yml"
+LOG = logging.getLogger(__name__)
 
 
 @click.group()
@@ -17,11 +19,15 @@ ORG_REPOS_CONFIG_FILE = ".dothub.org.repos.yml"
 @click.option("--token", help="GitHub API token to use", envvar="GITHUB_TOKEN", required=True)
 @click.option("--github_base_url", help="GitHub base api url",
               envvar="GITHUB_API_URL", default=DEFAULT_API_URL)
+@click.option("--verbosity", help="verbosity of the log",
+              default="INFO", type=click.Choice(["ERROR", "INFO", "DEBUG"]))
 @click.pass_context
-def dothub(ctx, user, token, github_base_url):
+def dothub(ctx, user, token, github_base_url, verbosity):
     """Configure github as code!
 
     Stop using the keyboard like a mere human and store your github config in a file"""
+    logging.getLogger().setLevel(getattr(logging, verbosity))
+
     gh = github_helper.GitHub(user, token, github_base_url)
     ctx.obj['github'] = gh
 
@@ -60,7 +66,7 @@ def repo_pull(ctx, output_file):
     r = ctx.obj['repository']
     repo_config = r.describe()
     utils.serialize_yaml(repo_config, output_file)
-    click.echo("{} updated".format(output_file))
+    LOG.info("{} updated".format(output_file))
 
 
 @repo.command("push")
@@ -92,7 +98,7 @@ def org_pull(ctx, output_file):
     o = ctx.obj['organization']
     org_config = o.describe()
     utils.serialize_yaml(org_config, output_file)
-    click.echo("{} updated".format(output_file))
+    LOG.info("{} updated".format(output_file))
 
 
 @org.command("push")
@@ -130,7 +136,7 @@ def repos(ctx, input_file):
         new_config["options"].pop(field, None)
 
     for repo_name in o.repos:
-        click.echo("Updating {}".format(repo_name))
+        LOG.info("Updating {}".format(repo_name))
         r = Repo(gh, o.name, repo_name)
         current_config = r.describe()
         for field in set(ignored_options) - {"name"}:
@@ -139,5 +145,5 @@ def repos(ctx, input_file):
         if utils.confirm_changes(current_config, new_config):
             r.update(new_config)
 
-    click.echo("All repos in {} processed".format(o.name))
+    LOG.info("All repos in {} processed".format(o.name))
 

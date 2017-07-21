@@ -1,8 +1,10 @@
 """Helper to retrieve/push data from/to github"""
+import logging
 import requests
 from requests.compat import urljoin
 
 DEFAULT_API_URL = "https://api.github.com"
+LOG = logging.getLogger(__name__)
 
 
 def mask_dict(in_dict, mask):
@@ -43,17 +45,15 @@ class GitHub(object):
         :raises: if anything goes wrong with the request
         :return: the same object/list that github returns but masked
         """
-        response = self._session.get(urljoin(self.api_url, url))
-        response.raise_for_status()
-        result = response.json()
+        result = self._request("get", url)
         if isinstance(result, dict):
             return mask_dict(result, fields)
         elif isinstance(result, list):
             return [mask_dict(item, fields)
-                    for item in response.json()]
+                    for item in result]
         else:
             raise ValueError("Unexpected type from github: {}"
-                             .format(repr(response)))
+                             .format(repr(result)))
 
     def put(self, url, payload):
         """Sends a put to the url
@@ -63,10 +63,7 @@ class GitHub(object):
         :param payload: the payload to send
         :type payload: dict
         """
-        response = self._session.put(urljoin(self.api_url, url), json=payload)
-        response.raise_for_status()
-        if response.text:
-            return response.json()
+        return self._request("put", url, json=payload)
 
     def patch(self, url, payload):
         """Sends a patch to the url
@@ -76,10 +73,7 @@ class GitHub(object):
         :param payload: the payload to send
         :type payload: dict
         """
-        response = self._session.patch(urljoin(self.api_url, url), json=payload)
-        response.raise_for_status()
-        if response.text:
-            return response.json()
+        return self._request("patch", url, json=payload)
 
     def post(self, url, payload):
         """Sends a post to the url
@@ -89,10 +83,7 @@ class GitHub(object):
         :param payload: the payload to send
         :type payload: dict
         """
-        response = self._session.post(urljoin(self.api_url, url), json=payload)
-        response.raise_for_status()
-        if response.text:
-            return response.json()
+        return self._request("post", url, json=payload)
 
     def delete(self, url):
         """Sends a delete to the url
@@ -100,5 +91,14 @@ class GitHub(object):
         :param url: url to delete (within the github api). Ex: /repos/mario/repo1/tags
         :type url: str
         """
-        response = self._session.delete(urljoin(self.api_url, url))
+        self._request("delete", url)
+
+    def _request(self, method, url, **kwargs):
+        """Shared plumbing to send a request"""
+        req_func = getattr(self._session, method)
+        response = req_func(urljoin(self.api_url, url), **kwargs)
+        LOG.debug("Request to '%s' returned %s", url, response.text)
         response.raise_for_status()
+        if response.text:
+            return response.json()
+

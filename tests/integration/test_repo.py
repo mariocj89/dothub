@@ -65,6 +65,7 @@ def get_mock_response(url):
     """Using the urls in GET_REQUESTS builds a mock and returns it"""
     res_payload = GET_REQUESTS[url]
     mock = sealedmock.SealedMock()
+    mock.text = str(res_payload)
     mock.json.return_value = copy.deepcopy(res_payload)
     mock.raise_for_status = lambda: None
     mock.sealed = True
