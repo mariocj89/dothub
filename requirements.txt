@@ -19,3 +19,4 @@ sealedmock==0.3.0
 six==1.10.0
 smmap2==2.0.1
 Werkzeug==0.11.15
+betamax==0.8.0

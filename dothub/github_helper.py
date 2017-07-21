@@ -20,6 +20,11 @@ class GitHub(object):
     It helps to retrieve the repository configuration and all of its
     elements
     """
+
+    _session = None  # Single global ugly horrible session to ease testing
+                     # set this value to any kind of mock  and it will be used
+                     # instead of an instance of requests.Session
+
     def __init__(self, user, token, api_url=DEFAULT_API_URL):
         """Creates a repo object
 
@@ -27,7 +32,7 @@ class GitHub(object):
         :param token: token to use for authentication. It can also be the user password
         """
         self.api_url = api_url
-        self._session = requests.Session()
+        self._session = self._session or requests.Session()
         self._session.auth = (user, token)
 
     def get(self, url, fields):
