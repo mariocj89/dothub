@@ -3,7 +3,7 @@ from . import config, cli
 
 
 def main():
-    logging.basicConfig(levle=logging.INFO, format="%(message)s")
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     conf = config.load_config()
     cli.dothub(obj={}, default_map=conf)
 
