@@ -1,4 +1,4 @@
-|Build Status| |PyPI Version| |Code Health|
+|Build Status| |PyPI Version| |Code Health| |Coveralls Report|
 
 dothub
 ======
@@ -130,3 +130,6 @@ members, etc.). It will be ignored
    :target: https://pypi.python.org/pypi/dothub/
 .. |Code Health| image:: https://landscape.io/github/mariocj89/dothub/master/landscape.svg?style=flat
    :target: https://landscape.io/github/mariocj89/dothub/master
+.. |Coveralls Report| image:: https://coveralls.io/repos/github/mariocj89/dothub/badge.svg
+   :target: https://coveralls.io/github/mariocj89/dothub
+
