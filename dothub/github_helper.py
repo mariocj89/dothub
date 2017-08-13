@@ -7,7 +7,7 @@ DEFAULT_API_URL = "https://api.github.com"
 LOG = logging.getLogger(__name__)
 
 
-def mask_dict(in_dict, mask):
+def _mask_dict(in_dict, mask):
     """Given a dict and a list of fields removes all fields not in the list"""
     for key in (set(in_dict.keys()) - set(mask)):
         in_dict.pop(key)
@@ -15,10 +15,10 @@ def mask_dict(in_dict, mask):
 
 
 class GitHub(object):
-    """Represents an repository on github.
+    """Handle to send HTTP requests to github
 
-    It helps to retrieve the repository configuration and all of its
-    elements
+    It basically adds authentication, github as base url and field masking
+    on top of Python requests.
     """
 
     _session = None  # Single global ugly horrible session to ease testing
@@ -52,9 +52,9 @@ class GitHub(object):
         """
         result = self._request("get", url)
         if isinstance(result, dict):
-            return mask_dict(result, fields)
+            return _mask_dict(result, fields)
         elif isinstance(result, list):
-            return [mask_dict(item, fields)
+            return [_mask_dict(item, fields)
                     for item in result]
         else:
             raise ValueError("Unexpected type from github: {}"
