@@ -1,6 +1,6 @@
 """Validates functionality of the repository objects
 
-Unit-tests in this file rely on the code within github_helper to test the repositories.py
+Unit-tests in this file rely on the code within github_helper to test the repository.py
 code. The code for github_helper is validated in a different test suite and therefore
 considered safe to test repository.py.
 
@@ -265,6 +265,22 @@ def test_get_labels_no_results(repo):
         assert repo.labels == {}
 
 
+def test_set_labels_unchanged(repo):
+    """No change on labels -> no request sent"""
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_labels(mock, DF.labels())
+
+        repo.labels = {
+            "label1": dict(
+                color="f29513",
+            ),
+            "label2": dict(
+                color="0f11f0",
+            ),
+        }
+
+
 def test_set_labels_add_one(repo):
     """Add a single label calls post"""
     with requests_mock.Mocker() as mock:
@@ -360,6 +376,25 @@ def test_get_collaborators_multiple_returned(repo):
             collaborator1=dict(permission="pull"),
             collaborator2=dict(permission="push"),
             collaborator3=dict(permission="admin"),
+        )
+
+
+def test_set_collaborators_unchanged(repo):
+    """No change on colaborators -> no request sent"""
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_collaborators(mock, DF.collaborators())
+
+        repo.collaborators = dict(
+            collaborator1=dict(
+                permission="pull",
+            ),
+            collaborator2=dict(
+                permission="push",
+            ),
+            collaborator3=dict(
+                permission="admin",
+            ),
         )
 
 
@@ -515,6 +550,10 @@ def test_set_hook_add_one(repo):
             events=["push"],
             config=dict(url="http://content2")
         ))
+
+
+def test_set_hooks_unchanged(repo):
+    pass
 
 
 def test_set_hook_remove_one(repo):
