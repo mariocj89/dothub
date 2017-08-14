@@ -1,8 +1,15 @@
+"""Models a repository as configured in github
+
+Via an instance of `Repository` the configuration can be retrieved and updated.
+"""
+
 import os.path
 import functools
 from . import dict_diff, utils
-import base64
 
+
+# These fields define the properties that are available in each of the subgroups of
+# the configuration that can be found in github
 FIELDS = {
     "repo": {
         "options": [
@@ -27,7 +34,12 @@ class Repo(object):
     """Represents an repository on github.
 
     It helps to retrieve the repository configuration and all of its
-    elements
+    elements.
+
+    Attributes can be found in each repo which can be used to updated/retrieve
+    the configuration in github.
+
+    To perform a full retrieve/update, use the describe/update methods.
     """
     def __init__(self, github, owner, repository):
         """Creates a repo object
@@ -118,10 +130,10 @@ class Repo(object):
     def collaborators(self, new):
         current = self.collaborators
         added, missing, updated = dict_diff.diff(current, new)
-        for user in updated:
+        if updated:
             # Update by recreating
-            missing.append(user)
-            added.append(user)
+            missing = missing.union(updated)
+            added = added.union(updated)
         for user in missing:
             url = self._get_url("collaborators", user)
             self._gh.delete(url)

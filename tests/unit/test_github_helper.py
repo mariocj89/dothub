@@ -7,7 +7,7 @@ To mock out the HTTP requests being sent `requests_mock` is used
 """
 import pytest
 import requests_mock
-from requests.compat import urljoin
+import os.path
 
 from dothub.github_helper import GitHub, DEFAULT_API_URL
 
@@ -17,7 +17,7 @@ from dothub.github_helper import GitHub, DEFAULT_API_URL
 # #######
 
 def register_uri(mock, method, url, base_url=DEFAULT_API_URL, **kwargs):
-    absolute_url = urljoin(base_url, url)
+    absolute_url = os.path.join(base_url, url)
     mock.register_uri(method, absolute_url, **kwargs)
 
 

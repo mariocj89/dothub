@@ -6,8 +6,10 @@ DiffDict = namedtuple("DiffDict", "added missing updated")
 
 
 def diff(current_dict, past_dict):
-    """Diffs two dicts, the result object has added, missing and updated values"""
-    current_dict, past_dict = current_dict, past_dict
+    """Diffs two dicts, the result object has added, missing and updated values
+
+    DiffDict, tuple of three sets which represents added missing and updated
+    """
     set_current, set_past = set(current_dict.keys()), set(past_dict.keys())
     intersect = set_current.intersection(set_past)
     updated = set(o for o in intersect if past_dict[o] != current_dict[o])

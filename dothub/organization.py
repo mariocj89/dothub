@@ -1,8 +1,15 @@
+"""Models an organization as configured in github
+
+Via an instance of `Organization` the configuration can be retrieved and updated.
+"""
+
 import functools
 import os
 from . import dict_diff, utils
 
 
+# These fields define the properties that are available in each of the subgroups of
+# the configuration that can be found in github
 FIELDS = {
     "options": ["billing_email", "company", "email", "location", "name", "description"],
     # default_repository_permission, members_can_create_repositories
@@ -17,7 +24,14 @@ FIELDS = {
 
 
 class Organization(object):
-    """Object to syncs the configuration for a github organization"""
+    """Object to syncs the configuration for a github organization
+
+    There are attributes for each major part or an organization like "teams" or "hooks"
+    and two methods to perform full retrieve and update, *describe* and *update*
+    respectively.
+
+    In addition, all repositories of the org can be retrieved via the `repos` attribute.
+    """
 
     def __init__(self, github_handle, name):
         """Creates an Organization object given the github api handle and the org name
@@ -57,7 +71,7 @@ class Organization(object):
 
     @options.setter
     def options(self, new):
-        """Updates the organization """
+        """Updates the organization general parameters"""
         current = self.options
         if current == new:
             return
