@@ -15,7 +15,7 @@ FIELDS = {
     # default_repository_permission, members_can_create_repositories
     "member": ["login"],
     "membership": ["role"],
-    "team": ["id", "name", "description", "privacy", "permission"],
+    "team": ["id", "name", "description", "privacy", "permission"],  # slug
     "team_member": ["login"],
     "team_membership": ["role"],
     "team_repos": ["permissions", "name"],
@@ -83,7 +83,7 @@ class Organization(object):
     def members(self):
         """Retrieve the plain members of an organization.
 
-        These memebers don't need to be linked to any team but for an user to
+        These members don't need to be linked to any team but for an user to
         be added to a team they need to be in this list"""
         result = dict()
         url = self._get_url("members")
