@@ -40,7 +40,7 @@ def config_wizard():
     initial_config(conf)
     with open(CONFIG_FILE, 'w') as f:
         conf = json.dump(conf, f, indent=4)
-    LOG.info("Config saved in: '{}'".format(CONFIG_FILE))
+    LOG.info("Config saved in: '%s'", CONFIG_FILE)
     LOG.info("Delete this file to rerun the wizard")
     return conf
 

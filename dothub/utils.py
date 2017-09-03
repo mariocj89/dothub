@@ -4,7 +4,6 @@ import yaml
 import git
 import re
 from deepdiff import DeepDiff
-from six import string_types
 import click
 
 from yaml import Loader, SafeLoader
