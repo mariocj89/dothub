@@ -61,13 +61,7 @@ REPO_CONFIG = {
         # TO BE IMPLEMENTED
     },
     'collaborators': {
-        'dnaranjo89': {
-            'permission': 'admin'
-        },
         'mariocj89': {
-            'permission': 'admin'
-        },
-        'palvarez89': {
             'permission': 'admin'
         },
         'dothub-bot': {

@@ -33,7 +33,6 @@ options:
 teams:
   Automation:
     description: ''
-    id: 1338338
     members:
       mariocj89:
         role: member
@@ -46,7 +45,6 @@ teams:
         permission: push
   Mobile:
     description: Pepole working in the apps
-    id: 1827619
     members:
       mariocj89:
         role: member
@@ -59,7 +57,6 @@ teams:
         permission: pull
   Web:
     description: Web developers
-    id: 1827620
     members:
       dnaranjo89:
         role: member

@@ -1,1 +1,1658 @@
-{"http_interactions": [{"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA+2YwW7jNhCGXyXQtXZoe5N4I6DYHnovUOTUi0FLtMVGElWSspsIeff+Q0qW5EUir7mHHgIsNjbN+Tgczgxn2EQyjeL1evW4WjyuZlHJCxHFkRXGzrWoVDSLdnWeb9rxVNms3s4NL9Ot+pcNp6ljKXQUN1Gu9rIEYzwXIFppdbe+v39YfJlF/MAt15ta55ibWVuZmDE/aJa3e0kL1UboRJVWlPY2UQWrWSf/7fDrHZB73WKIHWHgDFfJluTFgTPsO70yW+RnevjlndB303cqz9URpHPdpxdjJ1myq+PIcn81B7INw4kImBFbeyODSGOvUczJNYz+bGRKJIPT0SK9QrlWEqqRS7w1jBzJIeutSbSsrFTlNUqO5MFTes9L+cqv5UHeAEPqXaOOk4O8OMA/rwF4wYZVWh548kIm0iIR8gCzXw09I4BpXyqK6T8G1qLDkFZseFpQrO54bsTbLHKKWEx2AzOE5eWRMUoGqTgdNFb+vS6Kl5s/Ya4bq24qoXdKFzeiTOkr/ZEIcYQyneMN5RSyKuY8nxT5MKzdOZzF6UgbQk2cz8cMxC0IUOpZvISBCNAw/N9GWYIkwLcKe1dTCWVCxRGpYcOv5FhW8CJMdUcAKVMq0JqOAJI0phYXefrE3h3IsC6eyrrY+nR4SRRNsD0C2nJj5L4UIsyKJ0rDupy91bxMskBuB2mY/+TOnO/DlCUAONtcbcNAuE+ZozTMZNxfVHYTrB9hCTKiarELV5YgJ6rVoafuFCXKiYlL0sIBwjTtIKxprZrzcl/zfSD2RMHZ02W+56+T5c5EFPUYMKmk03Jb/4Sc14NIV19fIPYDzdpzeqqrWj6uhqZsMCh/nBWKQk7VDRPIljHy/5/BJX89Z9P36ULnAoUJ0rA+SftroMUHWbi9BzpNh4u0bUSYY3QQ1vxScZtRHsNaFdciSO2WwZotRxl2e3vbZIK7IrwQOjSYPQIsrpMMpWWQpk0HoQqOW1fb70jRFLV+rngaZt8TBUR/lkHaesTQCyr0smEqOsIQWcgcFasqA3NujxnCS2XlTiaXdDgTgTciNd+MLBMx43k+g/damUj4M9pJOkrUoyLQSB6BjeA1wXc1uYBrh1leCw9pmG9QU1Hl6iU8JQ04FM9aoANKN9yicVktlg/z5Wq+untaPsR3X+Mvq78wp67S0Zz1fLGer5ZPi8f4Hv8eaE5Vm2yAwRSQvj4tV/FyGd+taQqSbOve+ITHj3cfHfpmhl4zIGlM1kv+1svF773PtHJJDj89C6kfWPVwfv9dIAttM1WICkVJFJcIHuo8X/EZT0CD2iJRdQmLL2bRkVsUw7jB+6GuHukAGTcbH9tRbHVNjSpGKq3+Fgl6x8FYn1AGg0f5LEeCVDCdWk3fLPaLF1Jr1b5Tef1VJcp2/YGSvkWkHQx+H+3IfUnFjte53fgqHT5WcGPxcAaPEbrArlBlQJkmaltzvz/ypk5lykD+Mzp2RLA6bsw/NYdLuFR/2oj/yY1BTao1zn7Sgu6bTsovNHxS+XzMozfId18OPx/zPh/zBm/h/7vHvFLYI56tBilq2B+1CW759h90IssnAhgAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Last-Modified": ["Fri, 21 Jul 2017 09:59:56 GMT"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA20:11292B3:5971D0B9"], "ETag": ["W/\"4c177d2b718c8b5ea7e548c3abbe469e\""], "Date": ["Fri, 21 Jul 2017 10:00:26 GMT"], "X-RateLimit-Remaining": ["4792"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.044349"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "recorded_at": "2017-07-21T10:00:26"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA7WTXU+DMBSG/0uvcTUy90Fi/BVeGbMU6OAYoKQfLJPsv3sKzBWMS8rmFQ30fXg59HlvSSEyqEhESiZBJJ+bLQkIpCQK14/b1SYMCGuYZnJnZIG7cq1rFVHa31ThIgOdm9goLhNRaV7pRSJKaugQf21elgjM5ECxZII3JrQaBlCfRpqibqFcl8WkQf/ibr+7cy+KQhwwPy189RX0J4bd+jVU2RwExloqdM5xYvgZJ/vxoLRnnS7SUnvZQWohCv+B5KlfpSGEhQ4Vdmmp5LXoaCZWiYRag6g8q42iiBIyYxV8sRkojCok2FKeJboIRnmDJ84z22daWktoWHK045A84dDgdOfwJmHE6WPN8Zi/4f+3swbNdywtrWV7VigekJrLEpSywydRS4aHWhr7zKicROd1gdLZ9ekUXFRN8XyZ+CEWGvHWqKfl+nkZblfXZX38U9Zz/gZbR52u6zra6uXrJTlf2F+MW4x1YDcp63Du56wLdX2fI63D8rXWifpr64Tv4+2ozcj6/xL34xtC2NdLZQcAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA35:11292E5:5971D0BA"], "ETag": ["W/\"b99d801018edd2ad8b86d061c6fd21d1\""], "Date": ["Fri, 21 Jul 2017 10:00:26 GMT"], "X-RateLimit-Remaining": ["4791"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.047855"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "recorded_at": "2017-07-21T10:00:26"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA63SzWrEIBQF4FcpQneZUdOav13pY5QuNN5MBKOZRDsDpe9eM0PilC6y8bq6R5APOR/fSEnUMFKwvGaMZshPGjWod26cG4z5qI4n5Xovjq0d8ASjnbG0S3CYuZHCXrGD2R2WG6y5AD1j4U8oQ4YPEF66L63VdgobACkJDbcSOu61Q42bPPxkd0bBaF2ymrAkDOlHrVruIGIeo5XU3maHRMskJDA9Ny0MYFxE/Q1XVvUqChB7rDoJqwc9Pufkwo0DGWFL/LSFK4zm1Rt534GRNE1S5ovrUNCtTTHYGlVAOHsckuSfzj5UXVkTPQ9J7NMLLXf7VCUBXaxxnbpGTwxWTnebf//z+QsdWmFY+gMAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA42:1129314:5971D0BA"], "ETag": ["W/\"9c344bad02ada47949fcf057a6e3c2fc\""], "Date": ["Fri, 21 Jul 2017 10:00:26 GMT"], "X-RateLimit-Remaining": ["4790"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.030575"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:26"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "response": {"body": {"string": "[]", "encoding": "utf-8"}, "headers": {"Content-Length": ["2"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA59:112933B:5971D0BA"], "ETag": ["\"11ba23dd50cfc2af386d719ce718d55e\""], "Date": ["Fri, 21 Jul 2017 10:00:26 GMT"], "X-RateLimit-Remaining": ["4789"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.037976"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "recorded_at": "2017-07-21T10:00:26"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA+2YwW7jNhCGXyXQtXZoe5N4I6DYHnovUOTUi0FLtMVGElWSspsIeff+Q0qW5EUir7mHHgIsNjbN+Tgczgxn2EQyjeL1evW4WjyuZlHJCxHFkRXGzrWoVDSLdnWeb9rxVNms3s4NL9Ot+pcNp6ljKXQUN1Gu9rIEYzwXIFppdbe+v39YfJlF/MAt15ta55ibWVuZmDE/aJa3e0kL1UboRJVWlPY2UQWrWSf/7fDrHZB73WKIHWHgDFfJluTFgTPsO70yW+RnevjlndB303cqz9URpHPdpxdjJ1myq+PIcn81B7INw4kImBFbeyODSGOvUczJNYz+bGRKJIPT0SK9QrlWEqqRS7w1jBzJIeutSbSsrFTlNUqO5MFTes9L+cqv5UHeAEPqXaOOk4O8OMA/rwF4wYZVWh548kIm0iIR8gCzXw09I4BpXyqK6T8G1qLDkFZseFpQrO54bsTbLHKKWEx2AzOE5eWRMUoGqTgdNFb+vS6Kl5s/Ya4bq24qoXdKFzeiTOkr/ZEIcYQyneMN5RSyKuY8nxT5MKzdOZzF6UgbQk2cz8cMxC0IUOpZvISBCNAw/N9GWYIkwLcKe1dTCWVCxRGpYcOv5FhW8CJMdUcAKVMq0JqOAJI0phYXefrE3h3IsC6eyrrY+nR4SRRNsD0C2nJj5L4UIsyKJ0rDupy91bxMskBuB2mY/+TOnO/DlCUAONtcbcNAuE+ZozTMZNxfVHYTrB9hCTKiarELV5YgJ6rVoafuFCXKiYlL0sIBwjTtIKxprZrzcl/zfSD2RMHZ02W+56+T5c5EFPUYMKmk03Jb/4Sc14NIV19fIPYDzdpzeqqrWj6uhqZsMCh/nBWKQk7VDRPIljHy/5/BJX89Z9P36ULnAoUJ0rA+SftroMUHWbi9BzpNh4u0bUSYY3QQ1vxScZtRHsNaFdciSO2WwZotRxl2e3vbZIK7IrwQOjSYPQIsrpMMpWWQpk0HoQqOW1fb70jRFLV+rngaZt8TBUR/lkHaesTQCyr0smEqOsIQWcgcFasqA3NujxnCS2XlTiaXdDgTgTciNd+MLBMx43k+g/damUj4M9pJOkrUoyLQSB6BjeA1wXc1uYBrh1leCw9pmG9QU1Hl6iU8JQ04FM9aoANKN9yicVktlg/z5Wq+untaPsR3X+Mvq78wp67S0Zz1fLGer5ZPi8f4Hv8eaE5Vm2yAwRSQvj4tV/FyGd+taQqSbOve+ITHj3cfHfpmhl4zIGlM1kv+1svF773PtHJJDj89C6kfWPVwfv9dIAttM1WICkVJFJcIHuo8X/EZT0CD2iJRdQmLL2bRkVsUw7jB+6GuHukAGTcbH9tRbHVNjSpGKq3+Fgl6x8FYn1AGg0f5LEeCVDCdWk3fLPaLF1Jr1b5Tef1VJcp2/YGSvkWkHQx+H+3IfUnFjte53fgqHT5WcGPxcAaPEbrArlBlQJkmaltzvz/ypk5lykD+Mzp2RLA6bsw/NYdLuFR/2oj/yY1BTao1zn7Sgu6bTsovNHxS+XzMozfId18OPx/zPh/zBm/h/7vHvFLYI56tBilq2B+1CW759h90IssnAhgAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Last-Modified": ["Fri, 21 Jul 2017 09:59:56 GMT"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA6C:112935F:5971D0BA"], "ETag": ["W/\"4c177d2b718c8b5ea7e548c3abbe469e\""], "Date": ["Fri, 21 Jul 2017 10:00:26 GMT"], "X-RateLimit-Remaining": ["4788"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.050198"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "recorded_at": "2017-07-21T10:00:26"}, {"request": {"body": {"string": "{\"allow_squash_merge\": true, \"has_wiki\": false, \"description\": null, \"has_downloads\": true, \"private\": false, \"allow_merge_commit\": false, \"has_issues\": true, \"homepage\": \"https://echaloasuerte.com\", \"allow_rebase_merge\": true, \"name\": \"test-repo\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["248"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "PATCH", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA+2YwXLbOAyG30XXtUNbTeNWM53uG+wlp714aIm22EiiSlL2Jpq8+/4gJUtyJ5HX7GEPuSQ2TXwEQYAE0EYyi5LNJv4ar77Gi6jipYiSyApjl1rUKlpE+6Yott14pmze7JaGV9lO/cPG09SpEjpK2qhQB1mBMZ0LEK0U328+f35YfVpE/Mgt19tGF5ibW1ubhDE/aNZ3B0kLNUboVFVWVPYuVSVrWC///fjtHsiD7jDEjjBwgatlR/LiwBn2i165LYsLPfzyTuiX6XtVFOoE0qXu84uxsyzZ1XFkdbiZA9mW4UQEzIitvZJBpLG3KObkWkb/tjIjksHpaJHdoFwnCdXIJV5bRo7kkM3OpFrWVqrqFiUn8uApfeCVfOG38iBvgCH1blHHyUFeHOGftwC8YMtqLY88fSYTaZEKeYTZb4ZeEMC0zzXF9F8ja9FhSCu2PCspVve8MOJ1ETlFLCa7gQXC8vrImFwGmTgfdJRUuEDI3fXTGfxumDq7XsTdhE6oGXu/z0AcggAjPInnMBABWoa/XdSkCGq+U5pbNXdBzKg4IbVs/JUcxQpehqnuCCDlSgVa0xFAksY04irPndm7AxnWx0fVlDt/vV0TFTNsj4C23Bh5qIQIs+KZ0rL+Dt5pXqV5ILeHtMx/cmfOD2HKEgCcXaF2YSC8j8xRWmZy7h8euw3Wj7AEmVC12IcrS5Az1erQU3eKEuXMxKNn4QBhmvYQ1nZWLXh1aPghEHum0LWPZ/3AX2bTl5koGjBgUoqm5a75DXfeACJdfb6A2A8068AZqC4LeT+7mbPBKJ1xVihLOZcHzCA7xsT/fweX/PWSTd/nE5crFCZIy4ZL2j8DHT7Iwt070Gs6XqQrC8Ico4ew9o+a25zuMaxVcy2C1O4YrN1xpFV3d3dtLrhLqkuhQ4PZI8DiOs2RKgZp2vYQJEQlty5X35OiGXL3QvEszL5nCoj+LIO09YixF9RILcNUdIQxspQFil9VBd65A2YMr5SVe5leU7HMBN6E1H43skrFgiPRhvdamUr4M8pDOkrkoyLQSB6BjaA74KuUQsC1wyyvhYe0zBecmagL9Rx+JY04FM9aoKLJttyiBIpX64flOl7G94/rh+T+S/Ip/htzmjqbzNksV5tlvH5cr5LVKokfaE7dmHyEwRSQvjyu42S9Tu43NAWXbOfe+IRmxptNhKGYoe4EJI3JB8k/B7nkrX5LJ5cW8NOLkPoPqx4v378rZKFtrkpRIykZ9W1EmnNcF8jatRXUNqFNyRdMQadnlHKkqqlwEKtFdOIWOTIe9mGoT1P6ijHnZutDPkqsbqgexUit1Q+RWjMeG+6Z0cSTfJJDJUuSlEidR3wROaxeSq1V14/yFauqRdUpMNLSl460hdHvky25L5nY86awW5+9w1QlNxYNMniS0CW2RT0Qapd1JbjfIHlZvzG6mfxnVOaIbHXamp8Nh6u4J6Cf5n9xQ9CSUpDzFv1PWtAzNBUad04+enbUanyzQfjRs/vo2Y1a3v+7nl0l7AndrNENNS6buvtt/fovmEgXnOkXAAA=", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA7F:112938A:5971D0BA"], "ETag": ["W/\"8000fdbd3bdb8ddcbea3e1f179e8328f\""], "Date": ["Fri, 21 Jul 2017 10:00:27 GMT"], "X-RateLimit-Remaining": ["4787"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.078453"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "recorded_at": "2017-07-21T10:00:27"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA7WTXU+DMBSG/0uvcTUy90Fi/BVeGbMU6OAYoKQfLJPsv3sKzBWMS8rmFQ30fXg59HlvSSEyqEhESiZBJJ+bLQkIpCQK14/b1SYMCGuYZnJnZIG7cq1rFVHa31ThIgOdm9goLhNRaV7pRSJKaugQf21elgjM5ECxZII3JrQaBlCfRpqibqFcl8WkQf/ibr+7cy+KQhwwPy189RX0J4bd+jVU2RwExloqdM5xYvgZJ/vxoLRnnS7SUnvZQWohCv+B5KlfpSGEhQ4Vdmmp5LXoaCZWiYRag6g8q42iiBIyYxV8sRkojCok2FKeJboIRnmDJ84z22daWktoWHK045A84dDgdOfwJmHE6WPN8Zi/4f+3swbNdywtrWV7VigekJrLEpSywydRS4aHWhr7zKicROd1gdLZ9ekUXFRN8XyZ+CEWGvHWqKfl+nkZblfXZX38U9Zz/gZbR52u6zra6uXrJTlf2F+MW4x1YDcp63Du56wLdX2fI63D8rXWifpr64Tv4+2ozcj6/xL34xtC2NdLZQcAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BA9E:11293C4:5971D0BB"], "ETag": ["W/\"b99d801018edd2ad8b86d061c6fd21d1\""], "Date": ["Fri, 21 Jul 2017 10:00:27 GMT"], "X-RateLimit-Remaining": ["4786"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.046634"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "recorded_at": "2017-07-21T10:00:27"}, {"request": {"body": {"string": "{\"permission\": \"admin\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["23"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "PUT", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/dnaranjo89"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4785"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.051818"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BAB4:11293F5:5971D0BB"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:27 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/dnaranjo89"}, "recorded_at": "2017-07-21T10:00:27"}, {"request": {"body": {"string": "{\"permission\": \"admin\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["23"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "PUT", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/palvarez89"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4784"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.052960"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BAC3:1129419:5971D0BB"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:27 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/palvarez89"}, "recorded_at": "2017-07-21T10:00:27"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA63SzWrEIBQF4FcpQneZUdOav13pY5QuNN5MBKOZRDsDpe9eM0PilC6y8bq6R5APOR/fSEnUMFKwvGaMZshPGjWod26cG4z5qI4n5Xovjq0d8ASjnbG0S3CYuZHCXrGD2R2WG6y5AD1j4U8oQ4YPEF66L63VdgobACkJDbcSOu61Q42bPPxkd0bBaF2ymrAkDOlHrVruIGIeo5XU3maHRMskJDA9Ny0MYFxE/Q1XVvUqChB7rDoJqwc9Pufkwo0DGWFL/LSFK4zm1Rt534GRNE1S5ovrUNCtTTHYGlVAOHsckuSfzj5UXVkTPQ9J7NMLLXf7VCUBXaxxnbpGTwxWTnebf//z+QsdWmFY+gMAAA==", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BAFB:1129440:5971D0BB"], "ETag": ["W/\"9c344bad02ada47949fcf057a6e3c2fc\""], "Date": ["Fri, 21 Jul 2017 10:00:27 GMT"], "X-RateLimit-Remaining": ["4783"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.042614"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:28"}, {"request": {"body": {"string": "{\"color\": \"0052cc\", \"name\": \"technical\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["40"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "POST", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"string": "{\"id\":651976299,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels/technical\",\"name\":\"technical\",\"color\":\"0052cc\",\"default\":false}", "encoding": "utf-8"}, "headers": {"Content-Length": ["147"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Location": ["https://api.github.com/repos/dothub-sandbox/test-repo/labels/technical"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["201 Created"], "X-GitHub-Request-Id": ["CCB1:75FA:84BB1A:11294B0:5971D0BB"], "ETag": ["\"384f43bda460afa3cf3ef9a97116dc75\""], "Date": ["Fri, 21 Jul 2017 10:00:28 GMT"], "X-RateLimit-Remaining": ["4782"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.093461"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "Created", "code": 201}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:28"}, {"request": {"body": {"string": "{\"color\": \"e11d21\", \"name\": \"urgent\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["37"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "POST", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"string": "{\"id\":651976300,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels/urgent\",\"name\":\"urgent\",\"color\":\"e11d21\",\"default\":false}", "encoding": "utf-8"}, "headers": {"Content-Length": ["141"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Location": ["https://api.github.com/repos/dothub-sandbox/test-repo/labels/urgent"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["201 Created"], "X-GitHub-Request-Id": ["CCB1:75FA:84BB29:11294FD:5971D0BC"], "ETag": ["\"036026b4f272e6779e85b3075b728cf3\""], "Date": ["Fri, 21 Jul 2017 10:00:28 GMT"], "X-RateLimit-Remaining": ["4781"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.039527"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "Created", "code": 201}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:28"}, {"request": {"body": {"string": "{\"color\": \"fbca04\", \"name\": \"new draw\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["39"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "POST", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"string": "{\"id\":651976308,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels/new%20draw\",\"name\":\"new draw\",\"color\":\"fbca04\",\"default\":false}", "encoding": "utf-8"}, "headers": {"Content-Length": ["147"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Location": ["https://api.github.com/repos/dothub-sandbox/test-repo/labels/new%20draw"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["201 Created"], "X-GitHub-Request-Id": ["CCB1:75FA:84BB3A:1129517:5971D0BC"], "ETag": ["\"622adbd8d940bd49ad036b0ce6ef0338\""], "Date": ["Fri, 21 Jul 2017 10:00:28 GMT"], "X-RateLimit-Remaining": ["4780"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.040951"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "Created", "code": 201}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:28"}, {"request": {"body": {"string": "{\"color\": \"009800\", \"name\": \"feature\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["38"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "POST", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"string": "{\"id\":651976309,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels/feature\",\"name\":\"feature\",\"color\":\"009800\",\"default\":false}", "encoding": "utf-8"}, "headers": {"Content-Length": ["143"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Location": ["https://api.github.com/repos/dothub-sandbox/test-repo/labels/feature"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["201 Created"], "X-GitHub-Request-Id": ["CCB1:75FA:84BB47:1129537:5971D0BC"], "ETag": ["\"1a2ecb88d3cf33472f6c9aa7cf578a8b\""], "Date": ["Fri, 21 Jul 2017 10:00:28 GMT"], "X-RateLimit-Remaining": ["4779"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.041936"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "Created", "code": 201}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:29"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/question"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4778"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.052824"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BB8D:1129564:5971D0BC"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:29 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/question"}, "recorded_at": "2017-07-21T10:00:29"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/invalid"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4777"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.057804"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BBA5:11295F6:5971D0BD"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:29 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/invalid"}, "recorded_at": "2017-07-21T10:00:29"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/duplicate"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4776"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.114117"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BBB6:112961C:5971D0BD"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:29 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/duplicate"}, "recorded_at": "2017-07-21T10:00:29"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/enhancement"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4775"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.043104"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BBDC:112965F:5971D0BD"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:29 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/enhancement"}, "recorded_at": "2017-07-21T10:00:29"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/wontfix"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4774"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.045373"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BBF2:1129692:5971D0BD"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:29 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/wontfix"}, "recorded_at": "2017-07-21T10:00:30"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Content-Length": ["0"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "DELETE", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/help%20wanted"}, "response": {"body": {"string": "", "encoding": null}, "headers": {"Status": ["204 No Content"], "X-RateLimit-Remaining": ["4773"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Runtime-rack": ["0.047458"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Allow-Origin": ["*"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC2A:11296C2:5971D0BD"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "X-XSS-Protection": ["1; mode=block"], "Server": ["GitHub.com"], "X-Content-Type-Options": ["nosniff"], "X-RateLimit-Limit": ["5000"], "Date": ["Fri, 21 Jul 2017 10:00:30 GMT"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "Content-Type": ["application/octet-stream"], "X-Accepted-OAuth-Scopes": [""], "X-Frame-Options": ["deny"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "No Content", "code": 204}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/help%20wanted"}, "recorded_at": "2017-07-21T10:00:30"}, {"request": {"body": {"string": "{\"color\": \"000000\", \"name\": \"bug\"}", "encoding": "utf-8"}, "headers": {"Content-Length": ["34"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"], "Connection": ["keep-alive"], "Content-Type": ["application/json"], "Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"]}, "method": "PATCH", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/bug"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAAyWM0QqDMAxF/yXPatygg/VvUptpIZrSpjCQ/fvqdt/OPXBOSBG8mx/u/nTuNkArAh42s1w9IuU0rcm2FqZFdyyctWLU6xgrHTHoG42rjZdBocBSMbQVBjho5176w6KipdP8W7eRX9TEwFtp/PkCqDPvvoYAAAA=", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC3C:112973C:5971D0BE"], "ETag": ["W/\"ec86a4f73b01efcf404fd1f1a61a122f\""], "Date": ["Fri, 21 Jul 2017 10:00:30 GMT"], "X-RateLimit-Remaining": ["4772"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.043385"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/bug"}, "recorded_at": "2017-07-21T10:00:30"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "response": {"body": {"string": "[]", "encoding": "utf-8"}, "headers": {"Content-Length": ["2"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC50:1129769:5971D0BE"], "ETag": ["\"11ba23dd50cfc2af386d719ce718d55e\""], "Date": ["Fri, 21 Jul 2017 10:00:30 GMT"], "X-RateLimit-Remaining": ["4771"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.024752"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "recorded_at": "2017-07-21T10:00:30"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "response": {"body": {"string": "[]", "encoding": "utf-8"}, "headers": {"Content-Length": ["2"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC68:1129792:5971D0BE"], "ETag": ["\"11ba23dd50cfc2af386d719ce718d55e\""], "Date": ["Fri, 21 Jul 2017 10:00:30 GMT"], "X-RateLimit-Remaining": ["4770"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.025646"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "recorded_at": "2017-07-21T10:00:31"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA+2YwXLbOAyG30XXtUNbTeNWM53uG+wlp714aIm22EiiSlL2Jpq8+/4gJUtyJ5HX7GEPuSQ2TXwEQYAE0EYyi5LNJv4ar77Gi6jipYiSyApjl1rUKlpE+6Yott14pmze7JaGV9lO/cPG09SpEjpK2qhQB1mBMZ0LEK0U328+f35YfVpE/Mgt19tGF5ibW1ubhDE/aNZ3B0kLNUboVFVWVPYuVSVrWC///fjtHsiD7jDEjjBwgatlR/LiwBn2i165LYsLPfzyTuiX6XtVFOoE0qXu84uxsyzZ1XFkdbiZA9mW4UQEzIitvZJBpLG3KObkWkb/tjIjksHpaJHdoFwnCdXIJV5bRo7kkM3OpFrWVqrqFiUn8uApfeCVfOG38iBvgCH1blHHyUFeHOGftwC8YMtqLY88fSYTaZEKeYTZb4ZeEMC0zzXF9F8ja9FhSCu2PCspVve8MOJ1ETlFLCa7gQXC8vrImFwGmTgfdJRUuEDI3fXTGfxumDq7XsTdhE6oGXu/z0AcggAjPInnMBABWoa/XdSkCGq+U5pbNXdBzKg4IbVs/JUcxQpehqnuCCDlSgVa0xFAksY04irPndm7AxnWx0fVlDt/vV0TFTNsj4C23Bh5qIQIs+KZ0rL+Dt5pXqV5ILeHtMx/cmfOD2HKEgCcXaF2YSC8j8xRWmZy7h8euw3Wj7AEmVC12IcrS5Az1erQU3eKEuXMxKNn4QBhmvYQ1nZWLXh1aPghEHum0LWPZ/3AX2bTl5koGjBgUoqm5a75DXfeACJdfb6A2A8068AZqC4LeT+7mbPBKJ1xVihLOZcHzCA7xsT/fweX/PWSTd/nE5crFCZIy4ZL2j8DHT7Iwt070Gs6XqQrC8Ico4ew9o+a25zuMaxVcy2C1O4YrN1xpFV3d3dtLrhLqkuhQ4PZI8DiOs2RKgZp2vYQJEQlty5X35OiGXL3QvEszL5nCoj+LIO09YixF9RILcNUdIQxspQFil9VBd65A2YMr5SVe5leU7HMBN6E1H43skrFgiPRhvdamUr4M8pDOkrkoyLQSB6BjaA74KuUQsC1wyyvhYe0zBecmagL9Rx+JY04FM9aoKLJttyiBIpX64flOl7G94/rh+T+S/Ip/htzmjqbzNksV5tlvH5cr5LVKokfaE7dmHyEwRSQvjyu42S9Tu43NAWXbOfe+IRmxptNhKGYoe4EJI3JB8k/B7nkrX5LJ5cW8NOLkPoPqx4v378rZKFtrkpRIykZ9W1EmnNcF8jatRXUNqFNyRdMQadnlHKkqqlwEKtFdOIWOTIe9mGoT1P6ijHnZutDPkqsbqgexUit1Q+RWjMeG+6Z0cSTfJJDJUuSlEidR3wROaxeSq1V14/yFauqRdUpMNLSl460hdHvky25L5nY86awW5+9w1QlNxYNMniS0CW2RT0Qapd1JbjfIHlZvzG6mfxnVOaIbHXamp8Nh6u4J6Cf5n9xQ9CSUpDzFv1PWtAzNBUad04+enbUanyzQfjRs/vo2Y1a3v+7nl0l7AndrNENNS6buvtt/fovmEgXnOkXAAA=", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Last-Modified": ["Fri, 21 Jul 2017 10:00:26 GMT"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC7C:11297BB:5971D0BE"], "ETag": ["W/\"8000fdbd3bdb8ddcbea3e1f179e8328f\""], "Date": ["Fri, 21 Jul 2017 10:00:31 GMT"], "X-RateLimit-Remaining": ["4769"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.042836"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo"}, "recorded_at": "2017-07-21T10:00:31"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA72W0W6bMBhG38XXWZ2EtAWkak+xq2mKHHDBFWBkG6oW5d33O1BsmMpkjHKFBf4OX4wP4XeHCp6xCsWoJkVLBP0MI7RDLEXxITqG4f6wQ6QliohzIwqYlitVyxjj/qQ8PGRM5c2lkVQkvFK0Ug8JL3GDh/jP9uUEwEwMFE1GcGJGq9kA6tNAk3jSKFdlMavQ3/kWmEx95UXB34Ewr7x8EzzmoF4/ZlW2igG5DnOVU1g1+ClXvQBMKtdCt0yH9eHMUk2R8CAETR1LDSmo9F5Bmw4LWvMbrrnIRLBaMV65lptkgcVFRir2SdawICsBoWu51rhlIEtb2Hqu4T7U4VqwliQfekkETShrYYlXAWdp4KmPmsKO/wXbQC84U/RM0lIb90oKSXeopqJkUuongOIODReVaPS1RuYo/hoX4J8eX687o21JBOPJ22ht8LyPnsJg2drgW2uHuIe1dqFlae2ZTs6OwfXKzhE+xhqWl7AGs52vFtNWfY2uBuVqq0m6y2qy27hqd5mIfgdV04oIUr3x0dUoOJ4e9+FaV4e4h6uTRsuyTqY62WqS63X9h+HjqwXzEtbibGesDfVV1mK5OmtF3aW1wttYO2lzd23hQ665/LhwBe8I/fl6PD0/noLoadnb/bf/sV95H3HtTv8R157qJu6Y9BB3zvAS18D8xDWcDcW1oN7iGpazuCa6QlwT3khcu81dxP3zFyaPqefTDgAA", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BC9F:11297FC:5971D0BF"], "ETag": ["W/\"7f50287f029030483427138c85a34787\""], "Date": ["Fri, 21 Jul 2017 10:00:31 GMT"], "X-RateLimit-Remaining": ["4768"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.050231"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": [""], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"}, "recorded_at": "2017-07-21T10:00:31"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "response": {"body": {"base64_string": "H4sIAAAAAAAAA63QyWrDMBQF0F8pgu6caEjlRv6VkoWG5wEUyUhPpBD673WapkpJoRtrd+8DcbhvZzI50knWSqGk5A0pyZOOjIhz7ijV87QdJhyL2dp4pAnmmKmLl2KTdXAmvlOEjJvLhXptwGdqykAaEvQRlp+uwUYf05LY11uuDnpdPJIOU4GP5spoJVev7Y6pVRg9aCwJKqUWlaP2vzm99vnBs1/FE+D0LJhL+lRJS/f03dxMvbGavdxP9IdJqHU2QrBjmKz2lXRf1Z2ksPYf046xVXYqaYCAFfSTbxrg3An+qDl8AhAZqHrOAgAA", "encoding": "utf-8"}, "headers": {"X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Transfer-Encoding": ["chunked"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BCB0:112982E:5971D0BF"], "ETag": ["W/\"3f5912562b54ec8755ae517d2b076087\""], "Date": ["Fri, 21 Jul 2017 10:00:31 GMT"], "X-RateLimit-Remaining": ["4767"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "Content-Encoding": ["gzip"], "X-Runtime-rack": ["0.040011"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["repo"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"}, "recorded_at": "2017-07-21T10:00:31"}, {"request": {"body": {"string": "", "encoding": "utf-8"}, "headers": {"Authorization": ["Basic ZG90aHViLWJvdDpjOTI2MmVkNmYwYWZjNWEzODhkMzU2YmI3ZTAzNjllYjc4YmYwMzUy"], "Connection": ["keep-alive"], "Accept-Encoding": ["gzip, deflate"], "Accept": ["*/*"], "User-Agent": ["python-requests/2.12.4"]}, "method": "GET", "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "response": {"body": {"string": "[]", "encoding": "utf-8"}, "headers": {"Content-Length": ["2"], "X-XSS-Protection": ["1; mode=block"], "Content-Security-Policy": ["default-src 'none'"], "Access-Control-Expose-Headers": ["ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"], "Access-Control-Allow-Origin": ["*"], "X-Frame-Options": ["deny"], "Status": ["200 OK"], "X-GitHub-Request-Id": ["CCB1:75FA:84BCC6:112985A:5971D0BF"], "ETag": ["\"11ba23dd50cfc2af386d719ce718d55e\""], "Date": ["Fri, 21 Jul 2017 10:00:31 GMT"], "X-RateLimit-Remaining": ["4766"], "Strict-Transport-Security": ["max-age=31536000; includeSubdomains; preload"], "Server": ["GitHub.com"], "X-OAuth-Scopes": ["admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"], "X-GitHub-Media-Type": ["github.v3; format=json"], "X-Content-Type-Options": ["nosniff"], "X-Runtime-rack": ["0.030383"], "Vary": ["Accept, Authorization, Cookie, X-GitHub-OTP"], "X-RateLimit-Limit": ["5000"], "Cache-Control": ["private, max-age=60, s-maxage=60"], "Content-Type": ["application/json; charset=utf-8"], "X-Accepted-OAuth-Scopes": ["admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook"], "X-RateLimit-Reset": ["1500632391"]}, "status": {"message": "OK", "code": 200}, "url": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"}, "recorded_at": "2017-07-21T10:00:31"}], "recorded_with": "betamax/0.8.0"}
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2017-09-03T18:33:32",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"allow_squash_merge\": true, \"has_wiki\": false, \"description\": null, \"has_downloads\": true, \"private\": false, \"allow_merge_commit\": false, \"has_issues\": true, \"homepage\": \"https://echaloasuerte.com\", \"allow_rebase_merge\": true, \"name\": \"test-repo\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "248"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "PATCH",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA+2YzXLjNgzH30XX2qa/Nmk009m+QS859eKhJdpiI4kqSdlNNHn3/kFKluSdRK65hx5ySWya+BEEARJAE8k0ih8f10/r5dN6FpW8EFEcWWHsXItKRbPoUOf5rh1Plc3q/dzwMt2rf9hwmjqXQkdxE+XqKEswxnMBopXW28dv3x6Wm1nET9xyvat1jrmZtZWJGfODZrU4SlqoNkInqrSitItEFaxmnfz3029bII+6xRA7wsAVrpItyYsDZ9gPemW2yK/08Ms7oR+mH1SeqzNI17pPL8YusmRXx5Hl8W4OZBuGExEwI7b2TgaRxt6jmJNrGP3byZRIBqejRXqHcq0kVCOXeG8YOZJD1nuTaFlZqcp7lBzJg6f0kZfyjd/Lg7wBhtS7Rx0nB3lxgn/eA/CCDau0PPHklUykRSLkCWa/G3pFANO+VhTTfwysRYchrdjxtKBYPfDciPdZ5BSxmOwGZgjL2yNjdBmk4nLQUVziAiF31y8X8Kdh6ux6FXcjOqEm7P05A3EIAozwIl7DQARoGP62UZMgqPleaW7V1AUxoeKI1LDhV3IUK3gRprojgJQpFWhNRwBJGlOLmzx3Yu8OZFgXH2Vd7P31dktUTLA9AtpyY+SxFCLMihdKw7o7eK95mWSB3A7SMP/JnTk/hilLAHD2udqHgfA+MkdpmMm4f3jsLlg/whJkRNXiEK4sQS5Uq0NP3SlKlAsTj56FA4Rp2kFY01o15+Wx5sdA7IVC1z6e9SN/m0xfJqKox4BJKZqW+/on3Hk9iHT1+QJiP9CsPaenuizk8+xmygaDdMZZoSjkVB4wgWwZI///GVzy12s2fZ9OXG5QmCAN6y9p/wy0+CALt+9Ap+lwkbYsCHOMDsKaXypuM7rHsFbFtQhSu2WwZs+RVi0WiyYT3CXVhdChwewRYHGdZEgVgzRtOggSooJbl6sfSNEUuXuueBpm3wsFRH+WQdp6xNALKqSWYSo6whBZyBzFryoD79weM4SXysqDTG6pWCYCb0RqvhtZJmLGkWjDe61MJPwZ5SEdJfJREWgkj8BG0B3wVUou4NphltfCQxrmC85UVLl6Db+SBhyKZy1Q0aQ7blECrZerh/lqPV9vn1cP8fbXeLP+E3PqKh3NeZwvn+bLzfMKEzbxZklzqtpkAwymPM7Xq+fVKt48xWuHwSXbujc+oZnxYROhL2aoOwFJY7Je8vdeLv6o39LKJTn89Cqk/sOqp+v37wZZaJupQlRISgZ9G5FkHNcFsnZtBbVNaFPyDVO2o5QjUXWJg1jOojO3yJHxsPdDXZrSVYwZNzsf8lFsdU31KEYqrf4SiTXDsf6eGUw8yxfZV7IkSYnUZcQXkf3qhdRatf0oX7GqSpStAgMtfelIWxj8PtqS+5KKA69zu/PZO0xVcGPRIIMnCV1gW9QDoXZZW4L7DZKXdRujm8l/RmWOyFbnnfm75nAV9wR00/wvbghaUgpy2aL/SQt6hsZCw87JV8+OWo0fNgi/enZfPbtBy/t/17MrhT2jmzW4oYZlU3u/rd7/BXcwHRLpFwAA",
+          "encoding": "utf-8"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:30 GMT"
+          ],
+          "ETag": [
+            "W/\"d302a4cb93cd43de70283d5c25d945b8\""
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D1470:2256849:59AC4AFA"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4961"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.081514"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:33",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"color\": \"009800\", \"name\": \"feature\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "38"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"id\":682645347,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels/feature\",\"name\":\"feature\",\"color\":\"009800\",\"default\":false}"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Length": [
+            "143"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:31 GMT"
+          ],
+          "ETag": [
+            "\"172592100f02db7189c4ddcf07eeb3d8\""
+          ],
+          "Location": [
+            "https://api.github.com/repos/dothub-sandbox/test-repo/labels/feature"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "201 Created"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D14DE:2256946:59AC4AFB"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4953"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.044209"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:33",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/question"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:31 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D14EF:2256969:59AC4AFB"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4952"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.047805"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/question"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:34",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/invalid"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:31 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D14F8:2256983:59AC4AFB"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4951"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.049997"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/invalid"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:34",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/duplicate"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:32 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D14FE:2256997:59AC4AFB"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4950"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.050545"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/duplicate"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:34",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/enhancement"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:32 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D1507:22569B0:59AC4AFC"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4949"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.538298"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/enhancement"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/wontfix"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:32 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D152E:2256A11:59AC4AFC"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4948"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.049788"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/wontfix"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/help%20wanted"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/octet-stream"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:32 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "204 No Content"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D153D:2256A31:59AC4AFC"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4947"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.045297"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 204,
+          "message": "No Content"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/help%20wanted"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:33:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"color\": \"000000\", \"name\": \"bug\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "34"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "PATCH",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/bug"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAAyWM0QqDMAxF/yXPatygg/VvUptpIZrSpjCQ/fvqdt/OPXBOSBG8mx/u/nTuNkArAh42s1w9IuU0rcm2FqZFdyyctWLU6xgrHTHoG42rjZdBocBSMbQVBjho5176w6KipdP8W7eRX9TEwFtp/PkCqDPvvoYAAAA=",
+          "encoding": "utf-8"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:33:33 GMT"
+          ],
+          "ETag": [
+            "W/\"97c2f6a329192725a01dfdd637098c73\""
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D449:259A:10D1549:2256A52:59AC4AFC"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4946"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.048673"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels/bug"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:35:46",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"permission\": \"admin\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "23"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "PUT",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/dnaranjo89"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"id\":4885556,\"repository\":{\"id\":77292092,\"name\":\"test-repo\",\"full_name\":\"dothub-sandbox/test-repo\",\"owner\":{\"login\":\"dothub-sandbox\",\"id\":24755603,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/24755603?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dothub-sandbox\",\"html_url\":\"https://github.com/dothub-sandbox\",\"followers_url\":\"https://api.github.com/users/dothub-sandbox/followers\",\"following_url\":\"https://api.github.com/users/dothub-sandbox/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dothub-sandbox/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dothub-sandbox/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dothub-sandbox/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dothub-sandbox/orgs\",\"repos_url\":\"https://api.github.com/users/dothub-sandbox/repos\",\"events_url\":\"https://api.github.com/users/dothub-sandbox/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dothub-sandbox/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/dothub-sandbox/test-repo\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo\",\"forks_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/forks\",\"keys_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/events\",\"assignees_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/merges\",\"archive_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/deployments\"},\"invitee\":{\"login\":\"dnaranjo89\",\"id\":9324508,\"avatar_url\":\"https://avatars3.githubusercontent.com/u/9324508?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dnaranjo89\",\"html_url\":\"https://github.com/dnaranjo89\",\"followers_url\":\"https://api.github.com/users/dnaranjo89/followers\",\"following_url\":\"https://api.github.com/users/dnaranjo89/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dnaranjo89/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dnaranjo89/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dnaranjo89/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dnaranjo89/orgs\",\"repos_url\":\"https://api.github.com/users/dnaranjo89/repos\",\"events_url\":\"https://api.github.com/users/dnaranjo89/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dnaranjo89/received_events\",\"type\":\"User\",\"site_admin\":false},\"inviter\":{\"login\":\"dothub-bot\",\"id\":24754396,\"avatar_url\":\"https://avatars0.githubusercontent.com/u/24754396?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dothub-bot\",\"html_url\":\"https://github.com/dothub-bot\",\"followers_url\":\"https://api.github.com/users/dothub-bot/followers\",\"following_url\":\"https://api.github.com/users/dothub-bot/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dothub-bot/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dothub-bot/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dothub-bot/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dothub-bot/orgs\",\"repos_url\":\"https://api.github.com/users/dothub-bot/repos\",\"events_url\":\"https://api.github.com/users/dothub-bot/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dothub-bot/received_events\",\"type\":\"User\",\"site_admin\":false},\"permissions\":\"admin\",\"created_at\":\"2017-09-03T19:33:30+01:00\",\"url\":\"https://api.github.com/user/repository_invitations/4885556\",\"html_url\":\"https://github.com/dothub-sandbox/test-repo/invitations\"}"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Length": [
+            "6365"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:35:44 GMT"
+          ],
+          "ETag": [
+            "\"f06eb9c7124321debaf0c6196a9b2db9\""
+          ],
+          "Location": [
+            "https://api.github.com/user/repository_invitations/4885556"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "201 Created"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D509:259A:10D4E4B:225E1D4:59AC4B80"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4894"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.037275"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/dnaranjo89"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:35:46",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"permission\": \"admin\"}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "23"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "PUT",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/palvarez89"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"id\":4885557,\"repository\":{\"id\":77292092,\"name\":\"test-repo\",\"full_name\":\"dothub-sandbox/test-repo\",\"owner\":{\"login\":\"dothub-sandbox\",\"id\":24755603,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/24755603?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dothub-sandbox\",\"html_url\":\"https://github.com/dothub-sandbox\",\"followers_url\":\"https://api.github.com/users/dothub-sandbox/followers\",\"following_url\":\"https://api.github.com/users/dothub-sandbox/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dothub-sandbox/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dothub-sandbox/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dothub-sandbox/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dothub-sandbox/orgs\",\"repos_url\":\"https://api.github.com/users/dothub-sandbox/repos\",\"events_url\":\"https://api.github.com/users/dothub-sandbox/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dothub-sandbox/received_events\",\"type\":\"Organization\",\"site_admin\":false},\"private\":false,\"html_url\":\"https://github.com/dothub-sandbox/test-repo\",\"description\":null,\"fork\":false,\"url\":\"https://api.github.com/repos/dothub-sandbox/test-repo\",\"forks_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/forks\",\"keys_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/keys{/key_id}\",\"collaborators_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/collaborators{/collaborator}\",\"teams_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/teams\",\"hooks_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/hooks\",\"issue_events_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues/events{/number}\",\"events_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/events\",\"assignees_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/assignees{/user}\",\"branches_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/branches{/branch}\",\"tags_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/tags\",\"blobs_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/blobs{/sha}\",\"git_tags_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/tags{/sha}\",\"git_refs_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/refs{/sha}\",\"trees_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/trees{/sha}\",\"statuses_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/statuses/{sha}\",\"languages_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/languages\",\"stargazers_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/stargazers\",\"contributors_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/contributors\",\"subscribers_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/subscribers\",\"subscription_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/subscription\",\"commits_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/commits{/sha}\",\"git_commits_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/git/commits{/sha}\",\"comments_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/comments{/number}\",\"issue_comment_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues/comments{/number}\",\"contents_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/contents/{+path}\",\"compare_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/compare/{base}...{head}\",\"merges_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/merges\",\"archive_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/{archive_format}{/ref}\",\"downloads_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/downloads\",\"issues_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/issues{/number}\",\"pulls_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/pulls{/number}\",\"milestones_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/milestones{/number}\",\"notifications_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/notifications{?since,all,participating}\",\"labels_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/labels{/name}\",\"releases_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/releases{/id}\",\"deployments_url\":\"https://api.github.com/repos/dothub-sandbox/test-repo/deployments\"},\"invitee\":{\"login\":\"palvarez89\",\"id\":1928801,\"avatar_url\":\"https://avatars1.githubusercontent.com/u/1928801?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/palvarez89\",\"html_url\":\"https://github.com/palvarez89\",\"followers_url\":\"https://api.github.com/users/palvarez89/followers\",\"following_url\":\"https://api.github.com/users/palvarez89/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/palvarez89/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/palvarez89/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/palvarez89/subscriptions\",\"organizations_url\":\"https://api.github.com/users/palvarez89/orgs\",\"repos_url\":\"https://api.github.com/users/palvarez89/repos\",\"events_url\":\"https://api.github.com/users/palvarez89/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/palvarez89/received_events\",\"type\":\"User\",\"site_admin\":false},\"inviter\":{\"login\":\"dothub-bot\",\"id\":24754396,\"avatar_url\":\"https://avatars0.githubusercontent.com/u/24754396?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dothub-bot\",\"html_url\":\"https://github.com/dothub-bot\",\"followers_url\":\"https://api.github.com/users/dothub-bot/followers\",\"following_url\":\"https://api.github.com/users/dothub-bot/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dothub-bot/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dothub-bot/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dothub-bot/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dothub-bot/orgs\",\"repos_url\":\"https://api.github.com/users/dothub-bot/repos\",\"events_url\":\"https://api.github.com/users/dothub-bot/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dothub-bot/received_events\",\"type\":\"User\",\"site_admin\":false},\"permissions\":\"admin\",\"created_at\":\"2017-09-03T19:33:30+01:00\",\"url\":\"https://api.github.com/user/repository_invitations/4885557\",\"html_url\":\"https://github.com/dothub-sandbox/test-repo/invitations\"}"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Length": [
+            "6365"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:35:44 GMT"
+          ],
+          "ETag": [
+            "\"f892520bab2677b6d310607fae488c25\""
+          ],
+          "Location": [
+            "https://api.github.com/user/repository_invitations/4885557"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "201 Created"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "D509:259A:10D4E56:225E1EB:59AC4B80"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4893"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.037278"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 201,
+          "message": "Created"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators/palvarez89"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:45:11",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA+2YzXLjNgzH30XX2qa/Nmk009m+QS859eKhJdpiI4kqSdlNNHn3/kFKluSdRK65hx5ySWya+BEEARJAE8k0ih8f10/r5dN6FpW8EFEcWWHsXItKRbPoUOf5rh1Plc3q/dzwMt2rf9hwmjqXQkdxE+XqKEswxnMBopXW28dv3x6Wm1nET9xyvat1jrmZtZWJGfODZrU4SlqoNkInqrSitItEFaxmnfz3029bII+6xRA7wsAVrpItyYsDZ9gPemW2yK/08Ms7oR+mH1SeqzNI17pPL8YusmRXx5Hl8W4OZBuGExEwI7b2TgaRxt6jmJNrGP3byZRIBqejRXqHcq0kVCOXeG8YOZJD1nuTaFlZqcp7lBzJg6f0kZfyjd/Lg7wBhtS7Rx0nB3lxgn/eA/CCDau0PPHklUykRSLkCWa/G3pFANO+VhTTfwysRYchrdjxtKBYPfDciPdZ5BSxmOwGZgjL2yNjdBmk4nLQUVziAiF31y8X8Kdh6ux6FXcjOqEm7P05A3EIAozwIl7DQARoGP62UZMgqPleaW7V1AUxoeKI1LDhV3IUK3gRprojgJQpFWhNRwBJGlOLmzx3Yu8OZFgXH2Vd7P31dktUTLA9AtpyY+SxFCLMihdKw7o7eK95mWSB3A7SMP/JnTk/hilLAHD2udqHgfA+MkdpmMm4f3jsLlg/whJkRNXiEK4sQS5Uq0NP3SlKlAsTj56FA4Rp2kFY01o15+Wx5sdA7IVC1z6e9SN/m0xfJqKox4BJKZqW+/on3Hk9iHT1+QJiP9CsPaenuizk8+xmygaDdMZZoSjkVB4wgWwZI///GVzy12s2fZ9OXG5QmCAN6y9p/wy0+CALt+9Ap+lwkbYsCHOMDsKaXypuM7rHsFbFtQhSu2WwZs+RVi0WiyYT3CXVhdChwewRYHGdZEgVgzRtOggSooJbl6sfSNEUuXuueBpm3wsFRH+WQdp6xNALKqSWYSo6whBZyBzFryoD79weM4SXysqDTG6pWCYCb0RqvhtZJmLGkWjDe61MJPwZ5SEdJfJREWgkj8BG0B3wVUou4NphltfCQxrmC85UVLl6Db+SBhyKZy1Q0aQ7blECrZerh/lqPV9vn1cP8fbXeLP+E3PqKh3NeZwvn+bLzfMKEzbxZklzqtpkAwymPM7Xq+fVKt48xWuHwSXbujc+oZnxYROhL2aoOwFJY7Je8vdeLv6o39LKJTn89Cqk/sOqp+v37wZZaJupQlRISgZ9G5FkHNcFsnZtBbVNaFPyDVO2o5QjUXWJg1jOojO3yJHxsPdDXZrSVYwZNzsf8lFsdU31KEYqrf4SiTXDsf6eGUw8yxfZV7IkSYnUZcQXkf3qhdRatf0oX7GqSpStAgMtfelIWxj8PtqS+5KKA69zu/PZO0xVcGPRIIMnCV1gW9QDoXZZW4L7DZKXdRujm8l/RmWOyFbnnfm75nAV9wR00/wvbghaUgpy2aL/SQt6hsZCw87JV8+OWo0fNgi/enZfPbtBy/t/17MrhT2jmzW4oYZlU3u/rd7/BXcwHRLpFwAA",
+          "encoding": "utf-8"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:45:09 GMT"
+          ],
+          "ETag": [
+            "W/\"d302a4cb93cd43de70283d5c25d945b8\""
+          ],
+          "Last-Modified": [
+            "Sun, 03 Sep 2017 18:33:30 GMT"
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "FCAA:259B:F02FDB:25B30B6:59AC4DB3"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4488"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.042790"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:45:11",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA7WTXU+DMBSG/0uvcTUy90Fi/BVeGbMU6OAYoKQfLJPsv3sKzBWMS8rmFQ30fXg59HlvSSEyqEhESiZBJJ+bLQkIpCQK14/b1SYMCGuYZnJnZIG7cq1rFVHa31ThIgOdm9goLhNRaV7pRSJKaugQf21elgjM5ECxZII3JrQaBlCfRpqibqFcl8WkQf/ibr+7cy+KQhwwPy189RX0J4bd+jVU2RwExloqdM5xYvgZJ/vxoLRnnS7SUnvZQWohCv+B5KlfpSGEhQ4Vdmmp5LXoaCZWiYRag6g8q42iiBIyYxV8sRkojCok2FKeJboIRnmDJ84z22daWktoWHK045A84dDgdOfwJmHE6WPN8Zi/4f+3swbNdywtrWV7VigekJrLEpSywydRS4aHWhr7zKicROd1gdLZ9ekUXFRN8XyZ+CEWGvHWqKfl+nkZblfXZX38U9Zz/gZbR52u6zra6uXrJTlf2F+MW4x1YDcp63Du56wLdX2fI63D8rXWifpr64Tv4+2ozcj6/xL34xtC2NdLZQcAAA==",
+          "encoding": "utf-8"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:45:09 GMT"
+          ],
+          "ETag": [
+            "W/\"a90b795ebe7137e53553e3063609de59\""
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            ""
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "FCAA:259B:F02FEF:25B3293:59AC4DB5"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4487"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.051683"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/collaborators"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:45:12",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA63QTWrDMBAF4KsUQXdOZCuWm/gqJYuRNP4BRTLSiBRC714naaqEBLrx7N4bGD7m88RGw1pZNlLspKwKloJlLRuIpthyDtO47kcaklprf+ABJx+58ediFcEZ5b84YaTVecMtKLSRq9Szgjk44HzpGrS3PsypvMy8NdhBssRaCgm/iyuj2Yqmlpv6YxFGh0ApYKbkInN220dOBzY+eZpFPA6P76I0AY6ZNHdvv83N1CkNZX3/opemehEToR7cqMFm0n2V/ySF1v+a5CKmFHp0lEF/+abBqjKietbsfwB6e1p2zgIAAA==",
+          "encoding": "utf-8"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:45:09 GMT"
+          ],
+          "ETag": [
+            "W/\"fce8fcd21853d8c3b99f7a58a385a7d7\""
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "repo"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "FCAA:259B:F02FFE:25B32B2:59AC4DB5"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4486"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.028031"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/labels"
+      }
+    },
+    {
+      "recorded_at": "2017-09-03T18:45:12",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "Basic ZG90aHViLWJvdDowM2E2MjY4ODc1ZjE3ZTg5NDJlMmEzYTBhZTQyNGM1OWQxYTE4M2Qw"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.12.4"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"
+      },
+      "response": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "[]"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Expose-Headers": [
+            "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval"
+          ],
+          "Cache-Control": [
+            "private, max-age=60, s-maxage=60"
+          ],
+          "Content-Length": [
+            "2"
+          ],
+          "Content-Security-Policy": [
+            "default-src 'none'"
+          ],
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ],
+          "Date": [
+            "Sun, 03 Sep 2017 18:45:09 GMT"
+          ],
+          "ETag": [
+            "\"bca9487c67d98413d3cc70940e10e2e9\""
+          ],
+          "Server": [
+            "GitHub.com"
+          ],
+          "Status": [
+            "200 OK"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubdomains; preload"
+          ],
+          "Vary": [
+            "Accept, Authorization, Cookie, X-GitHub-OTP"
+          ],
+          "X-Accepted-OAuth-Scopes": [
+            "admin:repo_hook, public_repo, read:repo_hook, repo, write:repo_hook"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "deny"
+          ],
+          "X-GitHub-Media-Type": [
+            "github.v3; format=json"
+          ],
+          "X-GitHub-Request-Id": [
+            "FCAA:259B:F0300B:25B32D8:59AC4DB5"
+          ],
+          "X-OAuth-Scopes": [
+            "admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete_repo, gist, notifications, repo, user"
+          ],
+          "X-RateLimit-Limit": [
+            "5000"
+          ],
+          "X-RateLimit-Remaining": [
+            "4485"
+          ],
+          "X-RateLimit-Reset": [
+            "1504466601"
+          ],
+          "X-Runtime-rack": [
+            "0.033432"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://api.github.com/repos/dothub-sandbox/test-repo/hooks"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.0"
+}
