@@ -374,7 +374,7 @@ def test_set_team_add_one(org):
         add_org_teams(mock, DF.teams())
         register_uri(mock, "POST", url="orgs/ORG_NAME/teams", json=dict(id="team2id"))
         register_uri(mock, "PUT", url="teams/team2id/repos/ORG_NAME/repo2")
-        register_uri(mock, "PUT", url="teams/team2id/memberships/member2")
+        register_uri(mock, "PUT", url="teams/team2id/members/member2")
 
         org.teams = {
             'team1': {
@@ -417,19 +417,19 @@ def test_set_team_add_one(org):
         })
 
 
-@pytest.mark.xfail(reason="Work in progress", run=False)
 def test_set_team_update(org):
     """Adding and removing members and repos to a team"""
     with requests_mock.Mocker() as mock:
         add_org_options(mock, DF.options())
         add_org_teams(mock, DF.teams())
-        register_uri(mock, "PUT", url="teams/team2id/repos/ORG_NAME/repo2")
-        register_uri(mock, "PUT", url="teams/team2id/memberships/member2")
+        register_uri(mock, "DELETE", url="teams/team1id/repos/ORG_NAME/repo2")
+        register_uri(mock, "PUT", url="teams/team1id/repos/ORG_NAME/repo3")
+        register_uri(mock, "DELETE", url="teams/team1id/memberships/member2")
+        register_uri(mock, "PUT", url="teams/team1id/members/member3")
 
         org.teams = {
             'team1': {
                 'description': 'description1',
-                'id': 'team1id',
                 'members': {
                     'member1': {'role': 'maintainer'},
                     'member3': {'role': 'member'}
@@ -445,10 +445,10 @@ def test_set_team_update(org):
 
         org.spy.put.assert_any_call(ANY, {
             "role": "member"
-        })
+        })  # Added member3
         org.spy.put.assert_any_call(ANY, {
-            "permission": "push"
-        })
+            "permission": "admin"
+        })  # Added repo3
 
 
 def test_get_hooks(org):

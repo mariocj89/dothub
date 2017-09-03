@@ -148,7 +148,12 @@ def preserve_repo():
 
 
 @skip_on_no_token
-def test_configure_org(preserve_org):
+def test_update_org_configuration(preserve_org):
+    """Update dothub-sandbox organization
+
+    Updates the repo by setting the configuration as stated in ORG_CONFIG
+    The preserve_org fixture ensure that the org is left as it was after running the test
+    """
     runner = CliRunner()
     with tempfile.NamedTemporaryFile() as test_config:
         test_config_file = test_config.name
@@ -173,7 +178,12 @@ def test_configure_org(preserve_org):
 
 
 @skip_on_no_token
-def test_configure_repo(preserve_repo):
+def test_update_repo_configuration(preserve_repo):
+    """Update dothub-sandbox/test-repo repository
+
+    Updates the repo by setting the configuration as stated in REPO_CONFIG
+    The preserve_repo fixture ensures that the repo is left as it was after running the test
+    """
     runner = CliRunner()
     with tempfile.NamedTemporaryFile() as test_config:
         test_config_file = test_config.name
