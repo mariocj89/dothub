@@ -61,13 +61,7 @@ REPO_CONFIG = {
         # TO BE IMPLEMENTED
     },
     'collaborators': {
-        'dnaranjo89': {
-            'permission': 'admin'
-        },
         'mariocj89': {
-            'permission': 'admin'
-        },
-        'palvarez89': {
             'permission': 'admin'
         },
         'dothub-bot': {
@@ -188,14 +182,22 @@ def test_configure_repo(preserve_repo):
 # #############################
 
 
+import betamax
 from betamax.decorator import use_cassette
+from betamax_serializers import pretty_json
 import os.path
+from functools import wraps
 
 CASSETTE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cassettes')
+betamax.Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
+
 
 def vcr_requests(cassete_name):
     def decorator(func):
-        @use_cassette(cassete_name, cassette_library_dir=CASSETTE_DIR, record='none')
+        mode = 'all' if DOTHUB_TOKEN else 'none'
+        @wraps(func)
+        @use_cassette(cassete_name, cassette_library_dir=CASSETTE_DIR, record=mode,
+                      serialize_with='prettyjson')
         def _(*args, **kwargs):
             args = list(args)
             vcr_session = args.pop(0)
