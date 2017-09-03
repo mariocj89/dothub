@@ -319,7 +319,6 @@ def test_get_teams(org):
         assert result == {
             'team1': {
                 'description': 'description1',
-                'id': 'team1id',  # TODO: Should we expose the id? same q on other objs
                 'members': {
                     'member1': {'role': 'maintainer'},
                     'member2': {'role': 'member'}
@@ -342,7 +341,6 @@ def test_set_teams_without_change(org):
         org.teams = {
             'team1': {
                 'description': 'description1',
-                'id': 'team1id',
                 'members': {
                     'member1': {'role': 'maintainer'},
                     'member2': {'role': 'member'}
@@ -381,7 +379,6 @@ def test_set_team_add_one(org):
         org.teams = {
             'team1': {
                 'description': 'description1',
-                'id': 'team1id',
                 'members': {
                     'member1': {'role': 'maintainer'},
                     'member2': {'role': 'member'}
@@ -395,7 +392,6 @@ def test_set_team_add_one(org):
             },
             'team2': {
                 'description': 'description2',
-                'id': 'team2id',  # TODO: when adding a team, the id makes no sense
                 'members': {
                     'member2': {'role': 'member'},
                 },
@@ -410,7 +406,6 @@ def test_set_team_add_one(org):
         org.spy.post.assert_called_once_with(ANY, {
             'name': 'team2',
             'description': 'description2',
-            'id': 'team2id',  # TODO: Verify this actually works
             'permission': 'admin',
             'privacy': 'closed',
         })

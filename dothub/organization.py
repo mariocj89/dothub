@@ -15,7 +15,7 @@ FIELDS = {
     # default_repository_permission, members_can_create_repositories
     "member": ["login"],
     "membership": ["role"],
-    "team": ["id", "name", "description", "privacy", "permission"],  # slug
+    "team": ["name", "description", "privacy", "permission"],  # slug
     "team_member": ["login"],
     "team_membership": ["role"],
     "team_repos": ["permissions", "name"],
@@ -116,12 +116,12 @@ class Organization(object):
         """
         result = dict()
         url = self._get_url("teams")
-        teams = self._gh.get(url, FIELDS["team"])
+        teams = self._gh.get(url, FIELDS["team"] + ["id"])
         for team in teams:
             team_name = team.pop("name")
+            team_id = team.pop("id")
             team["members"] = {}
             team["repositories"] = {}
-            team_id = team["id"]
             members_url = self._get_team_url(team_id, "members")
             members = self._gh.get(members_url, FIELDS["team_member"])
             for member in members:
@@ -148,8 +148,13 @@ class Organization(object):
         current = self.teams
         added, missing, updated = dict_diff.diff(current, new)
 
+        teams_id_mapping = {
+            v["name"]: v["id"] for v in
+            self._gh.get(self._get_url("teams"), ["name", "id"])
+        }
+
         for team_name in missing:
-            team_id = current[team_name]["id"]
+            team_id = teams_id_mapping[team_name]
             url = self._get_team_url(team_id)
             self._gh.delete(url)
 
@@ -173,9 +178,7 @@ class Organization(object):
         for team_name in updated:
             new_team = new[team_name]
             old_team = new[team_name]
-            team_id = new_team.pop("id")
-            if team_id != old_team.pop("id"):
-                raise RuntimeError("Cannot update the team id")
+            team_id = teams_id_mapping[team_name]
             new_repos = new_team.pop("repositories", {})
             old_repos = old_team.pop("repositories", {})
             new_members = new_team.pop("members", {})
