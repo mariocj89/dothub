@@ -1,11 +1,14 @@
-"""Tests updating config of a real org and repo under the dothub-sandbox organization"""
+"""Tests updating config of a real org and repo under the dothub-sandbox organization
+
+Tests in this file target the real gothub organization of "dothub-sandbox"
+Set the environment variable GITHUB_TOKEN (only if any maintainer gave it to you) to run these tests
+"""
 
 import pytest
 from click.testing import CliRunner
 import tempfile
 from dothub.cli import dothub
 from dothub import utils
-from dothub import github_helper
 import os
 
 import logging
@@ -17,6 +20,17 @@ CLI_BASE_ARGS = ["--user=dothub-bot", "--token=" + str(DOTHUB_TOKEN), "--verbosi
 
 ORG_CONFIG = {
     'teams': {
+        'test-team': {
+            'description': 'This is a test team',
+            'members': {
+                'dothub-bot': {
+                    'role': 'maintainer'
+                }
+            },
+            'permission': 'pull',
+            'privacy': 'closed',
+            'repositories': {}
+        }
     },
     'hooks': {
         # TO BE IMPLEMENTED
@@ -89,23 +103,48 @@ skip_on_no_token = pytest.mark.skipif(
 )
 
 
-@pytest.yield_fixture()
+@pytest.fixture
 def preserve_org():
     """Saves the org config and restores it at the end of each test"""
-    with tempfile.NamedTemporaryFile() as original_config:
-        original_config_file = original_config.name
+    if DOTHUB_TOKEN:
+        with tempfile.NamedTemporaryFile() as original_config:
+            original_config_file = original_config.name
 
-    args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "pull",
-                            "--output_file=" + original_config_file]
-    result = CliRunner().invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+        args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "pull",
+                                "--output_file=" + original_config_file]
+        result = CliRunner().invoke(dothub, args, obj={})
+        assert 0 == result.exit_code
 
-    yield
+        yield
 
-    args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "push",
-                            "--input_file=" + original_config_file]
-    result = CliRunner().invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+        args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "push",
+                                "--input_file=" + original_config_file]
+        result = CliRunner().invoke(dothub, args, obj={})
+        assert 0 == result.exit_code
+    else:
+        yield
+
+
+@pytest.fixture
+def preserve_repo():
+    """Saves the repo config and restores it at the end of each test"""
+    if DOTHUB_TOKEN:
+        with tempfile.NamedTemporaryFile() as original_config:
+            original_config_file = original_config.name
+
+        args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
+                                "pull", "--output_file=" + original_config_file]
+        result = CliRunner().invoke(dothub, args, obj={})
+        assert 0 == result.exit_code
+
+        yield
+
+        args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
+                                "push", "--input_file=" + original_config_file]
+        result = CliRunner().invoke(dothub, args, obj={})
+        assert 0 == result.exit_code
+    else:
+        yield
 
 
 @skip_on_no_token
@@ -133,25 +172,6 @@ def test_configure_org(preserve_org):
     assert ORG_CONFIG == utils.load_yaml(test_config_file)
 
 
-@pytest.yield_fixture()
-def preserve_repo():
-    """Saves the repo config and restores it at the end of each test"""
-    with tempfile.NamedTemporaryFile() as original_config:
-        original_config_file = original_config.name
-
-    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
-                            "pull", "--output_file=" + original_config_file]
-    result = CliRunner().invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-
-    yield
-
-    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
-                            "push", "--input_file=" + original_config_file]
-    result = CliRunner().invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-
-
 @skip_on_no_token
 def test_configure_repo(preserve_repo):
     runner = CliRunner()
@@ -176,85 +196,3 @@ def test_configure_repo(preserve_repo):
     assert 0 == result.exit_code
     assert REPO_CONFIG == utils.load_yaml(test_config_file)
 
-
-# #############################
-# TEST USING RECORDED RESPONSES
-# #############################
-
-
-import betamax
-from betamax.decorator import use_cassette
-from betamax_serializers import pretty_json
-import os.path
-from functools import wraps
-
-CASSETTE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cassettes')
-betamax.Betamax.register_serializer(pretty_json.PrettyJSONSerializer)
-
-
-def vcr_requests(cassete_name):
-    def decorator(func):
-        mode = 'all' if DOTHUB_TOKEN else 'none'
-        @wraps(func)
-        @use_cassette(cassete_name, cassette_library_dir=CASSETTE_DIR, record=mode,
-                      serialize_with='prettyjson')
-        def _(*args, **kwargs):
-            args = list(args)
-            vcr_session = args.pop(0)
-            # Patch the global session
-            github_helper.GitHub._session = vcr_session
-            res = func(*args, **kwargs)
-            github_helper.GitHub._session = None
-            return res
-        return _
-    return decorator
-
-
-@vcr_requests('configure_repo')
-def test_configure_repo_vcr():
-    runner = CliRunner()
-    with tempfile.NamedTemporaryFile() as test_config:
-        test_config_file = test_config.name
-
-    # ########################
-    # Test updating the config
-    # ########################
-    utils.serialize_yaml(REPO_CONFIG, test_config_file)
-    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
-                            "push", "--input_file=" + test_config_file]
-    result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-
-    # ##########################
-    # Test retrieving the config
-    # ##########################
-    args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
-                            "pull", "--output_file=" + test_config_file]
-    result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-    assert REPO_CONFIG == utils.load_yaml(test_config_file)
-
-
-@vcr_requests('configure_org')
-def test_configure_org_vcr():
-    runner = CliRunner()
-    with tempfile.NamedTemporaryFile() as test_config:
-        test_config_file = test_config.name
-
-    # ########################
-    # Test updating the config
-    # ########################
-    utils.serialize_yaml(ORG_CONFIG, test_config_file)
-    args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "push",
-                            "--input_file=" + test_config_file]
-    result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-
-    # ##########################
-    # Test retrieving the config
-    # ##########################
-    args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "pull",
-                            "--output_file=" + test_config_file]
-    result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
-    assert ORG_CONFIG == utils.load_yaml(test_config_file)
