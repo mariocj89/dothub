@@ -172,12 +172,12 @@ class Organization(object):
                 self._gh.put(url, repo)
 
             for member_name, member in members.items():
-                url = self._get_team_url(team_id, "memberships", member_name)
+                url = self._get_team_url(team_id, "members", member_name)
                 self._gh.put(url, member)
 
         for team_name in updated:
             new_team = new[team_name]
-            old_team = new[team_name]
+            old_team = current[team_name]
             team_id = teams_id_mapping[team_name]
             new_repos = new_team.pop("repositories", {})
             old_repos = old_team.pop("repositories", {})
@@ -203,7 +203,7 @@ class Organization(object):
             m_added, m_missing, m_updated = dict_diff.diff(old_members, new_members)
             for member_name in m_added.union(m_updated):
                 member = new_members[member_name]
-                url = self._get_team_url(team_id, "memberships", member_name)
+                url = self._get_team_url(team_id, "members", member_name)
                 self._gh.put(url, member)
 
             for member_name in m_missing:
