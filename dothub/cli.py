@@ -66,7 +66,7 @@ def repo_pull(ctx, output_file):
     r = ctx.obj['repository']
     repo_config = r.describe()
     utils.serialize_yaml(repo_config, output_file)
-    LOG.info("{} updated".format(output_file))
+    LOG.info("%s updated", output_file)
 
 
 @repo.command("push")
@@ -98,7 +98,7 @@ def org_pull(ctx, output_file):
     o = ctx.obj['organization']
     org_config = o.describe()
     utils.serialize_yaml(org_config, output_file)
-    LOG.info("{} updated".format(output_file))
+    LOG.info("%s updated", output_file)
 
 
 @org.command("push")
@@ -136,7 +136,7 @@ def repos(ctx, input_file):
         new_config["options"].pop(field, None)
 
     for repo_name in o.repos:
-        LOG.info("Updating {}".format(repo_name))
+        LOG.info("Updating %s", repo_name)
         r = Repo(gh, o.name, repo_name)
         current_config = r.describe()
         for field in set(ignored_options) - {"name"}:
@@ -145,5 +145,5 @@ def repos(ctx, input_file):
         if utils.confirm_changes(current_config, new_config):
             r.update(new_config)
 
-    LOG.info("All repos in {} processed".format(o.name))
+    LOG.info("All repos in %s processed", o.name)
 
