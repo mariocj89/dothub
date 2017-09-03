@@ -71,13 +71,14 @@ def repo_pull(ctx, output_file):
 
 @repo.command("push")
 @click.option("--input_file", help="Input config file", default=REPO_CONFIG_FILE)
+@click.option("--yes", help="Respond with 'yes' to any prompt", default=False, is_flag=True)
 @click.pass_context
-def repo_push(ctx, input_file):
+def repo_push(ctx, input_file, auto_accept):
     """Update the repository config in github"""
     r = ctx.obj['repository']
     new_config = utils.load_yaml(input_file)
     current_config = r.describe()
-    if utils.confirm_changes(current_config, new_config, abort=True):
+    if auto_accept or utils.confirm_changes(current_config, new_config, abort=True):
         r.update(new_config)
 
 
@@ -103,20 +104,22 @@ def org_pull(ctx, output_file):
 
 @org.command("push")
 @click.option("--input_file", help="Input config file", default=ORG_CONFIG_FILE)
+@click.option("--yes", help="Respond with 'yes' to any prompt", default=False, is_flag=True)
 @click.pass_context
-def org_push(ctx, input_file):
+def org_push(ctx, input_file, auto_accept):
     """Update the organization config in github"""
     o = ctx.obj['organization']
     new_config = utils.load_yaml(input_file)
     current_config = o.describe()
-    if utils.confirm_changes(current_config, new_config, abort=True):
+    if auto_accept or utils.confirm_changes(current_config, new_config, abort=True):
         o.update(new_config)
 
 
 @org.command()
 @click.option("--input_file", help="Input config file", default=ORG_REPOS_CONFIG_FILE)
+@click.option("--yes", help="Respond with 'yes' to any prompt", default=False, is_flag=True)
 @click.pass_context
-def repos(ctx, input_file):
+def repos(ctx, input_file, auto_accept):
     """Updates all repos of an org with the specified repo config
 
     This will iterate over all repos in the org and update them with the template provided
@@ -127,7 +130,7 @@ def repos(ctx, input_file):
     gh = ctx.obj['github']
     o = ctx.obj['organization']
     new_config = utils.load_yaml(input_file)
-    if any(_ in new_config["options"] for _ in ignored_options):
+    if not auto_accept and any(_ in new_config["options"] for _ in ignored_options):
         message = ("{} keys wont be updated but they are present in {}.\n"
                    "Continue anyway?".format(ignored_options, input_file))
         click.confirm(message, abort=True, default=True)
@@ -142,7 +145,7 @@ def repos(ctx, input_file):
         for field in set(ignored_options) - {"name"}:
             current_config["options"].pop(field, None)
         new_config["options"]["name"] = repo_name
-        if utils.confirm_changes(current_config, new_config):
+        if auto_accept or utils.confirm_changes(current_config, new_config):
             r.update(new_config)
 
     LOG.info("All repos in {} processed".format(o.name))
