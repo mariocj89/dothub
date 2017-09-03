@@ -21,7 +21,6 @@ If the change is implementing a new feature be sure to have some integration tes
 The code has three kind of test levels:
 
 - [unit](https://github.com/mariocj89/dothub/tree/master/tests/unit): *Quick* to write, validate "happy paths" and corner cases of each piece of code. One suite of tests per Python module. These suites make assumptions about the HTTP responses are.
-- [interation](https://github.com/mariocj89/dothub/tree/master/tests/integration): Wider tests. Please keep number low. There are broader tests to validate full functionalities, mainly happy paths. They take the github reposnses as they come from the github API. These are recorded using betamax to ease the testing and remove the dependency on the real endpoints. If the env var GITHUB_TOKEN is provided new recordings will be performed and the real github be hit.
 - [end to end](https://github.com/mariocj89/dothub/tree/master/tests/end_to_end): Tests against the real github with a fake organization.
 
 If any check in the Pull Request fails, the chances of your pull request getting merged are really low.
