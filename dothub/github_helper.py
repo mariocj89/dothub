@@ -101,9 +101,14 @@ class GitHub(object):
     def _request(self, method, url, **kwargs):
         """Shared plumbing to send a request"""
         req_func = getattr(self._session, method)
-        response = req_func(urljoin(self.api_url, url), **kwargs)
-        LOG.debug("Request to '%s' returned %s", url, response.text)
-        response.raise_for_status()
+        try:
+            response = req_func(urljoin(self.api_url, url), **kwargs)
+            response.raise_for_status()
+        except:
+            LOG.debug("Failed to send %s request to %s", method, url, exc_info=True)
+            raise
+        else:
+            LOG.debug("Request to '%s' returned %s", url, response.text)
         if response.text:
             return response.json()
 
