@@ -39,14 +39,16 @@ def config_wizard():
         os.makedirs(APP_DIR)
     initial_config(conf)
     with open(CONFIG_FILE, 'w') as f:
-        conf = json.dump(conf, f, indent=4)
+        json.dump(conf, f, indent=4)
     LOG.info("Config saved in: '%s'", CONFIG_FILE)
     LOG.info("Delete this file to rerun the wizard")
     return conf
 
 
 def initial_config(conf):
-    """Asks the user for the general configuration for the app and fills the config object"""
+    """Sets up the initial config for dothub
+
+    Asks the user for the general configuration for the app and fills the config object"""
     user = click.prompt("What is your username? ")
     conf["user"] = user
     password = getpass.getpass()

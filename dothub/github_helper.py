@@ -21,9 +21,10 @@ class GitHub(object):
     on top of Python requests.
     """
 
-    _session = None  # Single global ugly horrible session to ease testing
-                     # set this value to any kind of mock  and it will be used
-                     # instead of an instance of requests.Session
+    # Single global ugly horrible session to ease testing
+    # set this value to any kind of mock  and it will be used
+    # instead of an instance of requests.Session
+    _session = None
 
     def __init__(self, user, token, api_url=DEFAULT_API_URL):
         """Creates a repo object
