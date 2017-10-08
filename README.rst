@@ -34,7 +34,7 @@ Retrieve locally:
 
 .. code:: bash
 
-    $ dothub repo pull
+    $ dothub pull mariocj89/dothub
     .dothub.repo.yml updated
 
 This creates a file that represents your repo configuration
@@ -44,7 +44,7 @@ Updating from local changes:
 
 .. code:: bash
 
-    dothub repo push
+    dothub push mariocj89/dothub
     Changes:
     + root['collaborators']['dnaranjo89']
     + root['labels']['new-tag']
@@ -52,7 +52,7 @@ Updating from local changes:
     Apply changes? [Y/n]: Y
     Updated!
 
-You can check the repo configuration in github. dnarnaj89 has been
+You can check the repo configuration in github. dnarnajo89 has been
 invited as a collaborator, travis hooks have been disabled and you have
 a new awesome "new-tag"
 
@@ -62,12 +62,12 @@ Organization Configuration
 Retrieve locally:
 ^^^^^^^^^^^^^^^^^
 
-``dothub org pull``
+``dothub pull <org_name>``
 
 Updating from local changes:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``dothub org push``
+``dothub push <org_name>``
 
 Updating all repositories within an organization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,26 +75,11 @@ Updating all repositories within an organization
 You can update all the repositories of an organization from your
 .dothub.repo.yml file.
 
-You can just do ``dothub repo pull --output_file=.dothub.org.repos.yml``
-from a repo with the default configuration and then ``dothub org repos``
+You can just do ``dothub pull <org/repo> .dothub.org.repos.yml``
+from a repo with the default configuration and then ``dothub push --bulk org/* ``
 to configure all the repositories. Note that some repository specific
 options like the name or the description will be ignored on the update.
 
-Targeting a different repo from the current workspace
------------------------------------------------------
-
-By default dothub will assume you want to work with the repo that your
-workspace is in or the organization of repo for the current tracking
-branch in case of organization commands but this can be overriden
-through some parameters.
-
-``dothub repo --owner=org_name --repository=repo_name pull``
-
-``dothub org --name=org_name pull``
-
-``dothub repo --owner=org_name --repository=repo_name push``
-
-``dothub org --name=org_name push``
 
 Future features
 ===============

@@ -11,9 +11,14 @@ def test_dothub_help():
     assert result.exit_code == 0
 
 
-def test_dothub_repo_help():
+def test_dothub_pull_help():
     runner = CliRunner()
-    result = runner.invoke(dothub, base_args + ['repo', "--help"], obj={})
+    result = runner.invoke(dothub, base_args + ['pull', "--help"], obj={})
     assert result.exit_code == 0
 
+
+def test_dothub_push_help():
+    runner = CliRunner()
+    result = runner.invoke(dothub, base_args + ['push', "--help"], obj={})
+    assert result.exit_code == 0
 

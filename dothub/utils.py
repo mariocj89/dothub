@@ -114,3 +114,18 @@ def diff_configs(current, new):
                 "set_item_removed"]:
         removed = removed.union(d.get(key, set()))
     return added, removed, changed
+
+
+def split_org_repo(in_str):
+    """Splits the input string to extract the repo and the org
+
+    If the repo is not provided none will be returned
+
+    Returns a pair or org, repo
+    """
+    tokens = in_str.split('/', 1)
+    org = tokens[0]
+    repo = None
+    if len(tokens) > 1 and tokens[1]:
+        repo = tokens[1]
+    return org, repo

@@ -14,6 +14,24 @@ def test_extract_gh_info_for_http():
     assert repo == "dothub"
 
 
+def test_split_org_only():
+    owner, repo = utils.split_org_repo("etcaterva")
+    assert owner == "etcaterva"
+    assert repo is None
+
+
+def test_split_org_only_with_slash():
+    owner, repo = utils.split_org_repo("etcaterva/")
+    assert owner == "etcaterva"
+    assert repo is None
+
+
+def test_split_org_and_repo():
+    owner, repo = utils.split_org_repo("etcaterva/echaloasuerte")
+    assert owner == "etcaterva"
+    assert repo == "echaloasuerte"
+
+
 @sealedmock.patch("dothub.utils.click.confirm")
 def test_confirm_changes_no_change(mock_confirm):
     mock_confirm.return_value = None
