@@ -96,17 +96,17 @@ def push(ctx, target, file_, bulk):
     if bulk:
         org = Organization(gh, org_name)
         file_ = file_ or ORG_REPOS_CONFIG_FILE
-        LOG.info("Pushing '{}' into multiple repos: '{}'".format(org_name, file_))
+        LOG.info("Pushing config '{}' to multiple repos: '{}'".format(file_, target ))
         _update_all_repos(gh, org, file_, repo_name)
     elif not repo_name:
         org = Organization(gh, org_name)
         file_ = file_ or ORG_CONFIG_FILE
-        LOG.info("Pulling '{}' into '{}'".format(org_name, file_))
+        LOG.info("Pushing '{}' into '{}'".format(file_, org_name))
         _push_repo(org, file_)
     else:
         repo = Repo(gh, org_name, repo_name)
         file_ = file_ or REPO_CONFIG_FILE
-        LOG.info("Pulling '{}/{}' into '{}'".format(org_name, repo_name, file_))
+        LOG.info("Pushing '{}' to '{}'".format(file_, target))
         _push_repo(repo, file_)
 
 
