@@ -18,7 +18,7 @@ Be sure to include tests that verify the change. All tests should have an human 
 
 If the change is implementing a new feature be sure to have some integration tests covering it as well.
 
-The code has three kind of test levels:
+The code has two kind of test levels:
 
 - [unit](https://github.com/mariocj89/dothub/tree/master/tests/unit): *Quick* to write, validate "happy paths" and corner cases of each piece of code. One suite of tests per Python module. These suites make assumptions about the HTTP responses are.
 - [end to end](https://github.com/mariocj89/dothub/tree/master/tests/end_to_end): Tests against the real github with a fake organization.
