@@ -213,19 +213,17 @@ class Organization(object):
     @property
     def hooks(self):
         """Retrieve the organization level web hooks"""
-        result = dict()
         url = self._get_url("hooks")
-        hooks = self._gh.get(url, FIELDS["hooks"])
-        for hook in hooks:
-            result[hook.pop("name")] = hook
-
-        return result
+        return self._gh.get(url, FIELDS["hooks"])
 
     @hooks.setter
     def hooks(self, new):
-        current = self.hooks
-        raw_curr_hooks = self._gh.get(self._get_url("hooks"), ["name", "id"])
-        hooks_id = {h["name"]: h["id"] for h in raw_curr_hooks}
+        assert isinstance(new, (list, tuple)), "Orgs need to be a list of dict"
+        get_hook_name = lambda h: h["config"]["url"] if h["name"] == "web" else h["name"]
+        current = {get_hook_name(h): h for h in self.hooks}
+        new = {get_hook_name(h): h for h in new}
+        raw_curr_hooks = self._gh.get(self._get_url("hooks"), ["name", "config", "id"])
+        hooks_id = {get_hook_name(h): h["id"] for h in raw_curr_hooks}
 
         added, missing, updated = dict_diff.diff(current, new)
         for hook_name in missing:
@@ -236,7 +234,12 @@ class Organization(object):
         for hook_name in updated:
             hook_id = hooks_id[hook_name]
             hook = new[hook_name]
-            if "secret" or "token" in hook:
+            # Safe check updating the config
+            new_config = hook.get("config")
+            current_config = current[hook_name].get("config")
+            forbidden_keys = ['token', 'secret']
+            if current_config != new_config and any(k in forbidden_keys
+                                                    for k in new_config):
                 raise RuntimeError("Updating hooks with secrets is not supported")
             url = self._get_url("hooks", hook_id)
             self._gh.patch(url, hook)

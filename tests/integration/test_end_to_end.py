@@ -1,7 +1,8 @@
 """Tests updating config of a real org and repo under the dothub-sandbox organization
 
 Tests in this file target the real gothub organization of "dothub-sandbox"
-Set the environment variable GITHUB_TOKEN (only if any maintainer gave it to you) to run these tests
+Set the environment variable GITHUB_TOKEN (only if any maintainer gave it to you)
+ to run these tests
 """
 
 import pytest
@@ -15,7 +16,10 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 DOTHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-CLI_BASE_ARGS = ["--user=dothub-bot", "--token=" + str(DOTHUB_TOKEN), "--verbosity=DEBUG"]
+CLI_BASE_ARGS = [
+    "--user=dothub-bot", "--token=" + str(DOTHUB_TOKEN),
+    "--verbosity=DEBUG"  # This logs all req/res
+]
 
 
 ORG_CONFIG = {
@@ -32,9 +36,18 @@ ORG_CONFIG = {
             'repositories': {}
         }
     },
-    'hooks': {
-        # TO BE IMPLEMENTED
-    },
+    'hooks': [{
+        'active': True,
+        'events': [
+            'push'
+        ],
+        'name': 'web',
+        'config': {
+            'url': 'https://example.com',
+            'insecure_ssl': '0',
+            'content_type': 'form',
+        }
+    }],
     'members': {
         'dothub-bot': {
             'role': 'admin'
@@ -71,9 +84,15 @@ REPO_CONFIG = {
             'color': '0052cc'
         }
     },
-    'hooks': {
-        # TO BE IMPLEMENTED
-    },
+    'hooks': [{
+        'active': True,
+        'config': {'domain': 'notify.travis-ci.org'},
+        'events': [
+            'create', 'delete', 'issue_comment', 'member', 'membership',
+            'public', 'pull_request', 'push', 'repository'
+        ],
+        'name': 'travis',
+    }],
     'collaborators': {
         'mariocj89': {
             'permission': 'admin'
@@ -113,14 +132,14 @@ def preserve_org():
         args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "pull",
                                 "--output_file=" + original_config_file]
         result = CliRunner().invoke(dothub, args, obj={})
-        assert 0 == result.exit_code
+        assert 0 == result.exit_code, result.output
 
         yield
 
         args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "push",
                                 "--input_file=" + original_config_file]
         result = CliRunner().invoke(dothub, args, obj={})
-        assert 0 == result.exit_code
+        assert 0 == result.exit_code, result.output
     else:
         yield
 
@@ -135,14 +154,14 @@ def preserve_repo():
         args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                                 "pull", "--output_file=" + original_config_file]
         result = CliRunner().invoke(dothub, args, obj={})
-        assert 0 == result.exit_code
+        assert 0 == result.exit_code, result.output
 
         yield
 
         args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                                 "push", "--input_file=" + original_config_file]
         result = CliRunner().invoke(dothub, args, obj={})
-        assert 0 == result.exit_code
+        assert 0 == result.exit_code, result.output
     else:
         yield
 
@@ -165,7 +184,7 @@ def test_update_org_configuration(preserve_org):
     args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "push",
                             "--input_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+    assert 0 == result.exit_code, result.output
 
     # ##########################
     # Test retrieving the config
@@ -173,7 +192,7 @@ def test_update_org_configuration(preserve_org):
     args = CLI_BASE_ARGS + ["org", "--name=dothub-sandbox", "pull",
                             "--output_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+    assert 0 == result.exit_code, result.output
     assert ORG_CONFIG == utils.load_yaml(test_config_file)
 
 
@@ -195,7 +214,7 @@ def test_update_repo_configuration(preserve_repo):
     args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "push", "--input_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+    assert 0 == result.exit_code, result.output
 
     # ##########################
     # Test retrieving the config
@@ -203,6 +222,6 @@ def test_update_repo_configuration(preserve_repo):
     args = CLI_BASE_ARGS + ["repo", "--owner=dothub-sandbox", "--repository=test-repo",
                             "pull", "--output_file=" + test_config_file]
     result = runner.invoke(dothub, args, obj={})
-    assert 0 == result.exit_code
+    assert 0 == result.exit_code, result.output
     assert REPO_CONFIG == utils.load_yaml(test_config_file)
 
