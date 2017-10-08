@@ -67,7 +67,7 @@ Retrieve locally:
 Updating from local changes:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``dothub repo push``
+``dothub org push``
 
 Updating all repositories within an organization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
