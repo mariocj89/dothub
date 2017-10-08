@@ -164,15 +164,14 @@ class DF(object):
             ),
             dict(
                 id=2,
-                name="hook2",
+                name="web",
                 active=False,
                 events=[
                     "push",
                 ],
                 config=dict(
-                    url="http://content",
-                    content="json",
                     token="******",
+                    url="https://chooserandom.com/webhook",
                 )
             ),
         ]
@@ -475,8 +474,9 @@ def test_get_hooks_multiple_returned(repo):
     with requests_mock.Mocker() as mock:
         add_repo_options(mock, DF.options())
         add_repo_hooks(mock, DF.hooks())
-        assert repo.hooks == dict(
-            hook1=dict(
+        assert repo.hooks == [
+            dict(
+                name="hook1",
                 active=True,
                 events=[
                     "push",
@@ -488,30 +488,29 @@ def test_get_hooks_multiple_returned(repo):
                     custom_param="custom",
                 )
             ),
-            hook2=dict(
+            dict(
+                name="web",
                 active=False,
                 events=[
                     "push",
                 ],
                 config=dict(
-                    url="http://content",
-                    content="json",
                     token="******",
+                    url='https://chooserandom.com/webhook',
                 )
-            ),
-        )
+            )
+        ]
 
 
-@pytest.mark.xfail(reason="The way web-hooks are handled is broken, they have no name",
-                   run=False)
 def test_set_hook_add_one(repo):
     """Adding a hook calls post"""
     with requests_mock.Mocker() as mock:
         add_repo_options(mock, DF.options())
         add_repo_hooks(mock, DF.hooks())
         allow_repo_method(mock, "POST", url_extra="hooks")
-        repo.hooks = dict(
-            hook1=dict(
+        repo.hooks = [
+            dict(
+                name="hook1",
                 active=True,
                 events=[
                     "push",
@@ -523,53 +522,88 @@ def test_set_hook_add_one(repo):
                     custom_param="custom",
                 )
             ),
-            hook2=dict(
+            dict(
                 active=False,
+                name="web",
                 events=[
                     "push",
                 ],
                 config=dict(
-                    url="http://content",
-                    content="json",
                     token="******",
+                    url="https://chooserandom.com/webhook",
                 )
             ),
-            hook3=dict(
+            dict(
+                name="web",
                 active=True,
                 events=[
                     "push",
                 ],
                 config=dict(
-                    url="http://content2",
+                    url="https://chooserandom2.com/webhook",
                 )
             ),
-        )
+        ]
         repo.spy.post.assert_called_once_with(ANY, dict(
-            name="hook3",
+            name="web",
             active=True,
             events=["push"],
-            config=dict(url="http://content2")
+            config=dict(url="https://chooserandom2.com/webhook")
         ))
 
 
 def test_set_hooks_unchanged(repo):
-    pass
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_hooks(mock, DF.hooks())
+        same_hooks = DF.hooks()
+        for h in same_hooks:
+            h.pop('id')
+        repo.hooks = same_hooks
 
 
 def test_set_hook_remove_one(repo):
-    pass
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_hooks(mock, DF.hooks())
+        hooks = DF.hooks()
+        deleted = hooks.pop()
+        for h in hooks:
+            h.pop('id')
+        allow_repo_method(mock, "DELETE", url_extra="hooks/{}".format(deleted["id"]))
+
+        repo.hooks = hooks
 
 
 def test_set_hook_update_one(repo):
-    pass
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_hooks(mock, DF.hooks())
+        hooks = DF.hooks()
+        updated = hooks[0]
+        allow_repo_method(mock, "PATCH", url_extra="hooks/{}".format(updated["id"]))
+        for h in hooks:
+            h.pop('id')
+        updated["active"] = not updated["active"]
+
+        repo.hooks = hooks
 
 
 def test_set_hook_invalid_update_in_config(repo):
-    pass
+    with requests_mock.Mocker() as mock:
+        add_repo_options(mock, DF.options())
+        add_repo_hooks(mock, DF.hooks())
+        hooks = DF.hooks()
+        updated = hooks[0]
+        updated["config"]["token"] = "secret_password"
+        allow_repo_method(mock, "PATCH", url_extra="hooks/{}".format(updated["id"]))
+        for h in hooks:
+            h.pop('id')
+        updated["active"] = not updated["active"]
 
-
-def test_set_hook_valid_update_in_config(repo):
-    pass
+        with pytest.raises(RuntimeError) as exc:
+            repo.hooks = hooks
+            assert "secrets is not supported" in str(exc)
 
 
 def test_describe_full_repo(repo):
@@ -593,8 +627,9 @@ def test_describe_full_repo(repo):
                 'collaborator2': {'permission': 'push'},
                 'collaborator3': {'permission': 'admin'}
             },
-            'hooks': {
-                'hook1': {
+            'hooks': [
+                {
+                    'name': 'hook1',
                     'active': True,
                     'config': {
                         'content': 'json',
@@ -603,16 +638,16 @@ def test_describe_full_repo(repo):
                     },
                     'events': ['push', 'pull_request']
                 },
-                'hook2': {
+                {
+                    'name': 'web',
                     'active': False,
                     'config': {
-                        'content': 'json',
                         'token': '******',
-                        'url': 'http://content'
+                        'url': 'https://chooserandom.com/webhook',
                     },
                     'events': ['push']
                 }
-            },
+            ],
             'labels': {
                 'label1': {'color': 'f29513'},
                 'label2': {'color': '0f11f0'}
