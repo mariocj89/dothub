@@ -43,6 +43,7 @@ class PartialDictMatcher(object):
                 return False
         return True
 
+
 def register_uri(mock, method, url, **kwargs):
     """Registers an url on requests_mock ensure the full url was passed"""
     absolute_url = os.path.join(github_helper.DEFAULT_API_URL, url)
