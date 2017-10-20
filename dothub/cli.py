@@ -182,7 +182,7 @@ def _update_all_repos(gh, org, input_file, repo_filter=None):
 @click.option("--repository", help="GitHub repo to serialize", required=False)
 @click.pass_context
 def repo(ctx, owner, repository):
-    """Serialize/Update the repository config. Deprecated, prefer push/pull"""
+    """DEPRECAED: Serialize/Update the repository config. Prefer push/pull"""
     ws_repo_info = utils.workspace_repo()
     if ws_repo_info:
         ws_owner, ws_repo = ws_repo_info
@@ -223,7 +223,7 @@ def repo_push(ctx, input_file):
 @click.option("--name", help="GitHub organization name", required=False)
 @click.pass_context
 def org(ctx, name):
-    """Serialize/Update the org config. Deprecated, prefer push/pull"""
+    """DEPRECATED: Serialize/Update the org config. prefer push/pull"""
     ws_repo_info = utils.workspace_repo()
     if ws_repo_info:
         ws_owner, ws_repo = ws_repo_info
