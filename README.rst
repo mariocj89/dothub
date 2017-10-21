@@ -75,10 +75,16 @@ Updating all repositories within an organization
 You can update all the repositories of an organization from your
 .dothub.repo.yml file.
 
-You can just do ``dothub pull <org/repo> .dothub.org.repos.yml``
-from a repo with the default configuration and then ``dothub push --bulk org/* ``
-to configure all the repositories. Note that some repository specific
-options like the name or the description will be ignored on the update.
+To make a repo configuration be a template for all the repositories
+of your org you can use dothub as follows:
+
+.. code:: bash
+
+    dothub pull <org/repo> .dothub.org.repos.yml
+    dothub push --bulk org/*
+
+Note that some repository specific options like the name or the
+description will be ignored on the update.
 
 
 Future features
