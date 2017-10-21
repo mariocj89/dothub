@@ -5,6 +5,7 @@ import git
 import re
 from deepdiff import DeepDiff
 import click
+import copy
 
 from yaml import Loader, SafeLoader
 
@@ -97,7 +98,27 @@ def diff_configs(current, new):
 
     Returns a tuple of added, removed and updated
     """
+    def reformat_hooks(hooks):
+        """Horrible hack to get a nicer repr of the hook changes
+
+        It transforms the array of hooks into a dict, where the key is either
+        the name or the url (for web hooks)
+        """
+        res = {}
+        for h in hooks:
+            key = h["config"]["url"] if h["name"] == "web" else h["name"]
+            res[key] = h
+        return res
+
+    # deep copy as we are going to change them
+    current = copy.deepcopy(current)
+    new = copy.deepcopy(new)
+
     current = {k: current[k] for k in new}
+    if "hooks" in current:
+        current["hooks"] = reformat_hooks(current["hooks"])
+    if "hooks" in current:
+        new["hooks"] = reformat_hooks(new["hooks"])
     d = DeepDiff(current, new, ignore_order=True)
     added = set()
     removed = set()
