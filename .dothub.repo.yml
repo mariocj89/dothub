@@ -1,7 +1,43 @@
 collaborators:
   mariocj89:
     permission: admin
+hooks:
+- active: true
+  config:
+    domain: notify.travis-ci.org
+    token: '********'
+    user: Mariocj89
+  events:
+  - create
+  - delete
+  - issue_comment
+  - member
+  - membership
+  - public
+  - pull_request
+  - push
+  - repository
+  name: travis
+- active: true
+  config:
+    content_type: json
+    insecure_ssl: '0'
+    secret: '********'
+    url: https://kolkrabbi.heroku.com/hooks/github
+  events:
+  - '*'
+  name: web
+- active: true
+  config: {}
+  events:
+  - pull_request
+  - pull_request_review_comment
+  - push
+  - status
+  name: landscape
 labels:
+  Hacktoberfest:
+    color: 5319e7
   bug:
     color: ee0701
   enhancement:
