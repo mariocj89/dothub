@@ -1,7 +1,7 @@
 click==6.6
 coverage==4.3
 deepdiff==2.5.3
-Flask==0.12
+Flask==1.0
 funcsigs==1.0.2
 gitdb2==2.0.0
 github-token==0.1.0
